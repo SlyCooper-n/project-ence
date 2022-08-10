@@ -1,10 +1,18 @@
 import { PageContainer, PageLayout } from "@components/layouts";
 import { Button, VisuallyHidden } from "@components/widgets";
 import { useTheme } from "@core/hooks";
-import type { NextPage } from "next";
+import { hygraph } from "@core/services/graphql";
+import { HOMEPAGE_PT } from "@core/services/graphql/queries";
+import type { GetStaticProps } from "next";
 
-const Home: NextPage = () => {
+interface HomeProps {
+  data: any;
+}
+
+const Home = ({ data }: HomeProps) => {
   const { theme } = useTheme();
+
+  console.log(data);
 
   return (
     <PageContainer headTitle="Ence | Home">
@@ -101,3 +109,13 @@ const Home: NextPage = () => {
 };
 
 export default Home;
+
+export const getStaticProps: GetStaticProps = async () => {
+  const { homepages } = await hygraph.request(HOMEPAGE_PT);
+
+  return {
+    props: {
+      data: homepages[0],
+    },
+  };
+};
