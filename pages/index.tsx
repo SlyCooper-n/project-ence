@@ -78,13 +78,13 @@ const Home: NextPage = () => {
               <img
                 src="https://github.com/slycooper-n.png"
                 alt="Gabriel VS Frasão picture"
-                className="w-2/3 max-w-sm rounded-full z-10 translate-x-[45px] lg:translate-x-[90px] flex-shrink-0"
+                className="w-2/3 max-w-[250px] rounded-full z-10 translate-x-[60px] lg:translate-x-[90px] flex-shrink-0"
               />
 
               <img
                 src="/images/joao-vitor-picture.png"
                 alt="Gabriel VS Frasão picture"
-                className="w-2/3 max-w-sm rounded-full -translate-x-[45px] lg:-translate-x-[90px] flex-shrink-0"
+                className="w-2/3 max-w-[250px] rounded-full -translate-x-[60px] lg:-translate-x-[90px] flex-shrink-0"
               />
             </div>
           </div>
