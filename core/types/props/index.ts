@@ -1,5 +1,10 @@
 import { ButtonHTMLAttributes, ReactNode } from "react";
 
+// Context providers props
+export interface ThemeProviderProps {
+  children: ReactNode;
+}
+
 // Layout components props
 export interface PageLayoutProps {
   navbar?: boolean;
