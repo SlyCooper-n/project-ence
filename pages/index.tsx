@@ -69,8 +69,8 @@ const Home: NextPage = () => {
 
               <Button
                 type="button"
-                variant="next-project"
-                className="w-[148px] hidden lg:block"
+                variant="see-more"
+                className="w-[200px] hidden lg:block"
               />
             </div>
 
@@ -91,7 +91,7 @@ const Home: NextPage = () => {
 
           <Button
             type="button"
-            variant="next-project"
+            variant="see-more"
             className="w-[148px] lg:hidden"
           />
         </section>
