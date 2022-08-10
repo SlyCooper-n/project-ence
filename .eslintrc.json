@@ -1,12 +1,6 @@
 {
-  "extends": [
-    "next/core-web-vitals",
-    "plugin:testing-library/react",
-    "plugin:jest-dom/recommended"
-  ],
-  "plugins": ["testing-library", "jest-dom"],
+  "extends": ["next/core-web-vitals"],
   "rules": {
-    "testing-library/await-async-utils": "off",
     "@next/next/no-img-element": "off"
   }
 }
