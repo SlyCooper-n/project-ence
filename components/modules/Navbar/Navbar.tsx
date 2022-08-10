@@ -1,9 +1,10 @@
 import { useTheme } from "@core/hooks";
 import Link from "next/link";
+import { Moon, Sun } from "phosphor-react";
 import { useState } from "react";
 
 export const Navbar = () => {
-  const { theme } = useTheme();
+  const { theme, toggleTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   function handleToggleMenu() {
@@ -11,7 +12,7 @@ export const Navbar = () => {
   }
 
   return (
-    <nav className="py-3 sm:py-6 flex sm:text-lg">
+    <nav className="py-3 sm:py-6 flex items-center sm:text-lg">
       <Link href="/">
         <a className="mr-auto">
           <img
@@ -39,6 +40,15 @@ export const Navbar = () => {
           </Link>
         </li>
       </ul>
+
+      {/* button to toggle theme (only on desktop screens) */}
+      <label className="swap swap-rotate mr-6">
+        <input type="checkbox" onChange={toggleTheme} />
+
+        <Sun className={`swap-on fill-current w-5 h-5`} />
+
+        <Moon className={`swap-off fill-current w-5 h-5`} />
+      </label>
 
       {/* button to toggle language (only on desktop screens) */}
       <button type="button" className="hidden sm:flex font-bold">
