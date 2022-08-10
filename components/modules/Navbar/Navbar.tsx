@@ -11,7 +11,7 @@ export const Navbar = () => {
   }
 
   return (
-    <nav className="py-3 flex sm:text-lg">
+    <nav className="py-3 sm:py-6 flex sm:text-lg">
       <Link href="/">
         <a className="mr-auto">
           <img
