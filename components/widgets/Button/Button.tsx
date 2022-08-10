@@ -10,7 +10,11 @@ export const Button = (props: ButtonProps) => {
     return (
       <button {...props}>
         {variant === "see-more" ? (
-          <svg width="148" height="27" viewBox="0 0 305 53" fill="none">
+          <svg
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 305 53"
+            fill="none"
+          >
             <rect width="305" height="53" rx="8.12506" fill="#4A4E69" />
             <rect x="236" width="69" height="53" rx="8.12506" fill="#22223B" />
             <path
@@ -26,7 +30,11 @@ export const Button = (props: ButtonProps) => {
             />
           </svg>
         ) : (
-          <svg width="148" height="27" viewBox="0 0 305 53" fill="none">
+          <svg
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 305 53"
+            fill="none"
+          >
             <rect width="305" height="53" rx="8.12506" fill="#4A4E69" />
             <rect x="236" width="69" height="53" rx="8.12506" fill="#22223B" />
             <path
@@ -49,7 +57,11 @@ export const Button = (props: ButtonProps) => {
   return (
     <button {...props}>
       {variant === "see-more" ? (
-        <svg width="148" height="27" viewBox="0 0 148 27" fill="none">
+        <svg
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 148 27"
+          fill="none"
+        >
           <rect
             y="0.463379"
             width="148"
@@ -78,7 +90,11 @@ export const Button = (props: ButtonProps) => {
           />
         </svg>
       ) : (
-        <svg width="148" height="27" viewBox="0 0 305 53" fill="none">
+        <svg
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 305 53"
+          fill="none"
+        >
           <rect width="305" height="53" rx="8.12506" fill="#22223B" />
           <rect x="236" width="69" height="53" rx="8.12506" fill="#4A4E69" />
           <path
