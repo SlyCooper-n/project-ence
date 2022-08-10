@@ -26,14 +26,15 @@ const Home: NextPage = () => {
           />
 
           <p className="text-[8px] sm:text-xl sm:w-4/5 sm:mx-auto">
-            Ence é um estúdio de design focado na criação e desenvolvimento de
-            Identidade de marca e UI Design. Foi criada para transformar a
-            experiência de projetos.
+            Ence é um estúdio de design focado na criação e desenvolvimento de{" "}
+            <br className="hidden xl:block" /> Identidade de marca e UI Design.
+            Foi criada para transformar a experiência{" "}
+            <br className="hidden xl:block" /> de projetos.
           </p>
         </main>
 
         {/* Highlighted cases */}
-        <section className="mb-16 sm:mb-32 text-center">
+        <section className="mb-16 sm:mb-64 text-center">
           <h2 className="mb-2 sm:mb-12 font-bold sm:text-6xl">
             Veja os principais cases de portfólio
           </h2>
@@ -42,13 +43,13 @@ const Home: NextPage = () => {
             <img
               src="images/zoeira-cooking-case.png"
               alt="Zoeira Cooking case"
-              className="sm:w-full"
+              className="sm:w-full max-w-[1080px] max-h-[350px]"
             />
 
             <img
               src="images/zoeira-cooking-case.png"
               alt="Zoeira Cooking case"
-              className="sm:w-full"
+              className="sm:w-full max-w-[1080px] max-h-[350px]"
             />
           </div>
         </section>
@@ -69,7 +70,7 @@ const Home: NextPage = () => {
               <Button
                 type="button"
                 variant="next-project"
-                className="hidden lg:block"
+                className="w-[148px] hidden lg:block"
               />
             </div>
 
@@ -88,7 +89,11 @@ const Home: NextPage = () => {
             </div>
           </div>
 
-          <Button type="button" variant="next-project" className="lg:hidden" />
+          <Button
+            type="button"
+            variant="next-project"
+            className="w-[148px] lg:hidden"
+          />
         </section>
       </PageLayout>
     </PageContainer>
