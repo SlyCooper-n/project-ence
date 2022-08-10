@@ -11,7 +11,7 @@ export const Navbar = () => {
   }
 
   return (
-    <nav className="py-3 flex">
+    <nav className="py-3 flex sm:text-lg">
       <Link href="/">
         <a className="mr-auto">
           <img
@@ -26,7 +26,7 @@ export const Navbar = () => {
       </Link>
 
       {/* menu bar on desktop screens */}
-      <ul className="mr-4 hidden sm:flex gap-2">
+      <ul className="mr-12 hidden sm:flex gap-6 font-bold">
         <li>
           <Link href="/about">
             <a>Portfólio</a>
@@ -41,7 +41,7 @@ export const Navbar = () => {
       </ul>
 
       {/* button to toggle language (only on desktop screens) */}
-      <button type="button" className="hidden sm:flex">
+      <button type="button" className="hidden sm:flex font-bold">
         EN
       </button>
 

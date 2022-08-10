@@ -10,7 +10,7 @@ const Home: NextPage = () => {
     <PageContainer headTitle="Ence | Home">
       <PageLayout>
         {/* Heading */}
-        <main className="my-16 text-center">
+        <main className="my-16 sm:my-32 text-center">
           <VisuallyHidden asChild>
             <h1>Ence</h1>
           </VisuallyHidden>
@@ -22,10 +22,10 @@ const Home: NextPage = () => {
                 : "/images/logo-ence-white.svg"
             }
             alt="Ence logo"
-            className="mx-auto mb-8"
+            className="sm:w-[100px] mx-auto mb-8"
           />
 
-          <p className="text-[8px]">
+          <p className="text-[8px] sm:text-xl sm:w-4/5 sm:mx-auto">
             Ence é um estúdio de design focado na criação e desenvolvimento de
             Identidade de marca e UI Design. Foi criada para transformar a
             experiência de projetos.
@@ -33,58 +33,62 @@ const Home: NextPage = () => {
         </main>
 
         {/* Highlighted cases */}
-        <section className="mb-16 text-center">
-          <h2 className="mb-2 font-bold">
+        <section className="mb-16 sm:mb-32 text-center">
+          <h2 className="mb-2 sm:mb-12 font-bold sm:text-6xl">
             Veja os principais cases de portfólio
           </h2>
 
-          <div className="flex flex-col gap-5">
+          <div className="sm:w-4/5 mx-auto flex flex-col items-center gap-5">
             <img
               src="images/zoeira-cooking-case.png"
               alt="Zoeira Cooking case"
-              className="mx-auto"
+              className="sm:w-full"
             />
 
             <img
               src="images/zoeira-cooking-case.png"
               alt="Zoeira Cooking case"
-              className="mx-auto"
+              className="sm:w-full"
             />
           </div>
         </section>
 
         {/* People */}
-        <section className="mb-16 text-center">
-          <h2 className="mb-2 font-bold">
-            Por trás da experiência do estúdio -
-          </h2>
+        <section className="mb-16 sm:mb-32 text-center">
+          <div className="flex flex-col lg:flex-row">
+            <div className="flex-1">
+              <h2 className="mb-2 sm:mb-4 font-bold sm:text-5xl lg:text-start">
+                Por trás da experiência do estúdio -
+              </h2>
 
-          <p className="mb-8 text-[8px]">
-            Conheça as pessoas por trás dos projetos do estúdio, conheça um
-            pouco sobre eles e veja suas redes.
-          </p>
+              <p className="mb-8 text-[8px] sm:text-lg lg:text-start">
+                Conheça as pessoas por trás dos projetos do estúdio, conheça um
+                pouco sobre eles e veja suas redes.
+              </p>
 
-          <div className="relative mb-8 flex justify-center">
-            <div className="avatar z-10">
-              <div className="w-2/3 rounded-full">
-                <img
-                  src="https://github.com/slycooper-n.png"
-                  alt="Gabriel VS Frasão picture"
-                />
-              </div>
+              <Button
+                type="button"
+                variant="next-project"
+                className="hidden lg:block"
+              />
             </div>
 
-            <div className="avatar -ml-[90px]">
-              <div className="w-2/3">
-                <img
-                  src="/images/joao-vitor-picture.png"
-                  alt="Gabriel VS Frasão picture"
-                />
-              </div>
+            <div className="flex-[2] relative mb-8 flex justify-center">
+              <img
+                src="https://github.com/slycooper-n.png"
+                alt="Gabriel VS Frasão picture"
+                className="w-2/3 max-w-sm rounded-full z-10 translate-x-[45px] lg:translate-x-[90px] flex-shrink-0"
+              />
+
+              <img
+                src="/images/joao-vitor-picture.png"
+                alt="Gabriel VS Frasão picture"
+                className="w-2/3 max-w-sm rounded-full -translate-x-[45px] lg:-translate-x-[90px] flex-shrink-0"
+              />
             </div>
           </div>
 
-          <Button type="button" />
+          <Button type="button" variant="next-project" className="lg:hidden" />
         </section>
       </PageLayout>
     </PageContainer>
