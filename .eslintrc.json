@@ -6,7 +6,7 @@
   ],
   "plugins": ["testing-library", "jest-dom"],
   "rules": {
-    "testing-library/await-async-utils": "off"
+    "testing-library/await-async-utils": "off",
+    "@next/next/no-img-element": "off"
   }
 }
-
