@@ -17,7 +17,7 @@ export const Navbar = () => {
 
   return (
     <nav className="py-3 sm:py-6 flex items-center sm:text-lg">
-      <Link href="/">
+      <Link href={isInEnglish ? "/en" : "/"}>
         <a className="mr-auto">
           <img
             src={
