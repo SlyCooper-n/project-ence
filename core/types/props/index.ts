@@ -1,11 +1,83 @@
 import { ButtonHTMLAttributes, ReactNode } from "react";
 
-// Context providers props
+// * Response from queries
+export interface HomepageResponse {
+  homepages: {
+    seo: {
+      title: string;
+      description: string;
+    };
+    headingSection: {
+      logo: {
+        url: string;
+      } | null;
+      title: string;
+      subtitle: string;
+    };
+    highlightedCases: {
+      title: string;
+      banners: {
+        id: string;
+        url: string;
+      }[];
+    };
+    aboutSection: {
+      title: string;
+      subtitle: string;
+      people: {
+        id: string;
+        personName: string;
+        profilePicture: {
+          url: string;
+        };
+      }[];
+    };
+  }[];
+}
+
+// * Context providers props
 export interface ThemeProviderProps {
   children: ReactNode;
 }
 
-// Layout components props
+// * Pages components props
+export interface HomeProps {
+  cmsData: {
+    seo: {
+      title: string;
+      description: string;
+    };
+    headingSection: {
+      logo: {
+        url: string;
+      } | null;
+      title: string;
+      subtitle: string;
+    };
+
+    highlightedCases: {
+      title: string;
+      banners: {
+        id: string;
+        url: string;
+      }[];
+    };
+
+    aboutSection: {
+      title: string;
+      subtitle: string;
+      people: {
+        id: string;
+        personName: string;
+        profilePicture: {
+          url: string;
+        };
+      }[];
+    };
+  };
+}
+
+// * Layout components props
 export interface PageLayoutProps {
   navbar?: boolean;
   children: ReactNode;
@@ -17,7 +89,7 @@ export interface PageContainerProps {
   children: ReactNode;
 }
 
-// Widget components props
+// * Widget components props
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant: "see-more" | "next-project";
 }
