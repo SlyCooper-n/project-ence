@@ -9,3 +9,5 @@ export const hygraph = new GraphQLClient(
   //   },
   // }
 );
+
+export * from "./queries";
