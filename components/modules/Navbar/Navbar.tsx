@@ -57,7 +57,7 @@ export const Navbar = () => {
       {/* button to toggle language (only on desktop screens) */}
       <Link
         href={
-          isInEnglish ? `/${router.pathname.slice(3)}` : `en/${router.pathname}`
+          isInEnglish ? `/${router.pathname.slice(3)}` : `/en${router.pathname}`
         }
       >
         <a className="hidden sm:flex font-bold">{isInEnglish ? "PT" : "EN"}</a>
