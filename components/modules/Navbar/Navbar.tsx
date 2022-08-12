@@ -1,11 +1,15 @@
 import { useTheme } from "@core/hooks";
 import Link from "next/link";
+import { useRouter } from "next/router";
 import { Moon, Sun } from "phosphor-react";
 import { useState } from "react";
 
 export const Navbar = () => {
   const { theme, toggleTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const router = useRouter();
+
+  const isInEnglish = router.pathname.includes("/en");
 
   function handleToggleMenu() {
     setIsMobileMenuOpen((prev) => !prev);
@@ -51,9 +55,13 @@ export const Navbar = () => {
       </label>
 
       {/* button to toggle language (only on desktop screens) */}
-      <button type="button" className="hidden sm:flex font-bold">
-        EN
-      </button>
+      <Link
+        href={
+          isInEnglish ? `/${router.pathname.slice(3)}` : `en/${router.pathname}`
+        }
+      >
+        <a className="hidden sm:flex font-bold">{isInEnglish ? "PT" : "EN"}</a>
+      </Link>
 
       {/* menu bar on mobile screens */}
       <button
