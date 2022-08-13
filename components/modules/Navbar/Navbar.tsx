@@ -33,7 +33,7 @@ export const Navbar = () => {
       {/* menu bar on desktop screens */}
       <ul className="mr-12 hidden sm:flex gap-6 font-bold">
         <li>
-          <Link href="/about">
+          <Link href={isInEnglish ? "en/projects/inova" : "/projects/inova"}>
             <a>Portfólio</a>
           </Link>
         </li>
