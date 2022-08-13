@@ -6,6 +6,38 @@ export const Button = (props: ButtonProps) => {
 
   const { theme } = useTheme();
 
+  // if (theme === "dark") {
+  //   return (
+  //     <button
+  //       type="button"
+  //       className={`flex flex-row items-center bg-secondary text-white rounded-md ${props.className}`}
+  //     >
+  //       <div className="flex-1 py-2 text-sm">
+  //         {variant === "see-more" ? "Ver mais" : "Próximo projeto"}
+  //       </div>
+
+  //       <div className="w-[23%] h-full flex justify-center items-center bg-primary rounded-md">
+  //         <img src="icons/arrow.svg" alt="Right arrow" className="w-2/3" />
+  //       </div>
+  //     </button>
+  //   );
+  // }
+
+  // return (
+  //   <button
+  //     type="button"
+  //     className={`flex flex-row items-center bg-primary text-white rounded-md ${props.className}`}
+  //   >
+  //     <div className="flex-1 text-sm">
+  //       {variant === "see-more" ? "Ver mais" : "Próximo projeto"}
+  //     </div>
+
+  //     <div className="w-[23%] h-full flex justify-center items-center bg-secondary rounded-md">
+  //       <img src="icons/arrow.svg" alt="Right arrow" className="w-2/3" />
+  //     </div>
+  //   </button>
+  // );
+
   if (theme === "dark") {
     return (
       <button {...props}>
