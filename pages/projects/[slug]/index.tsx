@@ -1,5 +1,10 @@
+import { Project } from "@components/pages";
+import { useRouter } from "next/router";
+
 const ProjectPage = () => {
-  return <div />;
+  const router = useRouter();
+
+  return <Project />;
 };
 
 export default ProjectPage;

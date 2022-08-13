@@ -1,5 +1,7 @@
+import { Project } from "@components/pages";
+
 const ProjectPageEn = () => {
-  return <div />;
+  return <Project />;
 };
 
 export default ProjectPageEn;
