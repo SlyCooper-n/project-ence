@@ -15,7 +15,7 @@ export const PageContainer = (props: PageContainerProps) => {
       </Head>
 
       <div data-theme={theme} className="w-screen min-h-screen flex flex-col">
-        <div className="container w-[95%]">{children}</div>
+        <div className="container w-[95vw]">{children}</div>
       </div>
     </>
   );
