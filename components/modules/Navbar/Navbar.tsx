@@ -58,9 +58,11 @@ export const Navbar = () => {
       <Link
         href={{
           pathname: isInEnglish
-            ? `${router.pathname.slice(3)}`
+            ? `/${router.pathname.slice(4)}`
             : `/en${router.pathname}`,
-          query: { slug: router.query.slug },
+          query: router.pathname.includes("/projects")
+            ? { slug: router.query.slug }
+            : {},
         }}
       >
         <a className="hidden sm:flex font-bold">{isInEnglish ? "PT" : "EN"}</a>
