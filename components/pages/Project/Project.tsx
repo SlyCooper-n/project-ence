@@ -20,22 +20,22 @@ export const Project = () => {
       <main className="mb-12 text-center text-xs sm:text-base">
         <span className="mb-4 block font-bold">1/x cases</span>
 
-        <h1 className="mb-12 font-bold">
+        <h1 className="mb-20 text-5xl font-bold">
           INOVA | Inovando em soluões nas alturas e telas
         </h1>
 
-        <div className="mb-6 flex flex-col sm:flex-row gap-6 sm:gap-0">
-          <p className="flex-1 sm:mr-[20vw] sm:text-start">
+        <div className="mb-6 flex flex-col sm:flex-row sm:justify-between gap-6 sm:gap-0">
+          <p className="w-1/2 sm:mr-[20vw] sm:text-start">
             Inovando em serviços em altura, Inova é uma empresa focada em
             realizar os melhores trabalhos em altura e em lugares de difícil
             acesso. Com o objetivo de entregar uma solução econômica e
             inteligente.
           </p>
 
-          <div className="flex-1 sm:text-start">
-            <h2 className="mb-2 font-bold">Ficha técnica -</h2>
+          <div className="sm:w-fit sm:text-start">
+            <h2 className="w-fit mb-2 font-bold">Ficha técnica -</h2>
 
-            <ul className="">
+            <ul className="w-fit">
               <li>
                 <strong>Serviços: </strong>
 
