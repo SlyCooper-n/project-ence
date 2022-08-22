@@ -131,7 +131,7 @@ export interface PageContainerProps {
 
 // * Widget components props
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant: "see-more" | "next-project";
+  children: ReactNode;
 }
 export interface VisuallyHiddenProps {
   asChild?: boolean;

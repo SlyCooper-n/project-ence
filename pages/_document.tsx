@@ -6,10 +6,6 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-        <meta
-          name="description"
-          content="Best Next.js template with bash scripts in the world"
-        />
 
         <link
           href="/favicon.ico"
@@ -29,7 +25,6 @@ export default function Document() {
         {/*
           // icons
           <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
 
           // apple-touch icons
           <link rel="apple-touch-icon" href="/icons/touch-icon-iphone.png" />

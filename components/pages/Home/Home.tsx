@@ -2,11 +2,13 @@ import { PageContainer, PageLayout } from "@components/layouts";
 import { Button, VisuallyHidden } from "@components/widgets";
 import { useTheme } from "@core/hooks";
 import { HomeProps } from "@core/types";
+import { useRouter } from "next/router";
 
 export const Home = ({ cmsData }: HomeProps) => {
   const { seo, headingSection, highlightedCases, aboutSection } = cmsData;
 
   const { theme } = useTheme();
+  const isInEnglish = useRouter().pathname.includes("/en");
 
   return (
     <PageContainer headTitle={seo.title} description={seo.description}>
@@ -62,11 +64,9 @@ export const Home = ({ cmsData }: HomeProps) => {
                 {aboutSection.subtitle}
               </p>
 
-              <Button
-                type="button"
-                variant="see-more"
-                className="w-[200px] hidden lg:block"
-              />
+              <Button type="button" className="w-[200px] hidden lg:flex">
+                {isInEnglish ? "See more" : "Ver mais"}
+              </Button>
             </div>
 
             <div className="lg:flex-[2] relative mb-8 flex justify-center">
@@ -75,7 +75,7 @@ export const Home = ({ cmsData }: HomeProps) => {
                   key={person.id}
                   src={person.profilePicture.url}
                   alt={`${person.personName} profile picture`}
-                  className={`w-2/3 max-w-[250px] lg:max-w-[700px] rounded-full flex-shrink-0 ${
+                  className={`w-2/3 max-w-[200px] lg:max-w-[450px] rounded-full flex-shrink-0 ${
                     i === 0
                       ? "z-10 translate-x-1/4 lg:translate-x-1/4"
                       : "-translate-x-1/4 lg:-translate-x-1/4"
@@ -85,11 +85,9 @@ export const Home = ({ cmsData }: HomeProps) => {
             </div>
           </div>
 
-          <Button
-            type="button"
-            variant="see-more"
-            className="w-[148px] lg:hidden"
-          />
+          <Button type="button" className="w-[148px] mx-auto lg:hidden">
+            {isInEnglish ? "See more" : "Ver mais"}
+          </Button>
         </section>
       </PageLayout>
     </PageContainer>

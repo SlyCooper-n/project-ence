@@ -17,7 +17,7 @@ export const Project = ({ caseData }: ProjectPageProps) => {
         <img
           src={caseData.banner.url}
           alt={`${caseData.projectName} banner`}
-          className="hidden sm:block w-screen max-w-[1440px] mx-auto mb-4"
+          className="hidden sm:block w-screen max-w-[1920px] mx-auto mb-4"
         />
       </div>
 
@@ -26,15 +26,17 @@ export const Project = ({ caseData }: ProjectPageProps) => {
           {caseData.caseOrder}/5 cases
         </span>
 
-        <h1 className="mb-20 text-5xl font-bold">{caseData.title}</h1>
+        <h1 className="mb-10 sm:mb-20 text-2xl sm:text-5xl font-bold">
+          {caseData.title}
+        </h1>
 
-        <div className="mb-6 flex flex-col sm:flex-row sm:justify-between gap-6 sm:gap-0">
-          <p className="w-1/2 sm:mr-[20vw] sm:text-start">
+        <div className="mb-6 flex flex-col items-center sm:flex-row sm:justify-between gap-6 sm:gap-0">
+          <p className="sm:w-1/2 sm:mr-[20vw] sm:text-start">
             {caseData.description}
           </p>
 
           <div className="sm:w-fit sm:text-start">
-            <h2 className="w-fit mb-2 font-bold">
+            <h2 className="w-fit mx-auto sm:mx-0 mb-2 font-bold">
               {isInEnglish ? "Data Sheet" : "Ficha Técnica"} -
             </h2>
 
@@ -110,11 +112,9 @@ export const Project = ({ caseData }: ProjectPageProps) => {
 
         <Link href={caseData.nextCase?.slug ?? "/"}>
           <a className="block">
-            <Button
-              type="button"
-              variant="next-project"
-              className="w-[50vw] max-w-[200px]"
-            />
+            <Button type="button" className="w-[50vw] max-w-[200px]">
+              {isInEnglish ? "Next case" : "Próximo case"}
+            </Button>
           </a>
         </Link>
       </div>
