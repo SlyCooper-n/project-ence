@@ -1,10 +1,11 @@
 import { useTheme } from "@core/hooks";
+import { NavbarProps } from "@core/types";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Moon, Sun } from "phosphor-react";
 import { useState } from "react";
 
-export const Navbar = () => {
+export const Navbar = ({ translucent, absolute }: NavbarProps) => {
   const { theme, toggleTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const router = useRouter();
@@ -16,7 +17,13 @@ export const Navbar = () => {
   }
 
   return (
-    <nav className="py-3 sm:py-6 flex items-center sm:text-lg">
+    <nav
+      className={`py-3 sm:py-6 flex items-center sm:text-lg z-50 ${
+        translucent ? "bg-opacity-70 bg-base-100" : ""
+      } ${
+        absolute ? "sm:absolute sm:top-0 sm:left-0 sm:w-full sm:px-[2.5vw]" : ""
+      }`}
+    >
       <Link href={isInEnglish ? "/en" : "/"}>
         <a className="mr-auto">
           <img

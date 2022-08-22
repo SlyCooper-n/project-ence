@@ -11,7 +11,7 @@ export const Project = ({ caseData }: ProjectPageProps) => {
 
   return (
     <PageContainer headTitle="Ence | Inova">
-      <Navbar />
+      <Navbar translucent absolute />
 
       <div className="flex justify-center items-center">
         <img

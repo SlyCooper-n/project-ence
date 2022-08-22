@@ -129,6 +129,12 @@ export interface PageContainerProps {
   children: ReactNode;
 }
 
+// * Modules components props
+export interface NavbarProps {
+  translucent?: boolean;
+  absolute?: boolean;
+}
+
 // * Widget components props
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
