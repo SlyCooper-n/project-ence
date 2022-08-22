@@ -44,7 +44,7 @@ export const Home = ({ cmsData }: HomeProps) => {
                 key={caseItem.id}
                 src={caseItem.url}
                 alt="Zoeira Cooking case"
-                className="w-full max-w-[1080px] max-h-[350px]"
+                className="w-full max-w-[1080px] max-h-[350px] object-cover"
               />
             ))}
           </div>
