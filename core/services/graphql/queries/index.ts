@@ -79,6 +79,7 @@ export const CASE_PT = gql`
         url
       }
       projectName
+      caseOrder
       title
       description
       dataSheet {
@@ -116,6 +117,7 @@ export const CASE_EN = gql`
         url
       }
       projectName
+      caseOrder
       title
       description
       dataSheet {

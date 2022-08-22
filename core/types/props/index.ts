@@ -40,6 +40,7 @@ export interface CaseDataResponse {
       url: string;
     };
     projectName: string;
+    caseOrder: number;
     title: string;
     description: string;
     dataSheet: {
