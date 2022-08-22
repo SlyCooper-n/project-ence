@@ -34,6 +34,42 @@ export interface HomepageResponse {
     };
   }[];
 }
+export interface CaseDataResponse {
+  case: {
+    banner: {
+      url: string;
+    };
+    projectName: string;
+    title: string;
+    description: string;
+    dataSheet: {
+      services: string;
+      artDirector: {
+        personName: string;
+      }[];
+      design: {
+        personName: string;
+      }[];
+      dev:
+        | {
+            personName: string;
+          }[]
+        | [];
+      date: number;
+    };
+    designStrategy: string;
+    snaps: {
+      id: string;
+      url: string;
+    }[];
+    nextCase: {
+      slug: string;
+    } | null;
+    previousCase: {
+      slug: string;
+    } | null;
+  };
+}
 
 // * Context providers props
 export interface ThemeProviderProps {
@@ -75,6 +111,9 @@ export interface HomeProps {
       }[];
     };
   };
+}
+export interface ProjectPageProps {
+  caseData: CaseDataResponse["case"];
 }
 
 // * Layout components props

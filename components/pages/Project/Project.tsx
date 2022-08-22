@@ -1,18 +1,22 @@
 import { PageContainer } from "@components/layouts";
 import { Navbar } from "@components/modules";
 import { Button } from "@components/widgets";
+import { ProjectPageProps } from "@core/types";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
-export const Project = () => {
+export const Project = ({ caseData }: ProjectPageProps) => {
+  const router = useRouter();
+  const isInEnglish = router.pathname.includes("/en");
+
   return (
     <PageContainer headTitle="Ence | Inova">
       <Navbar />
 
       <div className="flex justify-center items-center">
         <img
-          src="/images/zoeira-cooking-banner.png"
-          alt="Zoeira Cooking banner"
-          // className="hidden sm:block absolute top-16 sm:top-20 w-full max-w-7xl mx-auto"
+          src={caseData.banner.url}
+          alt={`${caseData.projectName} banner`}
           className="hidden sm:block w-screen max-w-[1440px] mx-auto mb-4"
         />
       </div>
@@ -20,82 +24,97 @@ export const Project = () => {
       <main className="mb-12 text-center text-xs sm:text-base">
         <span className="mb-4 block font-bold">1/x cases</span>
 
-        <h1 className="mb-20 text-5xl font-bold">
-          INOVA | Inovando em soluões nas alturas e telas
-        </h1>
+        <h1 className="mb-20 text-5xl font-bold">{caseData.title}</h1>
 
         <div className="mb-6 flex flex-col sm:flex-row sm:justify-between gap-6 sm:gap-0">
           <p className="w-1/2 sm:mr-[20vw] sm:text-start">
-            Inovando em serviços em altura, Inova é uma empresa focada em
-            realizar os melhores trabalhos em altura e em lugares de difícil
-            acesso. Com o objetivo de entregar uma solução econômica e
-            inteligente.
+            {caseData.description}
           </p>
 
           <div className="sm:w-fit sm:text-start">
-            <h2 className="w-fit mb-2 font-bold">Ficha técnica -</h2>
+            <h2 className="w-fit mb-2 font-bold">
+              {isInEnglish ? "Data Sheet" : "Ficha Técnica"} -
+            </h2>
 
             <ul className="w-fit">
               <li>
-                <strong>Serviços: </strong>
+                <strong>{isInEnglish ? "Services" : "Serviços"}: </strong>
 
-                <span>UI/UX Design</span>
+                <span>{caseData.dataSheet.services}</span>
               </li>
 
               <li>
-                <strong>Serviços: </strong>
+                <strong>
+                  {isInEnglish ? "Art director" : "Diretor de arte"}:{" "}
+                </strong>
 
-                <span>UI/UX Design</span>
+                <span>
+                  {caseData.dataSheet.artDirector
+                    .map((person) => person.personName)
+                    .join(", ")}
+                </span>
               </li>
 
               <li>
-                <strong>Serviços: </strong>
+                <strong>Design: </strong>
 
-                <span>UI/UX Design</span>
+                <span>
+                  {caseData.dataSheet.design
+                    .map((person) => person.personName)
+                    .join(", ")}
+                </span>
               </li>
 
-              <li>
-                <strong>Serviços: </strong>
+              {caseData.dataSheet.dev[0]?.personName && (
+                <li>
+                  <strong>
+                    {isInEnglish ? "Front-end dev" : "Dev Front-end"}:{" "}
+                  </strong>
 
-                <span>UI/UX Design</span>
-              </li>
+                  <span>
+                    {caseData.dataSheet.dev
+                      .map((person) => person.personName)
+                      .join(", ")}
+                  </span>
+                </li>
+              )}
             </ul>
           </div>
         </div>
 
         <div className="sm:text-start">
-          <h2 className="mb-2 font-bold">Estratégia de design -</h2>
+          <h2 className="mb-2 font-bold">
+            {isInEnglish ? "Design strategy" : "Estratégia de design"} -
+          </h2>
 
-          <p className="sm:max-w-[50%]">
-            Um site de fácil acesso, direto ao que interessa, apresentando os
-            principais pontos: Os serviços, sobre a empresa e meios de contato.
-          </p>
+          <p className="sm:max-w-[50%]">{caseData.designStrategy}</p>
         </div>
       </main>
 
       <section className="mb-8 flex flex-col gap-2">
-        <img src="/images/Frame 6.png" alt="Zoeira Cooking snap" />
-        <img src="/images/Frame 6.png" alt="Zoeira Cooking snap" />
-        <img src="/images/Frame 6.png" alt="Zoeira Cooking snap" />
-        <img src="/images/Frame 6.png" alt="Zoeira Cooking snap" />
-        <img src="/images/Frame 6.png" alt="Zoeira Cooking snap" />
-        <img src="/images/Frame 6.png" alt="Zoeira Cooking snap" />
-        <img src="/images/Frame 6.png" alt="Zoeira Cooking snap" />
-        <img src="/images/Frame 6.png" alt="Zoeira Cooking snap" />
-        <img src="/images/Frame 6.png" alt="Zoeira Cooking snap" />
-        <img src="/images/Frame 6.png" alt="Zoeira Cooking snap" />
+        {caseData.snaps.map((snap) => (
+          <img
+            key={snap.id}
+            src={snap.url}
+            alt={`${caseData.projectName} snap`}
+          />
+        ))}
       </section>
 
       <div className="mb-8 flex justify-center items-center gap-4 text-xs sm:text-base">
-        <Link href="/">
-          <a className="link">Voltar</a>
+        <Link href={caseData.previousCase?.slug ?? "/"}>
+          <a className="link">{isInEnglish ? "Previous" : "Voltar"}</a>
         </Link>
 
-        <Button
-          type="button"
-          variant="next-project"
-          className="w-1/2 max-w-[200px]"
-        />
+        <Link href={caseData.nextCase?.slug ?? "/"}>
+          <a className="block">
+            <Button
+              type="button"
+              variant="next-project"
+              className="w-[50vw] max-w-[200px]"
+            />
+          </a>
+        </Link>
       </div>
     </PageContainer>
   );
