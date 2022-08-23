@@ -13,11 +13,11 @@ export const Project = ({ caseData }: ProjectPageProps) => {
     <PageContainer headTitle="Ence | Inova">
       <Navbar translucent absolute />
 
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center max-h-[60vh] mb-4 overflow-y-clip">
         <img
           src={caseData.banner.url}
           alt={`${caseData.projectName} banner`}
-          className="hidden sm:block w-screen max-w-[1920px] mx-auto mb-4"
+          className="hidden sm:block w-screen max-w-[1920px] mx-auto object-cover"
         />
       </div>
 
