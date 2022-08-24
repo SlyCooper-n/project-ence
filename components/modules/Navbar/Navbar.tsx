@@ -2,7 +2,7 @@ import { useTheme } from "@core/hooks";
 import { NavbarProps } from "@core/types";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Moon, Sun } from "phosphor-react";
+import { Circle, Square } from "phosphor-react";
 import { useState } from "react";
 
 export const Navbar = ({ translucent, absolute }: NavbarProps) => {
@@ -56,9 +56,9 @@ export const Navbar = ({ translucent, absolute }: NavbarProps) => {
       <label className="swap swap-rotate mr-6">
         <input type="checkbox" onChange={toggleTheme} />
 
-        <Sun className={`swap-on fill-current w-5 h-5`} />
+        <Square className={`swap-on fill-current w-5 h-5`} />
 
-        <Moon className={`swap-off fill-current w-5 h-5`} />
+        <Circle className={`swap-off fill-current w-5 h-5`} />
       </label>
 
       {/* button to toggle language (only on desktop screens) */}
