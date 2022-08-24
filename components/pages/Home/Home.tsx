@@ -2,6 +2,7 @@ import { PageContainer, PageLayout } from "@components/layouts";
 import { Button, VisuallyHidden } from "@components/widgets";
 import { useTheme } from "@core/hooks";
 import { HomeProps } from "@core/types";
+import Link from "next/link";
 import { useRouter } from "next/router";
 
 export const Home = ({ cmsData }: HomeProps) => {
@@ -42,12 +43,15 @@ export const Home = ({ cmsData }: HomeProps) => {
 
           <div className="w-4/5 mx-auto flex flex-col items-center gap-5">
             {highlightedCases.banners.map((caseItem) => (
-              <img
-                key={caseItem.id}
-                src={caseItem.url}
-                alt="Zoeira Cooking case"
-                className="w-full max-w-[1080px] max-h-[350px] object-cover"
-              />
+              <Link key={caseItem.id} href="/projects">
+                <a className="w-full max-w-[1080px] max-h-[350px]">
+                  <img
+                    src={caseItem.url}
+                    alt="Zoeira Cooking case"
+                    className="w-full max-w-[1080px] max-h-[350px] object-cover"
+                  />
+                </a>
+              </Link>
             ))}
           </div>
         </section>
