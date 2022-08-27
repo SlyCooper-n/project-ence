@@ -21,7 +21,7 @@ export const Navbar = ({ translucent, absolute }: NavbarProps) => {
       className={`py-3 sm:py-6 flex items-center sm:text-lg z-50 ${
         translucent ? "bg-opacity-70 bg-base-100" : ""
       } ${
-        absolute ? "sm:absolute sm:top-0 sm:left-0 sm:w-full sm:px-[2.5vw]" : ""
+        absolute ? "sm:absolute sm:top-0 sm:left-0 sm:w-full sm:px-[5vw]" : ""
       }`}
     >
       <Link href={isInEnglish ? "/en" : "/"}>
@@ -40,14 +40,14 @@ export const Navbar = ({ translucent, absolute }: NavbarProps) => {
       {/* menu bar on desktop screens */}
       <ul className="mr-12 hidden sm:flex gap-6 font-bold">
         <li>
-          <Link href={isInEnglish ? "en/projects/inova" : "/projects/inova"}>
+          <Link href={isInEnglish ? "en/projects" : "/projects"}>
             <a>Portfólio</a>
           </Link>
         </li>
 
         <li>
-          <Link href="/contact">
-            <a>Sobre</a>
+          <Link href={isInEnglish ? "en/#about" : "/#about"}>
+            <a>{isInEnglish ? "About" : "Sobre"}</a>
           </Link>
         </li>
       </ul>
@@ -67,7 +67,7 @@ export const Navbar = ({ translucent, absolute }: NavbarProps) => {
           pathname: isInEnglish
             ? `/${router.pathname.slice(4)}`
             : `/en${router.pathname}`,
-          query: router.pathname.includes("/projects")
+          query: router.pathname.includes("/projects/")
             ? { slug: router.query.slug }
             : {},
         }}

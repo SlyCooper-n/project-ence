@@ -57,7 +57,10 @@ export const Home = ({ cmsData }: HomeProps) => {
         </section>
 
         {/* People */}
-        <section className="w-4/5 sm:w-auto mx-auto mb-16 sm:mb-32 text-center">
+        <section
+          id="about"
+          className="w-4/5 sm:w-auto mx-auto mb-16 sm:mb-32 text-center"
+        >
           <div className="flex flex-col lg:flex-row lg:items-center">
             <div className="lg:flex-1 lg:mr-4">
               <h2 className="mb-2 sm:mb-4 font-bold sm:text-5xl lg:text-start">

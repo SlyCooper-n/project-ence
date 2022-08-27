@@ -147,3 +147,49 @@ export const CASE_EN = gql`
     }
   }
 `;
+
+export const ALL_CASES_PT = gql`
+  query {
+    cases(stage: DRAFT, orderBy: caseOrder_ASC, locales: [pt_BR]) {
+      id
+      projectName
+      banner(locales: [en]) {
+        url
+      }
+      slug
+    }
+  }
+`;
+
+export const ALL_CASES_EN = gql`
+  query {
+    cases(stage: DRAFT, orderBy: caseOrder_ASC, locales: [en]) {
+      id
+      projectName
+      banner {
+        url
+      }
+      slug
+    }
+  }
+`;
+
+export const PROJECTS_PAGE_TITLE = gql`
+  query {
+    homepages(stage: DRAFT) {
+      highlightedCases(locales: [pt_BR]) {
+        title
+      }
+    }
+  }
+`;
+
+export const PROJECTS_PAGE_TITLE_EN = gql`
+  query {
+    homepages(stage: DRAFT) {
+      highlightedCases {
+        title
+      }
+    }
+  }
+`;

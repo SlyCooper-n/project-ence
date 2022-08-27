@@ -71,6 +71,24 @@ export interface CaseDataResponse {
     } | null;
   };
 }
+export interface AllCasesPageResponse {
+  cases: {
+    id: string;
+    projectName: string;
+    banner: {
+      url: string;
+    };
+    slug: string;
+  }[];
+}
+
+export interface ProjectsPageTitleResponse {
+  homepages: {
+    highlightedCases: {
+      title: string;
+    };
+  }[];
+}
 
 // * Context providers props
 export interface ThemeProviderProps {
@@ -115,6 +133,17 @@ export interface HomeProps {
 }
 export interface ProjectPageProps {
   caseData: CaseDataResponse["case"];
+}
+export interface AllCasesPageProps {
+  title: string;
+  cases: {
+    id: string;
+    projectName: string;
+    banner: {
+      url: string;
+    };
+    slug: string;
+  }[];
 }
 
 // * Layout components props
