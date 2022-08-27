@@ -56,9 +56,9 @@ export const Navbar = ({ translucent, absolute }: NavbarProps) => {
       <label className="swap swap-rotate mr-6">
         <input type="checkbox" onChange={toggleTheme} />
 
-        <Square className={`swap-on fill-current w-5 h-5`} />
+        <Square weight="fill" className={`swap-on fill-current w-5 h-5`} />
 
-        <Circle className={`swap-off fill-current w-5 h-5`} />
+        <Circle weight="fill" className={`swap-off fill-current w-5 h-5`} />
       </label>
 
       {/* button to toggle language (only on desktop screens) */}
