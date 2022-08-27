@@ -49,11 +49,11 @@ export const Home = ({ cmsData }: HomeProps) => {
               key={caseItem.id}
               href={isInEnglish ? "en/projects" : "/projects"}
             >
-              <a className="w-full max-w-[1080px] max-h-[350px]">
+              <a className="w-full max-w-[1080px] max-h-[350px] overflow-hidden">
                 <img
                   src={caseItem.url}
                   alt="Zoeira Cooking case"
-                  className="w-full max-w-[1080px] max-h-[350px] object-cover"
+                  className="w-full max-w-[1080px] max-h-[350px] object-cover hover:scale-[1.02] transition-transform duration-500"
                 />
               </a>
             </Link>

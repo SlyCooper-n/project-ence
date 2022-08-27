@@ -24,11 +24,11 @@ export const AllCases = ({ title, cases }: AllCasesPageProps) => {
               : `/projects/${project.slug}`
           }
         >
-          <a className="block max-w-[1080px] mx-auto mb-4">
+          <a className="block max-w-[1080px] mx-auto mb-4 overflow-hidden">
             <img
               src={project.banner.url}
               alt={project.projectName}
-              className="w-full max-w-[1080px] max-h-[350px] object-cover"
+              className="w-full max-w-[1080px] max-h-[350px] object-cover hover:scale-[1.03] transition-transform duration-500"
             />
           </a>
         </Link>
