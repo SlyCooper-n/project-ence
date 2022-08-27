@@ -43,7 +43,10 @@ export const Home = ({ cmsData }: HomeProps) => {
 
           <div className="w-4/5 mx-auto flex flex-col items-center gap-5">
             {highlightedCases.banners.map((caseItem) => (
-              <Link key={caseItem.id} href="/projects">
+              <Link
+                key={caseItem.id}
+                href={isInEnglish ? "en/projects" : "/projects"}
+              >
                 <a className="w-full max-w-[1080px] max-h-[350px]">
                   <img
                     src={caseItem.url}
