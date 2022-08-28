@@ -39,7 +39,7 @@ export const Home = ({ cmsData }: HomeProps) => {
 
       {/* Highlighted cases */}
       <section className="mb-16 sm:mb-64 text-center">
-        <h2 className="mb-2 sm:mb-12 font-semibold sm:text-6xl">
+        <h2 className="mb-2 sm:mb-12 font-semibold sm:text-5xl">
           {highlightedCases.title}
         </h2>
 
@@ -79,7 +79,7 @@ export const Home = ({ cmsData }: HomeProps) => {
       >
         <div className="flex flex-col lg:flex-row lg:items-center">
           <div className="lg:flex-1 lg:mr-4">
-            <h2 className="mb-2 sm:mb-4 font-bold sm:text-5xl lg:text-start">
+            <h2 className="mb-2 sm:mb-4 sm:text-5xl lg:text-start">
               {aboutSection.title}
             </h2>
 
