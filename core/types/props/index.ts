@@ -2,26 +2,26 @@ import { ButtonHTMLAttributes, ReactNode } from "react";
 
 // * Response from queries
 export interface HomepageResponse {
-  homepages: {
+  page: {
     seo: {
       title: string;
       description: string;
     };
-    headingSection: {
-      logo: {
-        url: string;
-      } | null;
+    heading: {
       title: string;
       subtitle: string;
     };
     highlightedCases: {
       title: string;
-      banners: {
+      cases: {
         id: string;
-        url: string;
+        banner: {
+          url: string;
+        };
+        slug: string;
       }[];
     };
-    aboutSection: {
+    about: {
       title: string;
       subtitle: string;
       people: {
@@ -32,7 +32,7 @@ export interface HomepageResponse {
         };
       }[];
     };
-  }[];
+  };
 }
 export interface CaseDataResponse {
   case: {
@@ -97,39 +97,7 @@ export interface ThemeProviderProps {
 
 // * Pages components props
 export interface HomeProps {
-  cmsData: {
-    seo: {
-      title: string;
-      description: string;
-    };
-    headingSection: {
-      logo: {
-        url: string;
-      } | null;
-      title: string;
-      subtitle: string;
-    };
-
-    highlightedCases: {
-      title: string;
-      banners: {
-        id: string;
-        url: string;
-      }[];
-    };
-
-    aboutSection: {
-      title: string;
-      subtitle: string;
-      people: {
-        id: string;
-        personName: string;
-        profilePicture: {
-          url: string;
-        };
-      }[];
-    };
-  };
+  cmsData: HomepageResponse["page"];
 }
 export interface ProjectPageProps {
   caseData: CaseDataResponse["case"];

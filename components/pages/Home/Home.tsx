@@ -7,7 +7,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 export const Home = ({ cmsData }: HomeProps) => {
-  const { seo, headingSection, highlightedCases, aboutSection } = cmsData;
+  const { seo, heading, highlightedCases, about } = cmsData;
 
   const { theme } = useTheme();
   const isInEnglish = useRouter().pathname.includes("/en");
@@ -17,9 +17,9 @@ export const Home = ({ cmsData }: HomeProps) => {
       <Navbar />
 
       {/* Heading */}
-      <main className="my-16 sm:mt-32 sm:mb-64 text-center">
+      <main className="my-16 sm:my-64 text-center">
         <VisuallyHidden asChild>
-          <h1>{headingSection.title}</h1>
+          <h1>{heading.title}</h1>
         </VisuallyHidden>
 
         <img
@@ -33,7 +33,7 @@ export const Home = ({ cmsData }: HomeProps) => {
         />
 
         <p className="sm:w-4/5 max-w-[400px] sm:max-w-[929px] mx-auto text-[8px] sm:text-xl">
-          {headingSection.subtitle}
+          {heading.subtitle}
         </p>
       </main>
 
@@ -43,21 +43,21 @@ export const Home = ({ cmsData }: HomeProps) => {
           {highlightedCases.title}
         </h2>
 
-        <div className="w-4/5 mx-auto flex flex-col items-center gap-5">
-          {highlightedCases.banners.map((caseItem) => (
+        <div className="flex flex-col items-center gap-5">
+          {highlightedCases.cases.map((caseItem) => (
             <Link
               key={caseItem.id}
               href={isInEnglish ? "en/projects" : "/projects"}
             >
-              <a className="relative w-full max-w-[1080px] max-h-[350px] overflow-hidden">
+              <a className="relative w-full max-h-[350px] overflow-clip">
                 <img
-                  src={caseItem.url}
+                  src={caseItem.banner.url}
                   alt="Zoeira Cooking case"
-                  className="w-full max-w-[1080px] max-h-[350px] object-cover hover:scale-[1.02] transition-transform duration-500 z-10"
+                  className="w-full max-h-[350px] object-cover object-center hover:scale-[1.02] transition-transform duration-500 z-10"
                 />
 
-                <Link href={`/projects/${caseItem.id}`}>
-                  <a className="absolute left-0 bottom-0 p-3 pl-7 flex flex-row gap-7 bg-secondary text-white z-20 hover:gap-16 transition-all">
+                <Link href={`/projects/${caseItem.slug}`}>
+                  <a className="absolute left-0 bottom-0 w-full sm:w-fit p-2 sm:pl-10 flex flex-row justify-center sm:justify-start gap-7 bg-secondary text-white text-xs sm:text-base z-20 hover:gap-16 transition-all">
                     {isInEnglish ? "See project" : "Ver projeto"}
                     <img
                       src="/icons/arrow.svg"
@@ -77,38 +77,38 @@ export const Home = ({ cmsData }: HomeProps) => {
         id="about"
         className="w-4/5 sm:w-auto mx-auto mb-16 sm:mb-32 text-center"
       >
-        <div className="flex flex-col lg:flex-row lg:items-center">
-          <div className="lg:flex-1 lg:mr-4">
-            <h2 className="mb-2 sm:mb-4 sm:text-5xl lg:text-start">
-              {aboutSection.title}
+        <div className="flex flex-col xl:flex-row xl:items-center">
+          <div className="xl:flex-1 xl:mr-4">
+            <h2 className="mb-2 sm:mb-4 sm:text-5xl xl:text-start">
+              {about.title}
             </h2>
 
-            <p className="w-2/3 lg:w-auto mx-auto mb-8 text-[8px] sm:text-lg lg:text-start">
-              {aboutSection.subtitle}
+            <p className="w-2/3 xl:w-auto mx-auto mb-8 text-[8px] sm:text-xl xl:text-start">
+              {about.subtitle}
             </p>
 
-            <Button type="button" className="w-[200px] hidden lg:flex">
+            <Button type="button" className="w-[200px] hidden xl:flex">
               {isInEnglish ? "See more" : "Ver mais"}
             </Button>
           </div>
 
-          <div className="lg:flex-[2] relative mb-8 flex justify-center">
-            {aboutSection.people.map((person, i) => (
+          <div className="xl:flex-[2] relative mb-8 flex justify-center xl:justify-end">
+            {about.people.map((person, i) => (
               <img
                 key={person.id}
                 src={person.profilePicture.url}
                 alt={`${person.personName} profile picture`}
-                className={`w-2/3 max-w-[200px] lg:max-w-[450px] rounded-full flex-shrink-0 ${
+                className={`max-w-[200px] sm:max-w-[300px] md:max-w-[450px] rounded-full ${
                   i === 0
-                    ? "z-10 translate-x-1/4 lg:translate-x-1/4"
-                    : "-translate-x-1/4 lg:-translate-x-1/4"
+                    ? "translate-x-1/4 xl:translate-x-[60%] z-10"
+                    : "-translate-x-1/4 xl:translate-x-0 z-0"
                 }`}
               />
             ))}
           </div>
         </div>
 
-        <Button type="button" className="w-[148px] mx-auto lg:hidden">
+        <Button type="button" className="w-[148px] mx-auto xl:hidden">
           {isInEnglish ? "See more" : "Ver mais"}
         </Button>
       </section>

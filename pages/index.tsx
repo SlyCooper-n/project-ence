@@ -10,11 +10,11 @@ const HomePage = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
 export default HomePage;
 
 export const getStaticProps = async () => {
-  const { homepages } = await hygraph.request<HomepageResponse>(HOMEPAGE_PT);
+  const { page } = await hygraph.request<HomepageResponse>(HOMEPAGE_PT);
 
   return {
     props: {
-      cmsData: homepages[0],
+      cmsData: page,
     },
   };
 };

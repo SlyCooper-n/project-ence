@@ -10,11 +10,11 @@ const HomeEn = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
 export default HomeEn;
 
 export const getStaticProps = async () => {
-  const { homepages } = await hygraph.request<HomepageResponse>(HOMEPAGE_EN);
+  const { page } = await hygraph.request<HomepageResponse>(HOMEPAGE_EN);
 
   return {
     props: {
-      cmsData: homepages[0],
+      cmsData: page,
     },
   };
 };

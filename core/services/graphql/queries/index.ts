@@ -2,26 +2,26 @@ import { gql } from "graphql-request";
 
 export const HOMEPAGE_PT = gql`
   query {
-    homepages(stage: DRAFT) {
+    page(where: { pageName: "home" }, stage: DRAFT) {
       seo(locales: pt_BR) {
         title
         description
       }
-      headingSection(locales: pt_BR) {
-        logo {
-          id
-        }
+      heading(locales: pt_BR) {
         title
         subtitle
       }
       highlightedCases(locales: pt_BR) {
         title
-        banners(locales: en) {
+        cases {
           id
-          url
+          banner(locales: en) {
+            url
+          }
+          slug
         }
       }
-      aboutSection(locales: pt_BR) {
+      about(locales: pt_BR) {
         title
         subtitle
         people {
@@ -38,26 +38,26 @@ export const HOMEPAGE_PT = gql`
 
 export const HOMEPAGE_EN = gql`
   query {
-    homepages(stage: DRAFT) {
-      seo(locales: en) {
+    page(where: { pageName: "home" }, stage: DRAFT) {
+      seo {
         title
         description
       }
-      headingSection(locales: en) {
-        logo {
-          id
-        }
+      heading {
         title
         subtitle
       }
-      highlightedCases(locales: en) {
+      highlightedCases {
         title
-        banners(locales: en) {
+        cases {
           id
-          url
+          banner(locales: en) {
+            url
+          }
+          slug
         }
       }
-      aboutSection(locales: en) {
+      about {
         title
         subtitle
         people {
