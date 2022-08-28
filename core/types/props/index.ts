@@ -83,11 +83,11 @@ export interface AllCasesPageResponse {
 }
 
 export interface ProjectsPageTitleResponse {
-  homepages: {
+  page: {
     highlightedCases: {
       title: string;
     };
-  }[];
+  };
 }
 
 // * Context providers props

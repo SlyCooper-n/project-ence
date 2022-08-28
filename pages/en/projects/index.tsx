@@ -16,7 +16,7 @@ export const getStaticProps = async () => {
     ALL_CASES_EN
   );
 
-  const title: ProjectsPageTitleResponse = await hygraph.request(
+  const { page }: ProjectsPageTitleResponse = await hygraph.request(
     PROJECTS_PAGE_TITLE_EN
   );
 
@@ -24,7 +24,7 @@ export const getStaticProps = async () => {
     props: {
       data: {
         cases: allCasesData.cases,
-        title: title.homepages[0].highlightedCases.title,
+        title: page.highlightedCases.title,
       },
     },
   };

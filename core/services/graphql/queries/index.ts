@@ -176,7 +176,7 @@ export const ALL_CASES_EN = gql`
 
 export const PROJECTS_PAGE_TITLE = gql`
   query {
-    homepages(stage: DRAFT) {
+    page(where: { pageName: "home" }, stage: DRAFT) {
       highlightedCases(locales: [pt_BR]) {
         title
       }
@@ -186,7 +186,7 @@ export const PROJECTS_PAGE_TITLE = gql`
 
 export const PROJECTS_PAGE_TITLE_EN = gql`
   query {
-    homepages(stage: DRAFT) {
+    page(where: { pageName: "home" }, stage: DRAFT) {
       highlightedCases {
         title
       }
