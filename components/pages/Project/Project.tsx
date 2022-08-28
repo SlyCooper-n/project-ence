@@ -23,11 +23,11 @@ export const Project = ({ caseData }: ProjectPageProps) => {
 
       {/* case description */}
       <main className="mb-12 text-xs sm:text-base">
-        <span className="mb-4 block font-semibold">
+        <span className="mb-4 block text-center font-semibold">
           {caseData.caseOrder}/5 cases
         </span>
 
-        <h1 className="mb-10 sm:mb-20 text-2xl sm:text-5xl">
+        <h1 className="mb-10 sm:mb-20 text-center text-2xl sm:text-5xl">
           {caseData.title}
         </h1>
 
