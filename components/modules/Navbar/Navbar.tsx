@@ -72,9 +72,7 @@ export const Navbar = ({ translucent, absolute }: NavbarProps) => {
             : {},
         }}
       >
-        <a className="hidden sm:flex font-semibold">
-          {isInEnglish ? "PT" : "EN"}
-        </a>
+        <a className="hidden sm:flex">{isInEnglish ? "PT" : "EN"}</a>
       </Link>
 
       {/* menu bar on mobile screens */}
