@@ -100,7 +100,7 @@ export const Project = ({ caseData }: ProjectPageProps) => {
 
       {/* case snaps */}
       <section className="mb-8 flex flex-col gap-2">
-        <Reveal keyframes={fadeUp}>
+        <Reveal keyframes={fadeUp} triggerOnce>
           {caseData.snaps.map((snap) => (
             <img
               key={snap.id}
