@@ -96,7 +96,7 @@ export const CASE_PT = gql`
         date
       }
       designStrategy
-      snaps(locales: [en]) {
+      snaps(locales: [en], first: 50) {
         id
         url
       }
@@ -134,7 +134,7 @@ export const CASE_EN = gql`
         date
       }
       designStrategy
-      snaps {
+      snaps(fist: 50) {
         id
         url
       }
