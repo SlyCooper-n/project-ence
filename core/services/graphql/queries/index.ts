@@ -186,32 +186,34 @@ import { gql } from "graphql-request";
 
 export const HOMEPAGE = gql`
   query homepage($lang: [Locale!]!) {
-    seo(locales: $lang) {
-      title
-      description
-    }
-    heading(locales: $lang) {
-      title
-      subtitle
-    }
-    highlightedCases(locales: $lang) {
-      title
-      cases {
-        id
-        banner(locales: en) {
-          url
-        }
-        slug
+    page(where: { pageName: "home" }, stage: DRAFT) {
+      seo(locales: $lang) {
+        title
+        description
       }
-    }
-    about(locales: $lang) {
-      title
-      subtitle
-      people {
-        id
-        personName
-        profilePicture(locales: en) {
-          url
+      heading(locales: $lang) {
+        title
+        subtitle
+      }
+      highlightedCases(locales: $lang) {
+        title
+        cases {
+          id
+          banner(locales: en) {
+            url
+          }
+          slug
+        }
+      }
+      about(locales: $lang) {
+        title
+        subtitle
+        people {
+          id
+          personName
+          profilePicture(locales: en) {
+            url
+          }
         }
       }
     }
