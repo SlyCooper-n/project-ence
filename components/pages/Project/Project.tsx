@@ -21,12 +21,13 @@ export const Project = ({ caseData }: ProjectPageProps) => {
         />
       </div>
 
+      {/* case description */}
       <main className="mb-12 text-center text-xs sm:text-base">
-        <span className="mb-4 block font-bold">
+        <span className="mb-4 block font-semibold">
           {caseData.caseOrder}/5 cases
         </span>
 
-        <h1 className="mb-10 sm:mb-20 text-2xl sm:text-5xl font-bold">
+        <h1 className="mb-10 sm:mb-20 text-2xl sm:text-5xl">
           {caseData.title}
         </h1>
 
@@ -36,7 +37,7 @@ export const Project = ({ caseData }: ProjectPageProps) => {
           </p>
 
           <div className="sm:w-fit sm:text-start">
-            <h2 className="w-fit mx-auto sm:mx-0 mb-2 font-bold">
+            <h2 className="w-fit mx-auto sm:mx-0 mb-2">
               {isInEnglish ? "Data Sheet" : "Ficha Técnica"} -
             </h2>
 
@@ -87,7 +88,7 @@ export const Project = ({ caseData }: ProjectPageProps) => {
         </div>
 
         <div className="sm:text-start">
-          <h2 className="mb-2 font-bold">
+          <h2 className="mb-2">
             {isInEnglish ? "Design strategy" : "Estratégia de design"} -
           </h2>
 
@@ -95,6 +96,7 @@ export const Project = ({ caseData }: ProjectPageProps) => {
         </div>
       </main>
 
+      {/* case snaps */}
       <section className="mb-8 flex flex-col gap-2">
         {caseData.snaps.map((snap) => (
           <img
@@ -105,6 +107,7 @@ export const Project = ({ caseData }: ProjectPageProps) => {
         ))}
       </section>
 
+      {/* navigation buttons */}
       <div className="mb-8 flex justify-center items-center gap-4 text-xs sm:text-base">
         <Link href={caseData.previousCase?.slug ?? "/"}>
           <a className="link">{isInEnglish ? "Previous" : "Voltar"}</a>

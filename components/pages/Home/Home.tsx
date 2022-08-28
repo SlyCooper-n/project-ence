@@ -17,7 +17,7 @@ export const Home = ({ cmsData }: HomeProps) => {
       <Navbar />
 
       {/* Heading */}
-      <main className="my-16 sm:my-32 text-center">
+      <main className="my-16 sm:mt-32 sm:mb-64 text-center">
         <VisuallyHidden asChild>
           <h1>{headingSection.title}</h1>
         </VisuallyHidden>
@@ -39,7 +39,7 @@ export const Home = ({ cmsData }: HomeProps) => {
 
       {/* Highlighted cases */}
       <section className="mb-16 sm:mb-64 text-center">
-        <h2 className="mb-2 sm:mb-12 font-bold sm:text-6xl">
+        <h2 className="mb-2 sm:mb-12 font-semibold sm:text-6xl">
           {highlightedCases.title}
         </h2>
 
@@ -49,12 +49,23 @@ export const Home = ({ cmsData }: HomeProps) => {
               key={caseItem.id}
               href={isInEnglish ? "en/projects" : "/projects"}
             >
-              <a className="w-full max-w-[1080px] max-h-[350px] overflow-hidden">
+              <a className="relative w-full max-w-[1080px] max-h-[350px] overflow-hidden">
                 <img
                   src={caseItem.url}
                   alt="Zoeira Cooking case"
-                  className="w-full max-w-[1080px] max-h-[350px] object-cover hover:scale-[1.02] transition-transform duration-500"
+                  className="w-full max-w-[1080px] max-h-[350px] object-cover hover:scale-[1.02] transition-transform duration-500 z-10"
                 />
+
+                <Link href={`/projects/${caseItem.id}`}>
+                  <a className="absolute left-0 bottom-0 p-3 pl-7 flex flex-row gap-7 bg-secondary text-white z-20 hover:gap-16 transition-all">
+                    {isInEnglish ? "See project" : "Ver projeto"}
+                    <img
+                      src="/icons/arrow.svg"
+                      alt="right arrow icon"
+                      className="w-5"
+                    />
+                  </a>
+                </Link>
               </a>
             </Link>
           ))}

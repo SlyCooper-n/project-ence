@@ -18,14 +18,14 @@ export const Navbar = ({ translucent, absolute }: NavbarProps) => {
 
   return (
     <nav
-      className={`py-3 sm:py-6 flex items-center sm:text-lg z-50 ${
+      className={`py-3 sm:py-6 flex items-center z-50 ${
         translucent ? "bg-opacity-70 bg-base-100" : ""
       } ${
         absolute ? "sm:absolute sm:top-0 sm:left-0 sm:w-full sm:px-[5vw]" : ""
       }`}
     >
       <Link href={isInEnglish ? "/en" : "/"}>
-        <a className="mr-auto">
+        <a className="mr-auto w-7">
           <img
             src={
               theme === "light"
@@ -72,7 +72,9 @@ export const Navbar = ({ translucent, absolute }: NavbarProps) => {
             : {},
         }}
       >
-        <a className="hidden sm:flex font-bold">{isInEnglish ? "PT" : "EN"}</a>
+        <a className="hidden sm:flex font-semibold">
+          {isInEnglish ? "PT" : "EN"}
+        </a>
       </Link>
 
       {/* menu bar on mobile screens */}
