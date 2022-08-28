@@ -2,8 +2,10 @@ import { PageContainer } from "@components/layouts";
 import { Navbar } from "@components/modules";
 import { Button } from "@components/widgets";
 import { ProjectPageProps } from "@core/types";
+import { fadeUp } from "@core/utils";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { Reveal } from "react-awesome-reveal";
 
 export const Project = ({ caseData }: ProjectPageProps) => {
   const router = useRouter();
@@ -97,14 +99,16 @@ export const Project = ({ caseData }: ProjectPageProps) => {
       </main>
 
       {/* case snaps */}
-      <section className="mb-8 flex flex-col gap-2">
-        {caseData.snaps.map((snap) => (
-          <img
-            key={snap.id}
-            src={snap.url}
-            alt={`${caseData.projectName} snap`}
-          />
-        ))}
+      <section className="mb-8">
+        <Reveal className="flex flex-col gap-2" keyframes={fadeUp}>
+          {caseData.snaps.map((snap) => (
+            <img
+              key={snap.id}
+              src={snap.url}
+              alt={`${caseData.projectName} snap`}
+            />
+          ))}
+        </Reveal>
       </section>
 
       {/* navigation buttons */}
