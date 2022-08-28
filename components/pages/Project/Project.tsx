@@ -109,9 +109,9 @@ export const Project = ({ caseData }: ProjectPageProps) => {
 
       {/* navigation buttons */}
       <div className="mb-8 flex justify-center items-center gap-4 text-xs sm:text-base">
-        <Link href={caseData.previousCase?.slug ?? "/"}>
+        {/* <Link href={caseData.previousCase?.slug ?? "/"}>
           <a className="link">{isInEnglish ? "Previous" : "Voltar"}</a>
-        </Link>
+        </Link> */}
 
         <Link href={caseData.nextCase?.slug ?? "/"}>
           <a className="block">
