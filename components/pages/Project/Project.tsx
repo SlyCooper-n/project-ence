@@ -22,7 +22,7 @@ export const Project = ({ caseData }: ProjectPageProps) => {
       </div>
 
       {/* case description */}
-      <main className="mb-12 text-center text-xs sm:text-base">
+      <main className="mb-12 text-xs sm:text-base">
         <span className="mb-4 block font-semibold">
           {caseData.caseOrder}/5 cases
         </span>
@@ -31,13 +31,13 @@ export const Project = ({ caseData }: ProjectPageProps) => {
           {caseData.title}
         </h1>
 
-        <div className="mb-6 flex flex-col items-center sm:flex-row sm:justify-between gap-6 sm:gap-0">
+        <div className="mb-6 flex flex-col sm:flex-row sm:justify-between gap-6 sm:gap-0">
           <p className="sm:w-1/2 sm:mr-[20vw] sm:text-start">
             {caseData.description}
           </p>
 
           <div className="sm:w-fit sm:text-start">
-            <h2 className="w-fit mx-auto sm:mx-0 mb-2">
+            <h2 className="w-fit mb-2">
               {isInEnglish ? "Data Sheet" : "Ficha Técnica"} -
             </h2>
 
