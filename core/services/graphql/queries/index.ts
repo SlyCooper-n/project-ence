@@ -72,6 +72,40 @@ export const HOMEPAGE_EN = gql`
   }
 `;
 
+export const HOMEPAGE = gql`
+  query homepage($lang: [Locale!]) {
+    seo(locales: $lang) {
+      title
+      description
+    }
+    heading(locales: $lang) {
+      title
+      subtitle
+    }
+    highlightedCases(locales: $lang) {
+      title
+      cases {
+        id
+        banner(locales: en) {
+          url
+        }
+        slug
+      }
+    }
+    about(locales: $lang) {
+      title
+      subtitle
+      people {
+        id
+        personName
+        profilePicture(locales: en) {
+          url
+        }
+      }
+    }
+  }
+`;
+
 export const CASE_PT = gql`
   query case($slug: String) {
     case(locales: [pt_BR], where: { slug: $slug }, stage: DRAFT) {
@@ -148,6 +182,44 @@ export const CASE_EN = gql`
   }
 `;
 
+export const CASE = gql`
+  query case($slug: String, $lang: [Locale!]) {
+    case(locales: $lang, where: { slug: $slug }, stage: DRAFT) {
+      banner(locales: [en]) {
+        url
+      }
+      projectName
+      caseOrder
+      title
+      description
+      dataSheet {
+        services
+        artDirector {
+          personName
+        }
+        design {
+          personName
+        }
+        dev {
+          personName
+        }
+        date
+      }
+      designStrategy
+      snaps(locales: [en], first: 50) {
+        id
+        url
+      }
+      nextCase {
+        slug
+      }
+      previousCase {
+        slug
+      }
+    }
+  }
+`;
+
 export const ALL_CASES_PT = gql`
   query {
     cases(stage: DRAFT, orderBy: caseOrder_ASC, locales: [pt_BR]) {
@@ -174,12 +246,15 @@ export const ALL_CASES_EN = gql`
   }
 `;
 
-export const PROJECTS_PAGE_TITLE = gql`
-  query {
-    page(where: { pageName: "home" }, stage: DRAFT) {
-      highlightedCases(locales: [pt_BR]) {
-        title
+export const ALL_CASES = gql`
+  query allCases($lang: [Locale!]) {
+    cases(stage: DRAFT, orderBy: caseOrder_ASC, locales: $lang) {
+      id
+      projectName
+      banner(locales: [en]) {
+        url
       }
+      slug
     }
   }
 `;
@@ -188,6 +263,16 @@ export const PROJECTS_PAGE_TITLE_EN = gql`
   query {
     page(where: { pageName: "home" }, stage: DRAFT) {
       highlightedCases {
+        title
+      }
+    }
+  }
+`;
+
+export const PROJECTS_PAGE_TITLE = gql`
+  query {
+    page(where: { pageName: "home" }, stage: DRAFT) {
+      highlightedCases(locales: [pt_BR]) {
         title
       }
     }

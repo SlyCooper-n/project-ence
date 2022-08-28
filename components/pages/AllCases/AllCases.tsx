@@ -1,24 +1,13 @@
 import { PageContainer } from "@components/layouts";
 import { Navbar } from "@components/modules";
 import { AllCasesPageProps } from "@core/types";
-import { keyframes } from "@emotion/react";
+import { fadeUp } from "@core/utils";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Reveal } from "react-awesome-reveal";
 
 export const AllCases = ({ title, cases }: AllCasesPageProps) => {
   const isInEnglish = useRouter().pathname.includes("/en");
-
-  const fadeUp = keyframes`
-    from {
-      opacity: 0;
-      transform: translateY(1.5rem);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  `;
 
   return (
     <PageContainer headTitle="Ence | Cases">
