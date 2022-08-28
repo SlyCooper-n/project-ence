@@ -17,7 +17,7 @@ export const Home = ({ cmsData }: HomeProps) => {
       <Navbar />
 
       {/* Heading */}
-      <main className="my-16 sm:my-64 text-center">
+      <main className="my-16 sm:my-60 text-center">
         <VisuallyHidden asChild>
           <h1>{heading.title}</h1>
         </VisuallyHidden>
@@ -38,7 +38,7 @@ export const Home = ({ cmsData }: HomeProps) => {
       </main>
 
       {/* Highlighted cases */}
-      <section className="mb-16 sm:mb-64 text-center">
+      <section className="mb-16 sm:mb-60 text-center">
         <h2 className="mb-2 sm:mb-12 font-semibold sm:text-5xl">
           {highlightedCases.title}
         </h2>
@@ -75,7 +75,7 @@ export const Home = ({ cmsData }: HomeProps) => {
       {/* People */}
       <section
         id="about"
-        className="w-4/5 sm:w-auto mx-auto mb-16 sm:mb-32 text-center"
+        className="w-4/5 sm:w-auto mx-auto mb-16 sm:mb-60 text-center"
       >
         <div className="flex flex-col xl:flex-row xl:items-center">
           <div className="xl:flex-1 xl:mr-4">
