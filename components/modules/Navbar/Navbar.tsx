@@ -53,7 +53,7 @@ export const Navbar = ({ translucent, absolute }: NavbarProps) => {
       </ul>
 
       {/* button to toggle theme (only on desktop screens) */}
-      <label className="swap swap-rotate mr-6">
+      <label className="swap swap-rotate mr-3">
         <input type="checkbox" onChange={toggleTheme} />
 
         <Square weight="fill" className={`swap-on fill-current w-5 h-5`} />
