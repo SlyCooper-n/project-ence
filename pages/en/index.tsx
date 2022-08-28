@@ -1,5 +1,5 @@
 import { Home } from "@components/pages";
-import { HOMEPAGE_EN, hygraph } from "@core/services";
+import { HOMEPAGE, hygraph } from "@core/services";
 import { HomepageResponse } from "@core/types";
 import { InferGetStaticPropsType } from "next";
 
@@ -10,7 +10,9 @@ const HomeEn = (props: InferGetStaticPropsType<typeof getStaticProps>) => {
 export default HomeEn;
 
 export const getStaticProps = async () => {
-  const { page } = await hygraph.request<HomepageResponse>(HOMEPAGE_EN);
+  const { page } = await hygraph.request<HomepageResponse>(HOMEPAGE, {
+    lang: ["en"],
+  });
 
   return {
     props: {

@@ -1,5 +1,5 @@
 import { Project } from "@components/pages";
-import { CASE_EN, hygraph } from "@core/services";
+import { CASE, hygraph } from "@core/services";
 import { CaseDataResponse } from "@core/types";
 import { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from "next";
 
@@ -12,8 +12,9 @@ const ProjectPageEn = ({
 export default ProjectPageEn;
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const caseData: CaseDataResponse = await hygraph.request(CASE_EN, {
+  const caseData: CaseDataResponse = await hygraph.request(CASE, {
     slug: params?.slug,
+    lang: ["en"],
   });
 
   return {

@@ -1,5 +1,5 @@
 import { AllCases } from "@components/pages/AllCases";
-import { ALL_CASES_PT, hygraph, PROJECTS_PAGE_TITLE } from "@core/services";
+import { ALL_CASES, hygraph, PROJECTS_PAGE_TITLE } from "@core/services";
 import { AllCasesPageResponse, ProjectsPageTitleResponse } from "@core/types";
 import { InferGetStaticPropsType } from "next";
 
@@ -12,11 +12,14 @@ const AllProjectsPage = ({
 export default AllProjectsPage;
 
 export const getStaticProps = async () => {
-  const allCasesData: AllCasesPageResponse = await hygraph.request(
-    ALL_CASES_PT
-  );
+  const allCasesData: AllCasesPageResponse = await hygraph.request(ALL_CASES, {
+    lang: ["pt_BR"],
+  });
   const { page }: ProjectsPageTitleResponse = await hygraph.request(
-    PROJECTS_PAGE_TITLE
+    PROJECTS_PAGE_TITLE,
+    {
+      lang: ["pt_BR"],
+    }
   );
 
   return {
