@@ -134,7 +134,7 @@ export const CASE_EN = gql`
         date
       }
       designStrategy
-      snaps(fist: 50) {
+      snaps(first: 50) {
         id
         url
       }
