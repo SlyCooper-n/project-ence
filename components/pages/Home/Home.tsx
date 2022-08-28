@@ -56,7 +56,13 @@ export const Home = ({ cmsData }: HomeProps) => {
                   className="w-full max-h-[350px] object-cover object-center hover:scale-[1.02] transition-transform duration-500 z-10"
                 />
 
-                <Link href={`/projects/${caseItem.slug}`}>
+                <Link
+                  href={
+                    isInEnglish
+                      ? `/en/projects/${caseItem.slug}`
+                      : `/projects/${caseItem.slug}`
+                  }
+                >
                   <a className="absolute left-0 bottom-0 w-full sm:w-fit p-2 sm:pl-10 flex flex-row justify-center sm:justify-start gap-7 bg-secondary text-white text-xs sm:text-base z-20 hover:gap-16 transition-all">
                     {isInEnglish ? "See project" : "Ver projeto"}
                     <img
