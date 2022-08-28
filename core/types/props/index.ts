@@ -104,14 +104,7 @@ export interface ProjectPageProps {
 }
 export interface AllCasesPageProps {
   title: string;
-  cases: {
-    id: string;
-    projectName: string;
-    banner: {
-      url: string;
-    };
-    slug: string;
-  }[];
+  cases: AllCasesPageResponse["cases"];
 }
 
 // * Layout components props
