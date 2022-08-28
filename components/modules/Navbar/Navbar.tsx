@@ -81,7 +81,7 @@ export const Navbar = ({ translucent, absolute }: NavbarProps) => {
         onClick={handleToggleMenu}
         className="relative sm:hidden w-16 h-[22px]"
       >
-        <div className="absolute top-0 w-full h-[6px] bg-base-content" />
+        <div className="absolute top-1/2 w-full h-[6px] bg-base-content -translate-y-1/2" />
 
         {/* <div
           className={`absolute bottom-0 ${
