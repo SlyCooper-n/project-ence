@@ -83,11 +83,11 @@ export const Navbar = ({ translucent, absolute }: NavbarProps) => {
       >
         <div className="absolute top-0 w-full h-[6px] bg-base-content" />
 
-        <div
+        {/* <div
           className={`absolute bottom-0 ${
             isMobileMenuOpen ? "left-0" : "left-16 -translate-x-full"
           } w-[14px] h-auto aspect-square rounded-full bg-base-content transition-all duration-300`}
-        />
+        /> */}
       </button>
     </nav>
   );
