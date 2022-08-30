@@ -8,14 +8,14 @@ export const Button = (props: ButtonProps) => {
     <button
       type="button"
       className={`h-7 lg:h-10 flex flex-row items-center ${
-        theme === "dark" ? "bg-secondary" : "bg-primary"
+        theme === "dark" ? "bg-primary" : "bg-secondary"
       } text-white rounded-md ${props.className}`}
     >
       <div className="flex-1 text-xs lg:text-sm">{props.children}</div>
 
       <div
         className={`w-[23%] h-full flex justify-center items-center ${
-          theme === "dark" ? "bg-primary" : "bg-secondary"
+          theme === "dark" ? "bg-secondary" : "bg-primary"
         } rounded-md`}
       >
         <img src="/icons/arrow.svg" alt="Right arrow" className="w-2/3" />
