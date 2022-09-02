@@ -9,20 +9,23 @@ export const PageContainer = (props: PageContainerProps) => {
   const { theme } = useTheme();
 
   useEffect(() => {
-    if (matchMedia("(prefers-color-scheme: dark)").matches) {
-      document.querySelector("link[rel='shortcut icon']").href =
-        "favicon-white.png";
+    const faviconLink = document.querySelector(
+      "link[rel='shortcut icon']"
+    ) as HTMLLinkElement;
 
-      document.querySelector("link[rel='apple-touch-icon']").href =
-        "touch-icon-white.png";
+    const touchIconLink = document.querySelector(
+      "link[rel='apple-touch-icon']"
+    ) as HTMLLinkElement;
+
+    if (matchMedia("(prefers-color-scheme: dark)").matches) {
+      faviconLink.href = "favicon-white.png";
+      touchIconLink.href = "touch-icon-white.png";
 
       return;
     }
 
-    document.querySelector("link[rel='shortcut icon']").href = "favicon.png";
-
-    document.querySelector("link[rel='apple-touch-icon']").href =
-      "touch-icon.png";
+    faviconLink.href = "favicon.png";
+    touchIconLink.href = "touch-icon.png";
   }, []);
 
   return (
