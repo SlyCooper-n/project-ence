@@ -25,8 +25,8 @@ export const Home = ({ cmsData }: HomeProps) => {
         <img
           src={
             theme === "light"
-              ? "/images/logo-ence-black.svg"
-              : "/images/logo-ence-white.svg"
+              ? "/images/logo-ence-st-black.svg"
+              : "/images/logo-ence-st-white.svg"
           }
           alt="Ence logo"
           className="sm:w-[100px] mx-auto mb-8"
