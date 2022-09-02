@@ -12,10 +12,6 @@ export const Button = (props: ButtonProps) => {
       } text-white ${props.className}`}
     >
       <div className="text-xs lg:text-sm">{props.children}</div>
-
-      <div className={`h-full flex justify-center items-center`}>
-        <img src="/icons/arrow.svg" alt="Right arrow" className="w-5" />
-      </div>
     </button>
   );
 };
