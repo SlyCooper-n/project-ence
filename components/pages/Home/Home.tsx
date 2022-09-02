@@ -69,11 +69,6 @@ export const Home = ({ cmsData }: HomeProps) => {
                     } text-white text-xs sm:text-base z-20 hover:gap-16 transition-all`}
                   >
                     {isInEnglish ? "See project" : "Ver projeto"}
-                    <img
-                      src="/icons/arrow.svg"
-                      alt="right arrow icon"
-                      className="w-5"
-                    />
                   </a>
                 </Link>
               </a>
@@ -85,7 +80,7 @@ export const Home = ({ cmsData }: HomeProps) => {
       {/* People */}
       <section
         id="about"
-        className="w-4/5 sm:w-auto mx-auto mb-16 sm:mb-60 text-center"
+        className="w-4/5 sm:w-auto mx-auto mb-16 sm:mb-32 text-center"
       >
         <div className="flex flex-col xl:flex-row xl:items-center">
           <div className="xl:flex-1 xl:mr-4">
