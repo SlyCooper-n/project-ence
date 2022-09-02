@@ -21,7 +21,7 @@ export const PageContainer = (props: PageContainerProps) => {
       {/* scrollbar styling */}
       <style jsx global>{`
         body::-webkit-scrollbar {
-          width: 16px;
+          width: 10px;
         }
 
         body::-webkit-scrollbar-thumb {
