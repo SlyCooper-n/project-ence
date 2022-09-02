@@ -38,6 +38,12 @@ export const PageContainer = (props: PageContainerProps) => {
 
       {/* scrollbar styling */}
       <style jsx global>{`
+        body {
+          scrollbar-width: 10px;
+          scrollbar-color: ${theme === "dark" ? "#4A4E69" : "#22223B"}
+            ${theme === "dark" ? "transparent" : "white"};
+        }
+
         body::-webkit-scrollbar {
           width: 10px;
         }
