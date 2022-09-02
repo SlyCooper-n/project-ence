@@ -29,7 +29,7 @@ export const Home = ({ cmsData }: HomeProps) => {
               : "/images/logo-ence-st-white.svg"
           }
           alt="Ence logo"
-          className="sm:w-[100px] mx-auto mb-8"
+          className="w-[100px] mx-auto mb-8"
         />
 
         <p className="sm:w-4/5 max-w-[400px] sm:max-w-[929px] mx-auto text-[8px] sm:text-xl">
