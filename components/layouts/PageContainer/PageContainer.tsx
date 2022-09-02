@@ -1,11 +1,29 @@
 import { useTheme } from "@core/hooks";
 import { PageContainerProps } from "@core/types";
 import Head from "next/head";
+import { useEffect } from "react";
 
 export const PageContainer = (props: PageContainerProps) => {
   const { headTitle, description, children } = props;
 
   const { theme } = useTheme();
+
+  useEffect(() => {
+    if (matchMedia("(prefers-color-scheme: dark)").matches) {
+      document.querySelector("link[rel='shortcut icon']").href =
+        "favicon-white.png";
+
+      document.querySelector("link[rel='apple-touch-icon']").href =
+        "touch-icon-white.png";
+
+      return;
+    }
+
+    document.querySelector("link[rel='shortcut icon']").href = "favicon.png";
+
+    document.querySelector("link[rel='apple-touch-icon']").href =
+      "touch-icon.png";
+  }, []);
 
   return (
     <>
