@@ -40,13 +40,13 @@ export const Navbar = ({ translucent, absolute }: NavbarProps) => {
       {/* menu bar on desktop screens */}
       <ul className="mr-12 hidden sm:flex gap-6 font-bold">
         <li>
-          <Link href={isInEnglish ? "en/projects" : "/projects"}>
+          <Link href={isInEnglish ? "/en/projects" : "/projects"}>
             <a>Portfólio</a>
           </Link>
         </li>
 
         <li>
-          <Link href={isInEnglish ? "en/#about" : "/#about"}>
+          <Link href={isInEnglish ? "/en/#about" : "/#about"}>
             <a>{isInEnglish ? "About" : "Sobre"}</a>
           </Link>
         </li>
