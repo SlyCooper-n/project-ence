@@ -1,5 +1,5 @@
 import { PageContainer } from "@components/layouts";
-import { Navbar } from "@components/modules";
+import { Footer, Navbar } from "@components/modules";
 import { Button } from "@components/widgets";
 import { ProjectPageProps } from "@core/types";
 import { fadeUp } from "@core/utils";
@@ -125,6 +125,8 @@ export const Project = ({ caseData }: ProjectPageProps) => {
           </a>
         </Link>
       </div>
+
+      <Footer />
     </PageContainer>
   );
 };

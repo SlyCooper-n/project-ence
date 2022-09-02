@@ -1,5 +1,5 @@
 import { PageContainer } from "@components/layouts";
-import { Navbar } from "@components/modules";
+import { Footer, Navbar } from "@components/modules";
 import { Button, VisuallyHidden } from "@components/widgets";
 import { useTheme } from "@core/hooks";
 import { HomeProps } from "@core/types";
@@ -122,6 +122,8 @@ export const Home = ({ cmsData }: HomeProps) => {
           {isInEnglish ? "See more" : "Ver mais"}
         </Button>
       </section>
+
+      <Footer />
     </PageContainer>
   );
 };

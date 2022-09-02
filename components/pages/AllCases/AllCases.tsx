@@ -1,5 +1,5 @@
 import { PageContainer } from "@components/layouts";
-import { Navbar } from "@components/modules";
+import { Footer, Navbar } from "@components/modules";
 import { AllCasesPageProps } from "@core/types";
 import { fadeUp } from "@core/utils";
 import Link from "next/link";
@@ -36,6 +36,8 @@ export const AllCases = ({ title, cases }: AllCasesPageProps) => {
           </Link>
         </Reveal>
       ))}
+
+      <Footer />
     </PageContainer>
   );
 };
