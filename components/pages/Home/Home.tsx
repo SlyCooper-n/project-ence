@@ -63,16 +63,9 @@ export const Home = ({ cmsData }: HomeProps) => {
                       : `/projects/${caseItem.slug}`
                   }
                 >
-                  {/* <a
-                    className={`absolute left-0 bottom-0 w-full sm:w-fit py-2 px-6 flex flex-row justify-center items-center ${
-                      theme === "dark" ? "bg-secondary" : "bg-primary"
-                    } text-white text-xs sm:text-base z-20 transition-all`}
-                  >
-                    {isInEnglish ? "See project" : "Ver projeto"}
-                  </a> */}
                   <Button
                     type="button"
-                    className="absolute left-0 bottom-0 w-[200px]"
+                    className="absolute left-0 bottom-0 right-0 sm:right-auto sm:w-[200px]"
                   >
                     {isInEnglish ? "See project" : "Ver projeto"}
                   </Button>
