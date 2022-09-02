@@ -30,6 +30,13 @@ export interface HomepageResponse {
         profilePicture: {
           url: string;
         };
+        bio: {
+          text: string;
+        };
+        socialMedia: {
+          socialMedia: string;
+          url: string;
+        }[];
       }[];
     };
   };

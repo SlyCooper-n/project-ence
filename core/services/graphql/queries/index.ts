@@ -214,6 +214,13 @@ export const HOMEPAGE = gql`
           profilePicture(locales: en) {
             url
           }
+          bio {
+            text
+          }
+          socialMedia {
+            socialMedia
+            url
+          }
         }
       }
     }
