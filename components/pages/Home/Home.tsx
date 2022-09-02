@@ -64,9 +64,9 @@ export const Home = ({ cmsData }: HomeProps) => {
                   }
                 >
                   <a
-                    className={`absolute left-0 bottom-0 w-full sm:w-fit p-2 sm:pl-10 flex flex-row justify-center sm:justify-start gap-7 ${
+                    className={`absolute left-0 bottom-0 w-full sm:w-fit py-2 px-6 flex flex-row justify-center items-center ${
                       theme === "dark" ? "bg-secondary" : "bg-primary"
-                    } text-white text-xs sm:text-base z-20 hover:gap-16 transition-all`}
+                    } text-white text-xs sm:text-base z-20 transition-all`}
                   >
                     {isInEnglish ? "See project" : "Ver projeto"}
                   </a>
