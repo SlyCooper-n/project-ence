@@ -7,7 +7,7 @@ export const Button = (props: ButtonProps) => {
   return (
     <button
       type="button"
-      className={`h-7 lg:h-10 flex flex-row justify-center items-center gap-5 ${
+      className={`h-7 lg:h-10 flex flex-row justify-center items-center ${
         theme === "dark" ? "bg-secondary" : "bg-primary"
       } text-white ${props.className}`}
     >
