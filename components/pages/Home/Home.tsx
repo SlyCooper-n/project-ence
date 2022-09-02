@@ -63,7 +63,11 @@ export const Home = ({ cmsData }: HomeProps) => {
                       : `/projects/${caseItem.slug}`
                   }
                 >
-                  <a className="absolute left-0 bottom-0 w-full sm:w-fit p-2 sm:pl-10 flex flex-row justify-center sm:justify-start gap-7 bg-secondary text-white text-xs sm:text-base z-20 hover:gap-16 transition-all">
+                  <a
+                    className={`absolute left-0 bottom-0 w-full sm:w-fit p-2 sm:pl-10 flex flex-row justify-center sm:justify-start gap-7 ${
+                      theme === "dark" ? "bg-secondary" : "bg-primary"
+                    } text-white text-xs sm:text-base z-20 hover:gap-16 transition-all`}
+                  >
                     {isInEnglish ? "See project" : "Ver projeto"}
                     <img
                       src="/icons/arrow.svg"
