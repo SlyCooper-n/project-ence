@@ -63,12 +63,14 @@ export const Home = ({ cmsData }: HomeProps) => {
                       : `/projects/${caseItem.slug}`
                   }
                 >
-                  <Button
-                    type="button"
-                    className="absolute left-0 bottom-0 right-0 sm:right-auto sm:w-[200px]"
-                  >
-                    {isInEnglish ? "See project" : "Ver projeto"}
-                  </Button>
+                  <a className="block">
+                    <Button
+                      type="button"
+                      className="absolute left-0 bottom-0 right-0 sm:right-auto sm:w-[200px]"
+                    >
+                      {isInEnglish ? "See project" : "Ver projeto"}
+                    </Button>
+                  </a>
                 </Link>
               </a>
             </Link>
