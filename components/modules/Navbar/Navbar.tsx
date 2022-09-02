@@ -18,7 +18,7 @@ export const Navbar = ({ translucent, absolute }: NavbarProps) => {
 
   return (
     <nav
-      className={`py-3 sm:py-6 flex items-center z-50 ${
+      className={`py-5 sm:py-8 flex items-center z-50 ${
         translucent ? "bg-opacity-70 bg-base-100" : ""
       } ${
         absolute ? "sm:absolute sm:top-0 sm:left-0 sm:w-full sm:px-[5vw]" : ""
