@@ -40,7 +40,7 @@ export const PageContainer = (props: PageContainerProps) => {
       </div>
 
       {/* scrollbar styling */}
-      <style jsx global>{`
+      {/* <style jsx global>{`
         body {
           scrollbar-width: 10px;
           scrollbar-color: ${theme === "dark" ? "#4A4E69" : "#22223B"}
@@ -58,7 +58,7 @@ export const PageContainer = (props: PageContainerProps) => {
         body::-webkit-scrollbar-track {
           background: ${theme === "dark" ? "transparent" : "white"};
         }
-      `}</style>
+      `}</style> */}
     </>
   );
 };

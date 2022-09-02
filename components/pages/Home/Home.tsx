@@ -20,8 +20,6 @@ export const Home = ({ cmsData }: HomeProps) => {
   const isInEnglish = useRouter().pathname.includes("/en");
   const [step, setStep] = useState<0 | 1 | 2>(0);
 
-  console.log(step);
-
   return (
     <PageContainer headTitle={seo.title} description={seo.description}>
       <Navbar />
@@ -181,7 +179,7 @@ export const Home = ({ cmsData }: HomeProps) => {
           onClick={() =>
             setStep((prev) => (prev++ > 1 ? 0 : (prev++ as 1 | 2)))
           }
-          className={`w-[148px] mx-auto ${step > 0 ? "" : "xl:hidden"}`}
+          className={`w-[148px] mx-auto ${step === 0 && "xl:hidden"}`}
         >
           {isInEnglish ? "See more" : "Ver mais"}
         </Button>
