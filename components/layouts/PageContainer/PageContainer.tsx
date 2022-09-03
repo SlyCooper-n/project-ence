@@ -40,25 +40,21 @@ export const PageContainer = (props: PageContainerProps) => {
       </div>
 
       {/* scrollbar styling */}
-      <style jsx global>{`
-        body {
-          scrollbar-width: 10px;
-          scrollbar-color: ${theme === "dark" ? "#4A4E69" : "#22223B"}
-            ${theme === "dark" ? "transparent" : "white"};
-        }
+      <style jsx global>
+        {`
+          body::-webkit-scrollbar {
+            width: 10px;
+          }
 
-        body::-webkit-scrollbar {
-          width: 10px;
-        }
+          body::-webkit-scrollbar-thumb {
+            background: ${theme === "dark" ? "#4A4E69" : "#22223B"};
+          }
 
-        body::-webkit-scrollbar-thumb {
-          background: ${theme === "dark" ? "#4A4E69" : "#22223B"};
-        }
-
-        body::-webkit-scrollbar-track {
-          background: ${theme === "dark" ? "transparent" : "white"};
-        }
-      `}</style>
+          body::-webkit-scrollbar-track {
+            background: ${theme === "dark" ? "transparent" : "white"};
+          }
+        `}
+      </style>
     </>
   );
 };
