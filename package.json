@@ -18,6 +18,7 @@
     "daisyui": "^2.22.0",
     "graphql": "^16.5.0",
     "graphql-request": "^4.3.0",
+    "lottie-react": "^2.3.1",
     "next": "12.2.4",
     "nookies": "^2.5.2",
     "phosphor-react": "^1.4.1",
