@@ -10,6 +10,10 @@ export interface HomepageResponse {
     heading: {
       title: string;
       subtitle: string;
+      socialMedia: {
+        socialMedia: string;
+        url: string;
+      }[];
     };
     highlightedCases: {
       title: string;
@@ -19,6 +23,8 @@ export interface HomepageResponse {
           url: string;
         };
         slug: string;
+        projectName: string;
+        caseOrder: number;
       }[];
     };
     about: {

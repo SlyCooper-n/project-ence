@@ -194,6 +194,10 @@ export const HOMEPAGE = gql`
       heading(locales: $lang) {
         title
         subtitle
+        socialMedia {
+          socialMedia
+          url
+        }
       }
       highlightedCases(locales: $lang) {
         title
@@ -203,6 +207,8 @@ export const HOMEPAGE = gql`
             url
           }
           slug
+          projectName
+          caseOrder
         }
       }
       about(locales: $lang) {
