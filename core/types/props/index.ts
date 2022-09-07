@@ -92,6 +92,7 @@ export interface AllCasesPageResponse {
       url: string;
     };
     slug: string;
+    caseOrder: number;
   }[];
 }
 
