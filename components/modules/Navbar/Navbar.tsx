@@ -22,6 +22,7 @@ export const Navbar = ({ translucent, absolute }: NavbarProps) => {
         absolute ? "sm:absolute sm:top-0 sm:left-0 sm:w-full sm:px-[5vw]" : ""
       }`}
     >
+      {/* logo */}
       <Link href={isInEnglish ? "/en" : "/"}>
         <a className="mr-auto w-7 z-50">
           <img
@@ -35,7 +36,7 @@ export const Navbar = ({ translucent, absolute }: NavbarProps) => {
         </a>
       </Link>
 
-      {/* menu bar on desktop screens */}
+      {/* desktop menu */}
       <ul className="mr-12 hidden sm:flex gap-6 font-bold">
         {menuOptions.map((opt) => (
           <li key={opt.name}>
@@ -63,7 +64,7 @@ export const Navbar = ({ translucent, absolute }: NavbarProps) => {
         `}</style>
       </ul>
 
-      {/* button to toggle language (only on desktop screens) */}
+      {/* language toggler button */}
       <Link
         href={{
           pathname: isInEnglish
@@ -98,6 +99,7 @@ export const Navbar = ({ translucent, absolute }: NavbarProps) => {
         /> */}
       </button>
 
+      {/* mobile menu */}
       <ul
         className={`lg:hidden fixed top-0 left-0 right-0 bottom-0 flex flex-col justify-center items-center gap-4 bg-primary text-white ${
           isMobileMenuOpen
@@ -109,8 +111,10 @@ export const Navbar = ({ translucent, absolute }: NavbarProps) => {
           .filter((opt) => opt.mobile)
           .map((opt) => (
             <li key={opt.name}>
-              <Link href={isInEnglish ? `/en/${opt.path}` : opt.path}>
-                <a>{isInEnglish ? opt.en_name : opt.name}</a>
+              <Link href={isInEnglish ? opt.en_path : opt.path}>
+                <a onClick={handleToggleMenu}>
+                  {isInEnglish ? opt.en_name : opt.name}
+                </a>
               </Link>
             </li>
           ))}
