@@ -101,7 +101,7 @@ export const Home = ({ cmsData }: HomeProps) => {
                   className="w-full max-h-[350px] object-cover object-center hover:scale-[1.02] transition-transform duration-500 z-10"
                 />
 
-                <div className="absolute -bottom-full group-hover:bottom-0 p-4 bg-primary text-white transition-all duration-500">
+                <div className="absolute -bottom-full group-hover:bottom-8 p-4 bg-primary text-2xl text-white transition-all duration-500">
                   {caseItem.projectName} - {caseItem.caseOrder}
                 </div>
               </a>

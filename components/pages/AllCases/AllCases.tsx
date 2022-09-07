@@ -26,12 +26,16 @@ export const AllCases = ({ title, cases }: AllCasesPageProps) => {
                 : `/projects/${project.slug}`
             }
           >
-            <a className="block max-w-[1080px] mx-auto mb-4 overflow-hidden">
+            <a className="group relative block max-w-[1080px] mx-auto mb-4 overflow-hidden">
               <img
                 src={project.banner.url}
                 alt={project.projectName}
                 className="slide-up w-full max-w-[1080px] max-h-[350px] object-cover hover:scale-[1.03] transition-transform duration-500"
               />
+
+              <div className="absolute -bottom-full group-hover:bottom-8 p-4 bg-primary text-2xl text-white transition-all duration-500">
+                {project.projectName} - {project.caseOrder}
+              </div>
             </a>
           </Link>
         </Reveal>
