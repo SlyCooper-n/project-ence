@@ -1,8 +1,9 @@
 import { PageContainer } from "@components/layouts";
 import { Footer, Navbar } from "@components/modules";
 import { Button, VisuallyHidden } from "@components/widgets";
-import { useTheme } from "@core/hooks";
 import { HomeProps } from "@core/types";
+import { scrollDown } from "@core/utils";
+import Lottie from "lottie-react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import {
@@ -16,7 +17,6 @@ import { useState } from "react";
 export const Home = ({ cmsData }: HomeProps) => {
   const { seo, heading, highlightedCases, about } = cmsData;
 
-  const { theme } = useTheme();
   const isInEnglish = useRouter().pathname.includes("/en");
   const [step, setStep] = useState<0 | 1 | 2>(0);
 
@@ -25,24 +25,57 @@ export const Home = ({ cmsData }: HomeProps) => {
       <Navbar />
 
       {/* Heading */}
-      <main className="my-16 sm:my-60 text-center">
+      <main className="relative h-[calc(100vh-3rem)] flex flex-col justify-center items-center text-center">
         <VisuallyHidden asChild>
           <h1>{heading.title}</h1>
         </VisuallyHidden>
 
         <img
-          src={
-            theme === "light"
-              ? "/images/logo-ence-st-black.svg"
-              : "/images/logo-ence-st-white.svg"
-          }
+          src="/images/logo-ence-st-black.svg"
           alt="Ence logo"
           className="w-[100px] mx-auto mb-8"
         />
 
-        <p className="sm:w-4/5 max-w-[400px] sm:max-w-[929px] mx-auto text-[8px] sm:text-xl">
+        <p className="sm:w-4/5 max-w-[400px] sm:max-w-[929px] mx-auto mb-4 text-[8px] sm:text-xl">
           {heading.subtitle}
         </p>
+
+        <ul className="flex gap-4 text-[8px] sm:text-base">
+          {heading.socialMedia.map((media) => (
+            <li key={media.socialMedia}>
+              <a
+                href={media.url}
+                target="_blank"
+                rel="noreferrer"
+                className="relative capitalize"
+              >
+                {media.socialMedia}
+              </a>
+            </li>
+          ))}
+
+          <style jsx>{`
+            a.relative::before {
+              content: "";
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              width: 0;
+              height: 3px;
+              margin-bottom: -3px;
+              background-color: #22223b;
+              transition: all 0.3s ease;
+            }
+            a.relative:hover::before {
+              width: 100%;
+            }
+          `}</style>
+        </ul>
+
+        <Lottie
+          animationData={scrollDown}
+          className="absolute bottom-24 w-12"
+        />
       </main>
 
       {/* Highlighted cases */}
@@ -55,34 +88,33 @@ export const Home = ({ cmsData }: HomeProps) => {
           {highlightedCases.cases.map((caseItem) => (
             <Link
               key={caseItem.id}
-              href={isInEnglish ? "en/projects" : "/projects"}
+              href={
+                isInEnglish
+                  ? `/en/projects/${caseItem.slug}`
+                  : `/projects/${caseItem.slug}`
+              }
             >
-              <a className="relative w-full max-h-[350px] overflow-clip">
+              <a className="group relative w-full max-h-[350px] overflow-clip">
                 <img
                   src={caseItem.banner.url}
                   alt="Zoeira Cooking case"
                   className="w-full max-h-[350px] object-cover object-center hover:scale-[1.02] transition-transform duration-500 z-10"
                 />
 
-                <Link
-                  href={
-                    isInEnglish
-                      ? `/en/projects/${caseItem.slug}`
-                      : `/projects/${caseItem.slug}`
-                  }
-                >
-                  <a className="block">
-                    <Button
-                      type="button"
-                      className="absolute left-0 bottom-0 right-0 sm:right-auto sm:w-[200px]"
-                    >
-                      {isInEnglish ? "See project" : "Ver projeto"}
-                    </Button>
-                  </a>
-                </Link>
+                <div className="absolute -bottom-full group-hover:bottom-0 p-4 bg-primary text-white transition-all duration-500">
+                  {caseItem.projectName} - {caseItem.caseOrder}
+                </div>
               </a>
             </Link>
           ))}
+
+          <Link href={isInEnglish ? "/en/projects" : "/projects"}>
+            <a>
+              <Button className="w-[180px] sm:w-[280px]">
+                {isInEnglish ? "See more projects" : "Ver mais projetos"}
+              </Button>
+            </a>
+          </Link>
         </div>
       </section>
 
