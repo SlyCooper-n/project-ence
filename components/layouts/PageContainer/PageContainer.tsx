@@ -1,12 +1,9 @@
-import { useTheme } from "@core/hooks";
 import { PageContainerProps } from "@core/types";
 import Head from "next/head";
 import { useEffect } from "react";
 
 export const PageContainer = (props: PageContainerProps) => {
   const { headTitle, description, children } = props;
-
-  const { theme } = useTheme();
 
   useEffect(() => {
     const faviconLink = document.querySelector(
@@ -35,7 +32,7 @@ export const PageContainer = (props: PageContainerProps) => {
         <meta name="description" content={description} />
       </Head>
 
-      <div data-theme={theme} className="w-screen min-h-screen flex flex-col">
+      <div className="w-screen min-h-screen flex flex-col">
         <div className="container w-[95vw]">{children}</div>
       </div>
 
@@ -47,11 +44,11 @@ export const PageContainer = (props: PageContainerProps) => {
           }
 
           body::-webkit-scrollbar-thumb {
-            background: ${theme === "dark" ? "#4A4E69" : "#22223B"};
+            background: #22223b;
           }
 
           body::-webkit-scrollbar-track {
-            background: ${theme === "dark" ? "transparent" : "white"};
+            background: white;
           }
         `}
       </style>

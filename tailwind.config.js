@@ -32,16 +32,16 @@ module.exports = {
           "base-content": "#22223B",
         },
       },
-      {
-        dark: {
-          primary: "#22223B",
-          secondary: "#4A4E69",
-          accent: "#9A8C98",
-          neutral: "#000000",
-          "base-100": "#000000",
-          "base-content": "#FFFFFF",
-        },
-      },
+      // {
+      //   dark: {
+      //     primary: "#22223B",
+      //     secondary: "#4A4E69",
+      //     accent: "#9A8C98",
+      //     neutral: "#000000",
+      //     "base-100": "#22223B",
+      //     "base-content": "#FFFFFF",
+      //   },
+      // },
     ],
   },
 };
