@@ -1,12 +1,10 @@
-import { useTheme } from "@core/hooks";
 import { NavbarProps } from "@core/types";
+import { menuOptions } from "@core/utils";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { Circle, Square } from "phosphor-react";
 import { useState } from "react";
 
 export const Navbar = ({ translucent, absolute }: NavbarProps) => {
-  const { theme, toggleTheme } = useTheme();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const router = useRouter();
 
@@ -25,12 +23,12 @@ export const Navbar = ({ translucent, absolute }: NavbarProps) => {
       }`}
     >
       <Link href={isInEnglish ? "/en" : "/"}>
-        <a className="mr-auto w-7">
+        <a className="mr-auto w-7 z-50">
           <img
             src={
-              theme === "light"
-                ? "/images/logo-minimal-black.svg"
-                : "/images/logo-minimal-white.svg"
+              isMobileMenuOpen
+                ? "/images/logo-minimal-white.svg"
+                : "/images/logo-minimal-black.svg"
             }
             alt="Ence logo"
           />
@@ -39,27 +37,31 @@ export const Navbar = ({ translucent, absolute }: NavbarProps) => {
 
       {/* menu bar on desktop screens */}
       <ul className="mr-12 hidden sm:flex gap-6 font-bold">
-        <li>
-          <Link href={isInEnglish ? "/en/projects" : "/projects"}>
-            <a>Portfólio</a>
-          </Link>
-        </li>
+        {menuOptions.map((opt) => (
+          <li key={opt.name}>
+            <Link href={isInEnglish ? `/en${opt.path}` : opt.path}>
+              <a className="relative">{isInEnglish ? opt.en_name : opt.name}</a>
+            </Link>
+          </li>
+        ))}
 
-        <li>
-          <Link href={isInEnglish ? "/en/#about" : "/#about"}>
-            <a>{isInEnglish ? "About" : "Sobre"}</a>
-          </Link>
-        </li>
+        <style jsx>{`
+          a.relative::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 3px;
+            margin-bottom: -3px;
+            background-color: #22223b;
+            transition: all 0.3s ease;
+          }
+          a.relative:hover::before {
+            width: 100%;
+          }
+        `}</style>
       </ul>
-
-      {/* button to toggle theme (only on desktop screens) */}
-      <label className="swap swap-rotate mr-3">
-        <input type="checkbox" onChange={toggleTheme} />
-
-        <Square weight="fill" className={`swap-on fill-current w-5 h-5`} />
-
-        <Circle weight="fill" className={`swap-off fill-current w-5 h-5`} />
-      </label>
 
       {/* button to toggle language (only on desktop screens) */}
       <Link
@@ -72,16 +74,22 @@ export const Navbar = ({ translucent, absolute }: NavbarProps) => {
             : {},
         }}
       >
-        <a className="hidden sm:flex">{isInEnglish ? "PT" : "EN"}</a>
+        <a className={`flex mr-3 z-50 ${isMobileMenuOpen ? "text-white" : ""}`}>
+          {isInEnglish ? "PT" : "EN"}
+        </a>
       </Link>
 
       {/* menu bar on mobile screens */}
       <button
         type="button"
         onClick={handleToggleMenu}
-        className="relative sm:hidden w-16"
+        className="relative sm:hidden w-16 z-50"
       >
-        <div className="absolute top-1/2 -translate-y-1/2 w-full h-3 bg-base-content" />
+        <div
+          className={`absolute top-1/2 -translate-y-1/2 w-full h-3 ${
+            isMobileMenuOpen ? "bg-white" : "bg-base-content"
+          }`}
+        />
 
         {/* <div
           className={`absolute bottom-0 ${
@@ -89,6 +97,24 @@ export const Navbar = ({ translucent, absolute }: NavbarProps) => {
           } w-[14px] h-auto aspect-square rounded-full bg-base-content transition-all duration-300`}
         /> */}
       </button>
+
+      <ul
+        className={`lg:hidden fixed top-0 left-0 right-0 bottom-0 flex flex-col justify-center items-center gap-4 bg-primary text-white ${
+          isMobileMenuOpen
+            ? "opacity-100 pointer-events-auto"
+            : "opacity-0 pointer-events-none"
+        } transition-opacity duration-500 z-40`}
+      >
+        {menuOptions
+          .filter((opt) => opt.mobile)
+          .map((opt) => (
+            <li key={opt.name}>
+              <Link href={isInEnglish ? `/en/${opt.path}` : opt.path}>
+                <a>{isInEnglish ? opt.en_name : opt.name}</a>
+              </Link>
+            </li>
+          ))}
+      </ul>
     </nav>
   );
 };
