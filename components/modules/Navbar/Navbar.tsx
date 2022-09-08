@@ -41,7 +41,7 @@ export const Navbar = ({ translucent, absolute }: NavbarProps) => {
         <ul className="mr-12 hidden sm:flex gap-6 font-bold">
           {menuOptions.map((opt) => (
             <li key={opt.name}>
-              <Link href={isInEnglish ? `/en${opt.path}` : opt.path}>
+              <Link href={isInEnglish ? opt.en_path : opt.path}>
                 <a className="relative">
                   {isInEnglish ? opt.en_name : opt.name}
                 </a>
@@ -73,7 +73,7 @@ export const Navbar = ({ translucent, absolute }: NavbarProps) => {
           href={{
             pathname: isInEnglish
               ? `/${router.pathname.slice(4)}`
-              : `/${router.pathname}`,
+              : `${router.pathname}`,
             query: router.pathname.includes("/projects/")
               ? { slug: router.query.slug }
               : {},
@@ -91,7 +91,7 @@ export const Navbar = ({ translucent, absolute }: NavbarProps) => {
         <Link
           href={{
             pathname: isInEnglish
-              ? `/${router.pathname}`
+              ? `${router.pathname}`
               : `/en${router.pathname}`,
             query: router.pathname.includes("/projects/")
               ? { slug: router.query.slug }
