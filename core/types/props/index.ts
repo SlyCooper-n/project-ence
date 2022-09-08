@@ -143,6 +143,15 @@ export interface NavbarProps {
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
 }
+export interface SelectProps {
+  container?: HTMLElement;
+  placeholder: string;
+  children: ReactNode;
+}
+export interface SelectItemProps {
+  value: string;
+  text: string;
+}
 export interface VisuallyHiddenProps {
   asChild?: boolean;
   children: ReactNode;
