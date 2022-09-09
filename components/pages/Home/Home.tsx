@@ -2,7 +2,14 @@ import { PageContainer } from "@components/layouts";
 import { Footer, Navbar } from "@components/modules";
 import { Button, VisuallyHidden } from "@components/widgets";
 import { HomeProps } from "@core/types";
-import { scrollDown } from "@core/utils";
+import {
+  firstProfileBioVariants,
+  firstProfilePicVariants,
+  scrollDown,
+  secondProfileBioVariants,
+  secondProfilePicVariants,
+} from "@core/utils";
+import { motion, useAnimationControls } from "framer-motion";
 import Lottie from "lottie-react";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -12,13 +19,37 @@ import {
   InstagramLogo,
   LinkedinLogo,
 } from "phosphor-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export const Home = ({ cmsData }: HomeProps) => {
   const { seo, heading, highlightedCases, about } = cmsData;
 
   const isInEnglish = useRouter().pathname.includes("/en");
   const [step, setStep] = useState<0 | 1 | 2>(0);
+  const profilePicture = useAnimationControls();
+  const profileBio = useAnimationControls();
+
+  useEffect(() => {
+    async function aboutAnimationSequence() {
+      switch (step) {
+        case 0:
+          await profileBio.start("step0");
+          await profilePicture.start("step0");
+          break;
+
+        case 1:
+          await profilePicture.start("step1");
+          await profileBio.start("step1");
+          break;
+
+        case 2:
+          await profileBio.start("step2");
+          await profilePicture.start("step2");
+          break;
+      }
+    }
+    aboutAnimationSequence();
+  }, [step, profilePicture, profileBio]);
 
   return (
     <PageContainer headTitle={seo.title} description={seo.description}>
@@ -124,8 +155,8 @@ export const Home = ({ cmsData }: HomeProps) => {
         className="relative w-4/5 sm:w-auto mx-auto mb-16 sm:mb-32 text-center"
       >
         <div className="flex flex-col xl:flex-row xl:items-center">
-          <div
-            className={`xl:flex-1 xl:mr-4 transition-all ${
+          <motion.div
+            className={`xl:flex-1 xl:mr-4 ${
               step > 0 && "lg:opacity-0"
             } transition-all`}
           >
@@ -139,78 +170,100 @@ export const Home = ({ cmsData }: HomeProps) => {
 
             <Button
               type="button"
-              onClick={() =>
-                setStep((prev) => (prev++ > 2 ? 0 : (prev++ as 0 | 1 | 2)))
-              }
+              onClick={() => setStep(step >= 2 ? 0 : ((step + 1) as 0 | 1 | 2))}
               className="w-[200px] hidden xl:flex"
             >
               {isInEnglish ? "See more" : "Ver mais"}
             </Button>
-          </div>
+          </motion.div>
 
+          {/* profile about */}
           <div className="xl:flex-[2] mb-8 flex justify-center xl:justify-end">
-            {about.people.map((person, i) => (
-              <>
-                <img
-                  key={person.id}
-                  src={person.profilePicture.url}
-                  alt={`${person.personName} profile picture`}
-                  className={`max-w-[200px] sm:max-w-[300px] md:max-w-[450px] rounded-full ${
-                    i === 0
-                      ? `translate-x-1/4 xl:translate-x-[60%] z-10 ${
-                          step === 1 && "absolute -left-1/3 translate-x-0"
-                        } ${step === 2 && "opacity-0"}`
-                      : `-translate-x-1/4 xl:translate-x-0 z-0 ${
-                          step === 1 && "opacity-0"
-                        } ${
-                          step === 2 &&
-                          "absolute opacity-100 -left-1/3 lg:-left-16 translate-x-0"
-                        }`
-                  } transition-all`}
-                />
+            {/* profile pictures */}
+            <motion.img
+              animate={profilePicture}
+              variants={firstProfilePicVariants}
+              src={about.people[0].profilePicture.url}
+              alt={`${about.people[0].personName} profile picture`}
+              className={`max-w-[200px] sm:max-w-[300px] md:max-w-[450px] rounded-full z-10 transition-all`}
+            />
 
-                <div
-                  className={`${
-                    step === 0 && "opacity-0"
-                  } absolute top-1/3 left-1/2 ${
-                    i === 0
-                      ? `${step === 1 && ""} ${step === 2 && "opacity-0"}`
-                      : `${step === 1 && "opacity-0"}`
-                  } transition-all`}
-                >
-                  <p className="text-[8px] sm:text-base">{person.bio.text}</p>
+            <motion.img
+              animate={profilePicture}
+              variants={secondProfilePicVariants}
+              src={about.people[1].profilePicture.url}
+              alt={`${about.people[1].personName} profile picture`}
+              className={`max-w-[200px] sm:max-w-[300px] md:max-w-[450px] rounded-full z-0 transition-all`}
+            />
 
-                  <ul className="mt-4 flex justify-center items-center gap-2">
-                    {person.socialMedia.map((media) => (
-                      <li key={media.socialMedia}>
-                        <a href={media.url} target="_blank" rel="noreferrer">
-                          {media.socialMedia === "behance" && (
-                            <BehanceLogo size={30} />
-                          )}
-                          {media.socialMedia === "instagram" && (
-                            <InstagramLogo size={30} />
-                          )}
-                          {media.socialMedia === "github" && (
-                            <GithubLogo size={30} />
-                          )}
-                          {media.socialMedia === "linkedin" && (
-                            <LinkedinLogo size={30} />
-                          )}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </>
-            ))}
+            {/* profile bios */}
+            <motion.div
+              animate={profileBio}
+              variants={firstProfileBioVariants}
+              className={`absolute top-1/3 sm:top-1/2 lg:top-1/3 left-1/2 opacity-0 transition-all`}
+            >
+              <p className="text-[8px] sm:text-base">
+                {about.people[0].bio.text}
+              </p>
+
+              <ul className="mt-4 flex justify-center items-center gap-2">
+                {about.people[0].socialMedia.map((media) => (
+                  <li key={media.socialMedia}>
+                    <a href={media.url} target="_blank" rel="noreferrer">
+                      {media.socialMedia === "behance" && (
+                        <BehanceLogo size={30} />
+                      )}
+                      {media.socialMedia === "instagram" && (
+                        <InstagramLogo size={30} />
+                      )}
+                      {media.socialMedia === "github" && (
+                        <GithubLogo size={30} />
+                      )}
+                      {media.socialMedia === "linkedin" && (
+                        <LinkedinLogo size={30} />
+                      )}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
+
+            <motion.div
+              animate={profileBio}
+              variants={secondProfileBioVariants}
+              className={`absolute top-1/3 sm:top-1/2 lg:top-1/3 left-1/2 opacity-0 transition-all`}
+            >
+              <p className="text-[8px] sm:text-base">
+                {about.people[1].bio.text}
+              </p>
+
+              <ul className="mt-4 flex justify-center items-center gap-2">
+                {about.people[1].socialMedia.map((media) => (
+                  <li key={media.socialMedia}>
+                    <a href={media.url} target="_blank" rel="noreferrer">
+                      {media.socialMedia === "behance" && (
+                        <BehanceLogo size={30} />
+                      )}
+                      {media.socialMedia === "instagram" && (
+                        <InstagramLogo size={30} />
+                      )}
+                      {media.socialMedia === "github" && (
+                        <GithubLogo size={30} />
+                      )}
+                      {media.socialMedia === "linkedin" && (
+                        <LinkedinLogo size={30} />
+                      )}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
           </div>
         </div>
 
         <Button
           type="button"
-          onClick={() =>
-            setStep((prev) => (prev++ > 1 ? 0 : (prev++ as 1 | 2)))
-          }
+          onClick={() => setStep(step >= 2 ? 0 : ((step + 1) as 0 | 1 | 2))}
           className={`w-[148px] mx-auto ${step > 0 ? "" : "xl:hidden"}`}
         >
           {isInEnglish ? "See more" : "Ver mais"}
