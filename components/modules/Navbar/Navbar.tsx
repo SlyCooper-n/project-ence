@@ -33,7 +33,7 @@ export const Navbar = ({ translucent, absolute }: NavbarProps) => {
           />
         </button>
 
-        <Link href="/404">
+        <Link href={isInEnglish ? "/en/budget" : "/budget"}>
           <a className="relative hidden sm:block">Iniciar experiência</a>
         </Link>
 
