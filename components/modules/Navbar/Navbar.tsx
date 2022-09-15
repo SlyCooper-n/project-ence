@@ -53,8 +53,8 @@ export const Navbar = ({ translucent, absolute }: NavbarProps) => {
           >
             <a
               className={`relative flex mr-3 z-50 ${
-                isMobileMenuOpen ? "text-white" : ""
-              } ${isInEnglish ? "" : "lang-active"}`}
+                isInEnglish ? "" : "lang-active"
+              }`}
             >
               PT
             </a>
@@ -72,8 +72,8 @@ export const Navbar = ({ translucent, absolute }: NavbarProps) => {
           >
             <a
               className={`relative flex mr-3 z-50 ${
-                isMobileMenuOpen ? "text-white" : ""
-              } ${isInEnglish ? "lang-active" : ""}`}
+                isInEnglish ? "lang-active" : ""
+              }`}
             >
               EN
             </a>
