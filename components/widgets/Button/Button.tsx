@@ -1,15 +1,10 @@
-import { useTheme } from "@core/hooks";
 import { ButtonProps } from "@core/types";
 
 export const Button = ({ className, children, ...rest }: ButtonProps) => {
-  const { theme } = useTheme();
-
   return (
     <button
       {...rest}
-      className={`group h-7 lg:h-10 flex flex-row justify-center items-center gap-0 hover:gap-5 transition-all ${
-        theme === "dark" ? "bg-secondary" : "bg-primary"
-      } text-white ${className}`}
+      className={`group h-7 lg:h-10 flex flex-row justify-center items-center gap-0 hover:gap-5 transition-all bg-black text-white ${className}`}
     >
       <div className="text-xs lg:text-sm -mr-5 group-hover:mr-0">
         {children}
