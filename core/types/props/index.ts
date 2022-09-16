@@ -1,6 +1,22 @@
 import { ButtonHTMLAttributes, ReactNode } from "react";
 
 // * Response from queries
+export interface PeopleResponse {
+  people: {
+    id: string;
+    personName: string;
+    bio: {
+      text: string;
+    };
+    profilePicture: {
+      url: string;
+    };
+    socialMedia: {
+      url: string;
+      socialMedia: string;
+    }[];
+  }[];
+}
 export interface HomepageResponse {
   page: {
     seo: {
@@ -110,6 +126,18 @@ export interface ThemeProviderProps {
 }
 
 // * Pages components props
+export interface AboutProps {
+  people: {
+    id: string;
+    personName: string;
+    profilePicture: string;
+    bio: string;
+    socialMedia: {
+      media: string;
+      url: string;
+    }[];
+  }[];
+}
 export interface HomeProps {
   cmsData: HomepageResponse["page"];
 }
@@ -130,6 +158,7 @@ export interface PageContainerProps {
   headTitle: string;
   description?: string;
   center?: boolean;
+  className?: string;
   children: ReactNode;
 }
 
@@ -137,6 +166,7 @@ export interface PageContainerProps {
 export interface NavbarProps {
   translucent?: boolean;
   absolute?: boolean;
+  className?: string;
 }
 
 // * Widget components props

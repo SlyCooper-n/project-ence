@@ -110,3 +110,22 @@ export const PROJECTS_PAGE_TITLE = gql`
     }
   }
 `;
+
+export const PEOPLE = gql`
+  query People($lang: [Locale!]!) {
+    people(locales: $lang) {
+      id
+      personName
+      bio {
+        text
+      }
+      profilePicture(locales: [en]) {
+        url
+      }
+      socialMedia(locales: [en]) {
+        socialMedia
+        url
+      }
+    }
+  }
+`;
