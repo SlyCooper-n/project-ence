@@ -1,9 +1,12 @@
 import { PageContainerProps } from "@core/types";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import { useEffect } from "react";
 
 export const PageContainer = (props: PageContainerProps) => {
   const { headTitle, description, children } = props;
+
+  const router = useRouter();
 
   useEffect(() => {
     const faviconLink = document.querySelector(
@@ -32,8 +35,10 @@ export const PageContainer = (props: PageContainerProps) => {
         <meta name="description" content={description} />
       </Head>
 
-      <div className="w-screen min-h-screen flex flex-col">
-        <div className="container w-[95vw]">{children}</div>
+      <div className={`w-screen ${props.className}`}>
+        <div className="container w-[95vw] min-h-screen flex flex-col">
+          {children}
+        </div>
       </div>
 
       {/* scrollbar styling */}
@@ -48,7 +53,9 @@ export const PageContainer = (props: PageContainerProps) => {
           }
 
           body::-webkit-scrollbar-track {
-            background: white;
+            background: ${router.pathname.includes("/about")
+              ? "black"
+              : "white"};
           }
         `}
       </style>
