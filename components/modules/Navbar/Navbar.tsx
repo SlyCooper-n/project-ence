@@ -15,7 +15,7 @@ export const Navbar = ({ translucent, absolute, className }: NavbarProps) => {
 
   return (
     <nav
-      className={`py-5 sm:py-8 flex justify-between items-center bg-white text-black z-50 ${
+      className={`py-5 sm:py-8 flex justify-between items-center text-black z-50 ${
         translucent ? "bg-opacity-70 bg-base-100" : ""
       } ${
         absolute ? "sm:absolute sm:top-0 sm:left-0 sm:w-full sm:px-[5vw]" : ""
