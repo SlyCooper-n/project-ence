@@ -32,9 +32,17 @@ export const Navbar = ({ translucent, absolute, className }: NavbarProps) => {
         />
       </button>
 
-      <Link href={isInEnglish ? "/en/budget" : "/budget"}>
-        <a className="relative hidden sm:block">Iniciar experiência</a>
-      </Link>
+      {!router.pathname.includes("/budget") ? (
+        <Link href={isInEnglish ? "/en/budget" : "/budget"}>
+          <a className="relative hidden sm:block">
+            {isInEnglish ? "Start experience" : "Iniciar experiência"}
+          </a>
+        </Link>
+      ) : isInEnglish ? (
+        "Experience started"
+      ) : (
+        "Experiência iniciada"
+      )}
 
       <div className="divider hidden sm:block w-[13vw] h-1 mx-4 bg-black" />
 
