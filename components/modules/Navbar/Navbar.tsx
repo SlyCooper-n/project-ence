@@ -36,7 +36,7 @@ export const Navbar = ({
       <button
         type="button"
         onClick={handleToggleMenu}
-        className="relative w-32 ml-auto sm:mr-auto sm:ml-0 z-50"
+        className="relative w-32 sm:-translate-x-1/2 ml-auto sm:mr-auto sm:ml-0 z-50"
       >
         <div
           className={`absolute top-1/2 -translate-y-1/2 w-full h-3 bg-black`}
@@ -99,71 +99,73 @@ export const Navbar = ({
       </div>
 
       {/* menu */}
-      <motion.ul
+      <motion.div
         variants={menuList}
         animate={isMenuOpen ? "show" : "hidden"}
-        className="fixed top-0 -right-full w-screen h-screen pl-8 sm:pl-16 pt-16 flex flex-col justify-center gap-4 sm:gap-8 bg-secondary z-[49]"
+        className="fixed top-0 -right-full w-screen h-screen pt-32 flex items-center bg-secondary z-[49]"
       >
-        {menuOptions.map((opt) => {
-          if (
-            router.pathname.includes("/budget") &&
-            opt.name.includes("Iniciar experiência")
-          ) {
+        <motion.ul className="container w-[95vw] flex flex-col justify-center gap-4 sm:gap-16">
+          {menuOptions.map((opt) => {
+            if (
+              router.pathname.includes("/budget") &&
+              opt.name.includes("Iniciar experiência")
+            ) {
+              return (
+                <motion.span
+                  variants={menuItems}
+                  animate={isMenuOpen ? "show" : "hidden"}
+                  className="text-xl sm:text-[80px] font-semibold"
+                >
+                  {isInEnglish ? "Experience started" : "Experiência iniciada"}
+                </motion.span>
+              );
+            }
+
             return (
-              <motion.span
+              <motion.li
+                key={opt.name}
                 variants={menuItems}
                 animate={isMenuOpen ? "show" : "hidden"}
-                className="text-xl sm:text-6xl font-semibold"
               >
-                {isInEnglish ? "Experience started" : "Experiência iniciada"}
-              </motion.span>
+                <Link href={isInEnglish ? opt.en_path : opt.path}>
+                  <motion.a className="relative font-semibold text-xl sm:text-[80px] cursor-pointer">
+                    {isInEnglish ? opt.en_name : opt.name}
+                  </motion.a>
+                </Link>
+              </motion.li>
             );
-          }
+          })}
 
-          return (
-            <motion.li
-              key={opt.name}
-              variants={menuItems}
-              animate={isMenuOpen ? "show" : "hidden"}
-            >
-              <Link href={isInEnglish ? opt.en_path : opt.path}>
-                <motion.a className="relative font-semibold text-xl sm:text-6xl cursor-pointer">
-                  {isInEnglish ? opt.en_name : opt.name}
-                </motion.a>
-              </Link>
-            </motion.li>
-          );
-        })}
+          <motion.li
+            variants={menuItems}
+            animate={isMenuOpen ? "show" : "hidden"}
+          >
+            <ul className="mt-12 flex gap-4 text-[8px] sm:text-base">
+              <li>
+                <a
+                  href="https://www.behance.net/joaovitorn-ence/moodboards"
+                  rel="noreferrer"
+                  target="_blank"
+                  className="relative sm:text-lg"
+                >
+                  Behance
+                </a>
+              </li>
 
-        <motion.li
-          variants={menuItems}
-          animate={isMenuOpen ? "show" : "hidden"}
-        >
-          <ul className="mt-12 flex gap-4 text-[8px] sm:text-base">
-            <li>
-              <a
-                href="https://www.behance.net/joaovitorn-ence/moodboards"
-                rel="noreferrer"
-                target="_blank"
-                className="relative sm:text-lg"
-              >
-                Behance
-              </a>
-            </li>
-
-            <li>
-              <a
-                href="www.instagram.com/encestudio"
-                rel="noreferrer"
-                target="_blank"
-                className="relative sm:text-lg"
-              >
-                Instagram
-              </a>
-            </li>
-          </ul>
-        </motion.li>
-      </motion.ul>
+              <li>
+                <a
+                  href="www.instagram.com/encestudio"
+                  rel="noreferrer"
+                  target="_blank"
+                  className="relative sm:text-lg"
+                >
+                  Instagram
+                </a>
+              </li>
+            </ul>
+          </motion.li>
+        </motion.ul>
+      </motion.div>
     </nav>
   );
 };
