@@ -1,6 +1,8 @@
 import { PageContainer } from "@components/layouts";
 import { Footer, Navbar } from "@components/modules";
 import { AboutProps } from "@core/types";
+import { scrollDown } from "@core/utils";
+import Lottie from "lottie-react";
 import { useRouter } from "next/router";
 import { Navigation } from "swiper";
 import "swiper/css/bundle";
@@ -27,6 +29,11 @@ export const About = (props: AboutProps) => {
                 : "Por trás da experiência do estúdio-"}
             </span>
 
+            <Lottie
+              animationData={scrollDown}
+              className="absolute bottom-20 w-12"
+            />
+
             <style jsx>{`
               div.bg {
                 background: linear-gradient(90deg, #000000 0%, #e5f2c9 275.03%);
@@ -43,7 +50,7 @@ export const About = (props: AboutProps) => {
                 <img
                   src={profilePicture}
                   alt={`${personName} picture`}
-                  className="max-w-[180px]"
+                  className="max-w-[180px] aspect-square object-cover object-bottom"
                 />
 
                 <h2>{personName}</h2>
@@ -100,7 +107,7 @@ export const About = (props: AboutProps) => {
                     <img
                       src={profilePicture}
                       alt={`${personName} picture`}
-                      className="max-w-[180px] lg:max-w-[525px]"
+                      className="max-w-[180px] aspect-square lg:max-w-[460px] object-cover object-bottom"
                     />
 
                     <section className="flex flex-col gap-8 text-end">

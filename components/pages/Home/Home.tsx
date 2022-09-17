@@ -46,7 +46,7 @@ export const Home = ({ cmsData }: HomeProps) => {
           {heading.subtitle}
         </motion.p>
 
-        <motion.ul className="flex sm:justify-end gap-4 text-xs sm:text-base">
+        <motion.ul className="flex sm:justify-end gap-4 text-sm sm:text-base">
           {heading.socialMedia.map((media) => (
             <li key={media.socialMedia}>
               <a
@@ -80,7 +80,7 @@ export const Home = ({ cmsData }: HomeProps) => {
 
         <Lottie
           animationData={scrollDown}
-          className="absolute bottom-24 w-12"
+          className="absolute bottom-20 w-12"
         />
       </motion.main>
 

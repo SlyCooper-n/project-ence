@@ -12,8 +12,8 @@ export const Project = ({ caseData }: ProjectPageProps) => {
   const isInEnglish = router.pathname.includes("/en");
 
   return (
-    <PageContainer headTitle="Ence | Inova">
-      <Navbar translucent absolute className="px-[5vw] xl:px-[8vw]" />
+    <PageContainer headTitle={`Ence | ${caseData.projectName}`}>
+      <Navbar translucent absolute className="xl:px-[8vw]" />
 
       <div className="max-h-[1080px] mb-4 sm:mb-12 flex justify-center items-center overflow-y-clip">
         <img
