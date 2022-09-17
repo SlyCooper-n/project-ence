@@ -39,4 +39,5 @@ a.relative.lang-active::before {
 
 .swiper-button-disabled {
   opacity: 0;
+  pointer-events: none;
 }
