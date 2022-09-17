@@ -99,12 +99,12 @@ export const Budget = () => {
               <option value="medium">Medium</option>
             </select>
 
-            <div className="mt-8 flex items-center gap-8">
+            <div className="mt-8 flex flex-col sm:flex-row items-center gap-8">
               <Button type="submit" className="w-[240px]">
                 {isInEnglish ? "Request budget" : "Solicitar orçamento"}
               </Button>
 
-              <p>
+              <p className="text-[8px] sm:text-base">
                 {isInEnglish
                   ? "Thank you very much! This was the first step, wait for new updates."
                   : "Muito obrigado! Esse foi o primeiro passo, aguarde novas atualizações."}
