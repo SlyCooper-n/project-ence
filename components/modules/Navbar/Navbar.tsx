@@ -114,7 +114,7 @@ export const Navbar = ({
                 <motion.span
                   variants={menuItems}
                   animate={isMenuOpen ? "show" : "hidden"}
-                  className="text-xl sm:text-[80px] font-semibold"
+                  className="text-3xl sm:text-[80px] font-semibold"
                 >
                   {isInEnglish ? "Experience started" : "Experiência iniciada"}
                 </motion.span>
@@ -128,7 +128,7 @@ export const Navbar = ({
                 animate={isMenuOpen ? "show" : "hidden"}
               >
                 <Link href={isInEnglish ? opt.en_path : opt.path}>
-                  <motion.a className="relative font-semibold text-xl sm:text-[80px] cursor-pointer">
+                  <motion.a className="relative font-semibold text-3xl sm:text-[80px] cursor-pointer">
                     {isInEnglish ? opt.en_name : opt.name}
                   </motion.a>
                 </Link>
@@ -140,7 +140,7 @@ export const Navbar = ({
             variants={menuItems}
             animate={isMenuOpen ? "show" : "hidden"}
           >
-            <ul className="mt-12 flex gap-4 text-[8px] sm:text-base">
+            <ul className="mt-12 flex gap-4 text-sm sm:text-base">
               <li>
                 <a
                   href="https://www.behance.net/joaovitorn-ence/moodboards"

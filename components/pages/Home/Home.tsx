@@ -42,11 +42,11 @@ export const Home = ({ cmsData }: HomeProps) => {
           className="sm:max-w-[60vw] mb-12"
         />
 
-        <motion.p className="sm:w-4/5 sm:max-w-[929px] mb-12 text-[8px] sm:text-xl">
+        <motion.p className="sm:w-4/5 sm:max-w-[929px] mb-12 text-sm sm:text-xl">
           {heading.subtitle}
         </motion.p>
 
-        <motion.ul className="flex sm:justify-end gap-4 text-[8px] sm:text-base">
+        <motion.ul className="flex sm:justify-end gap-4 text-xs sm:text-base">
           {heading.socialMedia.map((media) => (
             <li key={media.socialMedia}>
               <a
@@ -86,7 +86,7 @@ export const Home = ({ cmsData }: HomeProps) => {
 
       {/* Highlighted cases */}
       <section className="mb-16 sm:mb-60">
-        <h2 className="mb-2 sm:mb-12 font-semibold sm:text-5xl">
+        <h2 className="mb-4 sm:mb-12 font-semibold text-xl sm:text-5xl">
           {highlightedCases.title}
         </h2>
 
@@ -128,7 +128,7 @@ export const Home = ({ cmsData }: HomeProps) => {
         className="w-full mb-16 sm:mb-32 flex flex-col lg:flex-row lg:justify-between items-center"
       >
         <div className="lg:max-w-[33.33%] text-center lg:text-start">
-          <h2 className="mb-4 sm:text-5xl">{about.title}</h2>
+          <h2 className="mb-4 text-xl sm:text-5xl">{about.title}</h2>
 
           <p className="mb-4 text-[8px] sm:text-base">{about.subtitle}</p>
 

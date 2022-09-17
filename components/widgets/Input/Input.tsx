@@ -19,13 +19,13 @@ export const Input = ({
         onChange={(e) => setInputValue(e.target.value)}
         className={`${
           inputRef.current?.value.length! > 0 ? "pt-4 pb-2" : "py-2"
-        } w-full px-2 focus:pt-4 focus:pb-2 bg-secondary border-2 border-black rounded-sm transition-all duration-500 placeholder-shown:placeholder:opacity-0`}
+        } w-full px-2 focus:pt-4 focus:pb-2 bg-secondary text-sm sm:text-base border-2 border-black rounded-sm transition-all duration-500 placeholder-shown:placeholder:opacity-0`}
       />
 
       <span
         className={`${
           inputRef.current?.value.length! > 0 ? "top-2 text-xs" : "top-1/2"
-        } absolute left-2 -translate-y-1/2 font-semibold group-focus-within:top-2 group-focus-within:-translate-x-0 group-focus-within:text-xs pointer-events-none transition-all duration-500`}
+        } absolute left-2 -translate-y-1/2 text-sm sm:text-base font-semibold group-focus-within:top-2 group-focus-within:-translate-x-0 group-focus-within:text-xs pointer-events-none transition-all duration-500`}
       >
         {placeholder}
       </span>
@@ -34,7 +34,7 @@ export const Input = ({
         <span
           className={`${
             inputRef.current?.value.length! > 0 ? "top-2 text-xs" : "top-1/2"
-          } hidden sm:block absolute left-1/2 -translate-y-1/2 opacity-50 font-semibold group-focus-within:top-2 group-focus-within:-translate-x-0 group-focus-within:text-xs pointer-events-none transition-all duration-500`}
+          } hidden sm:block absolute left-1/2 -translate-y-1/2 opacity-50 text-sm sm:text-base font-semibold group-focus-within:top-2 group-focus-within:-translate-x-0 group-focus-within:text-xs pointer-events-none transition-all duration-500`}
         >
           {description}
         </span>

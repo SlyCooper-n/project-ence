@@ -13,9 +13,9 @@ export const Project = ({ caseData }: ProjectPageProps) => {
 
   return (
     <PageContainer headTitle="Ence | Inova">
-      <Navbar translucent absolute />
+      <Navbar translucent absolute className="px-[5vw] xl:px-[8vw]" />
 
-      <div className="max-h-[1080px] mb-4 flex justify-center items-center overflow-y-clip">
+      <div className="max-h-[1080px] mb-4 sm:mb-12 flex justify-center items-center overflow-y-clip">
         <img
           src={caseData.banner.url}
           alt={`${caseData.projectName} banner`}

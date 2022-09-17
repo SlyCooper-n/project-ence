@@ -11,7 +11,7 @@ export const About = (props: AboutProps) => {
 
   return (
     <>
-      <Navbar className="px-[4vw]" />
+      <Navbar className="container w-[95vw]" />
 
       <PageContainer
         headTitle={isInEnglish ? "Ence | About" : "Ence | Sobre"}

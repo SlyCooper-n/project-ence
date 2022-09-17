@@ -79,7 +79,7 @@ export const Budget = () => {
               defaultValue="+55 (__) _____-____"
               allowEmptyFormatting
               mask="_"
-              className="w-full px-2 py-2 bg-secondary font-semibold border-2 border-black rounded-sm"
+              className="w-full px-2 py-2 bg-secondary text-sm sm:text-base font-semibold border-2 border-black rounded-sm"
             />
 
             <Input
@@ -112,7 +112,7 @@ export const Budget = () => {
             <select
               name="company-size"
               required
-              className="w-full px-2 py-2 bg-secondary font-semibold border-2 border-black rounded-sm"
+              className="w-full px-2 py-2 bg-secondary text-sm sm:text-base font-semibold border-2 border-black rounded-sm"
             >
               <option value="" disabled selected>
                 {isInEnglish
@@ -152,7 +152,7 @@ export const Budget = () => {
             <select
               name="experience"
               required
-              className="w-full px-2 py-2 bg-secondary font-semibold border-2 border-black rounded-sm"
+              className="w-full px-2 py-2 bg-secondary text-sm sm:text-base font-semibold border-2 border-black rounded-sm"
             >
               <option value="" disabled selected>
                 {isInEnglish

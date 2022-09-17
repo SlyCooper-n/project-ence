@@ -13,7 +13,15 @@ export const Button = ({ className, children, ...rest }: ButtonProps) => {
       <div
         className={`h-full flex justify-center items-center opacity-0 group-hover:opacity-100 scale-0 group-hover:scale-100 transition-all`}
       >
-        <img src="/icons/arrow.svg" alt="Right arrow" className="w-5" />
+        <svg width="10" height="25" viewBox="0 0 43 78" fill="none">
+          <path
+            d="M8 70L39 39L8 8"
+            stroke="#FFFFFF"
+            strokeWidth="10.3333"
+            strokeLinecap="square"
+            strokeLinejoin="bevel"
+          />
+        </svg>
       </div>
     </button>
   );
