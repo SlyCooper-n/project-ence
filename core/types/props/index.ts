@@ -166,6 +166,7 @@ export interface PageContainerProps {
 export interface NavbarProps {
   translucent?: boolean;
   absolute?: boolean;
+  onMenuOpen?: (isMenuOpen: boolean) => Promise<void>;
   className?: string;
 }
 
