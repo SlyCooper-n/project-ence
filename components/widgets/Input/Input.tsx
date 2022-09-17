@@ -3,8 +3,9 @@ import { InputHTMLAttributes, useRef, useState } from "react";
 export const Input = ({
   type,
   placeholder,
+  description,
   ...rest
-}: InputHTMLAttributes<HTMLInputElement>) => {
+}: InputHTMLAttributes<HTMLInputElement> & { description?: string }) => {
   const [inputValue, setInputValue] = useState("");
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -28,6 +29,16 @@ export const Input = ({
       >
         {placeholder}
       </span>
+
+      {description && (
+        <span
+          className={`${
+            inputRef.current?.value.length! > 0 ? "top-2 text-xs" : "top-1/2"
+          } hidden sm:block absolute left-1/2 -translate-y-1/2 opacity-50 font-semibold group-focus-within:top-2 group-focus-within:-translate-x-0 group-focus-within:text-xs pointer-events-none transition-all duration-500`}
+        >
+          {description}
+        </span>
+      )}
     </label>
   );
 };
