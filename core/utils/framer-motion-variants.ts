@@ -2,7 +2,7 @@ import { Variants } from "framer-motion";
 
 export const menuList: Variants = {
   hidden: {
-    right: "-100%",
+    right: "-101%",
     transition: {
       delay: 0.4,
     },
@@ -24,7 +24,7 @@ export const menuItems: Variants = {
   show: {
     opacity: 1,
     transition: {
-      delay: 0.8,
+      delay: 1,
     },
   },
 };
