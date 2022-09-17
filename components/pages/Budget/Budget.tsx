@@ -40,7 +40,7 @@ export const Budget = () => {
                 name="_next"
                 value={`https://project-ence.vercel.app${
                   isInEnglish ? "/en" : ""
-                }/budget#submitted?submitted=true`}
+                }/budget?submitted=true`}
               />
 
               <input
