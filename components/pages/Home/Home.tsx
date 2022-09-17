@@ -3,41 +3,14 @@ import { Footer, Navbar } from "@components/modules";
 import { Button, VisuallyHidden } from "@components/widgets";
 import { HomeProps } from "@core/types";
 import { scrollDown } from "@core/utils";
-import { useAnimationControls } from "framer-motion";
 import Lottie from "lottie-react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
 
 export const Home = ({ cmsData }: HomeProps) => {
   const { seo, heading, highlightedCases, about } = cmsData;
 
   const isInEnglish = useRouter().pathname.includes("/en");
-  const [step, setStep] = useState<0 | 1 | 2>(0);
-  const profilePicture = useAnimationControls();
-  const profileBio = useAnimationControls();
-
-  useEffect(() => {
-    async function aboutAnimationSequence() {
-      switch (step) {
-        case 0:
-          await profileBio.start("step0");
-          await profilePicture.start("step0");
-          break;
-
-        case 1:
-          await profilePicture.start("step1");
-          await profileBio.start("step1");
-          break;
-
-        case 2:
-          await profileBio.start("step2");
-          await profilePicture.start("step2");
-          break;
-      }
-    }
-    aboutAnimationSequence();
-  }, [step, profilePicture, profileBio]);
 
   return (
     <PageContainer headTitle={seo.title} description={seo.description}>
