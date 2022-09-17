@@ -6,16 +6,22 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { Reveal } from "react-awesome-reveal";
 
-export const AllCases = ({ title, cases }: AllCasesPageProps) => {
+export const AllCases = ({ cases }: AllCasesPageProps) => {
   const isInEnglish = useRouter().pathname.includes("/en");
 
   return (
     <PageContainer headTitle="Ence | Cases">
       <Navbar />
 
-      <h1 className="mt-12 mb-10 text-center text-xl font-bold sm:text-3xl lg:text-5xl">
-        {title}
+      <h1 className="mt-12 mb-4 text-xl font-bold sm:text-3xl lg:text-5xl">
+        {isInEnglish ? "Projects-" : "Projetos-"}
       </h1>
+
+      <p className="mb-10 text-[8px] sm:text-base">
+        {isInEnglish
+          ? "The following is a selection of experiences."
+          : "A seguir, uma seleção de experiências."}
+      </p>
 
       {cases.map((project) => (
         <Reveal key={project.id} triggerOnce keyframes={fadeUp}>
@@ -26,15 +32,19 @@ export const AllCases = ({ title, cases }: AllCasesPageProps) => {
                 : `/projects/${project.slug}`
             }
           >
-            <a className="group relative block max-w-[1080px] mx-auto mb-4 overflow-hidden">
+            <a className="group relative max-h-[350px] h-fit mx-auto mb-4 flex items-end overflow-hidden">
               <img
                 src={project.banner.url}
                 alt={project.projectName}
-                className="slide-up w-full max-w-[1080px] max-h-[350px] object-cover hover:scale-[1.03] transition-transform duration-500"
+                className="slide-up w-full max-h-[350px] object-cover group-hover:scale-[1.03] transition-transform duration-500"
               />
 
-              <div className="absolute -bottom-full group-hover:bottom-8 p-4 bg-primary text-2xl text-white transition-all duration-500">
+              <h2 className="absolute -bottom-full group-hover:bottom-8 p-4 bg-primary text-lg sm:text-2xl text-white transition-all duration-500">
                 {project.projectName} - {project.caseOrder}
+              </h2>
+
+              <div className="absolute top-0 right-0 bottom-0 px-4 flex items-end bg-secondary text-xl sm:text-5xl z-10">
+                {project.caseOrder}
               </div>
             </a>
           </Link>
