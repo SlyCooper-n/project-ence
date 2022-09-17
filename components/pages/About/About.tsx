@@ -52,9 +52,9 @@ export const About = (props: AboutProps) => {
             )
           )}
 
-          <div className="relative w-[calc(100%-100px)] my-12 mx-auto">
-            <div className="swiper-people-prev absolute top-0 -left-[50px] h-full flex justify-center items-center z-10 cursor-pointer">
-              <svg width="43" height="78" viewBox="0 0 43 78" fill="none">
+          <div className="relative w-[calc(100%-120px)] my-12 mx-auto">
+            <div className="swiper-people-prev absolute top-0 -left-[60px] h-full flex justify-center items-center z-10 cursor-pointer">
+              <svg width="25" height="59" viewBox="0 0 43 78" fill="none">
                 <path
                   d="M35 70L4 39L35 8"
                   stroke="#E5F2C9"
@@ -112,8 +112,8 @@ export const About = (props: AboutProps) => {
               )}
             </Swiper>
 
-            <div className="swiper-people-next absolute top-0 -right-[50px] h-full flex justify-center items-center z-10 cursor-pointer">
-              <svg width="43" height="78" viewBox="0 0 43 78" fill="none">
+            <div className="swiper-people-next absolute top-0 -right-[60px] h-full flex justify-center items-center z-10 cursor-pointer">
+              <svg width="25" height="59" viewBox="0 0 43 78" fill="none">
                 <path
                   d="M8 70L39 39L8 8"
                   stroke="#E5F2C9"
