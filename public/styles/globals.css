@@ -29,7 +29,7 @@ a.relative::before {
   width: 0;
   height: 3px;
   margin-bottom: -3px;
-  background-color: #22223b;
+  background-color: black;
   transition: all 0.3s ease;
 }
 a.relative:hover::before,

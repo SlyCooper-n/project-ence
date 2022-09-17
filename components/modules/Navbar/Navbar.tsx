@@ -36,7 +36,7 @@ export const Navbar = ({
       <button
         type="button"
         onClick={handleToggleMenu}
-        className="relative w-16 ml-auto sm:mr-auto sm:ml-0 z-50"
+        className="relative w-32 ml-auto sm:mr-auto sm:ml-0 z-50"
       >
         <div
           className={`absolute top-1/2 -translate-y-1/2 w-full h-3 bg-black`}
@@ -89,7 +89,7 @@ export const Navbar = ({
           }}
         >
           <a
-            className={`relative flex mr-3 font-semibold z-50 ${
+            className={`relative flex font-semibold z-50 ${
               isInEnglish ? "lang-active" : ""
             }`}
           >
@@ -102,7 +102,7 @@ export const Navbar = ({
       <motion.ul
         variants={menuList}
         animate={isMenuOpen ? "show" : "hidden"}
-        className="fixed top-0 -right-full w-screen h-screen pl-16 pt-16 flex flex-col justify-center gap-4 sm:gap-8 bg-secondary z-[49]"
+        className="fixed top-0 -right-full w-screen h-screen pl-8 sm:pl-16 pt-16 flex flex-col justify-center gap-4 sm:gap-8 bg-secondary z-[49]"
       >
         {menuOptions.map((opt) => {
           if (
@@ -113,7 +113,7 @@ export const Navbar = ({
               <motion.span
                 variants={menuItems}
                 animate={isMenuOpen ? "show" : "hidden"}
-                className="sm:text-5xl font-semibold"
+                className="text-xl sm:text-6xl font-semibold"
               >
                 {isInEnglish ? "Experience started" : "Experiência iniciada"}
               </motion.span>
@@ -127,7 +127,7 @@ export const Navbar = ({
               animate={isMenuOpen ? "show" : "hidden"}
             >
               <Link href={isInEnglish ? opt.en_path : opt.path}>
-                <motion.a className="relative font-semibold sm:text-5xl cursor-pointer">
+                <motion.a className="relative font-semibold text-xl sm:text-6xl cursor-pointer">
                   {isInEnglish ? opt.en_name : opt.name}
                 </motion.a>
               </Link>
@@ -145,7 +145,7 @@ export const Navbar = ({
                 href="https://www.behance.net/joaovitorn-ence/moodboards"
                 rel="noreferrer"
                 target="_blank"
-                className="relative"
+                className="relative sm:text-lg"
               >
                 Behance
               </a>
@@ -156,7 +156,7 @@ export const Navbar = ({
                 href="www.instagram.com/encestudio"
                 rel="noreferrer"
                 target="_blank"
-                className="relative"
+                className="relative sm:text-lg"
               >
                 Instagram
               </a>

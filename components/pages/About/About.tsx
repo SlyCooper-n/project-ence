@@ -18,6 +18,22 @@ export const About = (props: AboutProps) => {
         className="bg-black text-white"
       >
         <div className="flex-1 flex flex-col lg:justify-center">
+          <section className="relative h-[calc(100vh-3rem)] flex justify-center items-center text-lg sm:text-5xl">
+            <div className="bg absolute w-screen h-full" />
+
+            <span className="text-center font-semibold z-10">
+              {isInEnglish
+                ? "Behind the studio experience-"
+                : "Por trás da experiência do estúdio-"}
+            </span>
+
+            <style jsx>{`
+              div.bg {
+                background: linear-gradient(90deg, #000000 0%, #e5f2c9 275.03%);
+              }
+            `}</style>
+          </section>
+
           {props.people.map(
             ({ id, bio, personName, profilePicture, socialMedia }) => (
               <article
@@ -52,7 +68,7 @@ export const About = (props: AboutProps) => {
             )
           )}
 
-          <div className="relative hidden lg:block w-[calc(100%-120px)] my-12 mx-auto">
+          <div className="relative hidden w-[calc(100%-120px)] h-screen mx-auto lg:flex justify-center items-center">
             <div className="swiper-people-prev absolute top-0 -left-[60px] h-full flex justify-center items-center z-10 cursor-pointer">
               <svg width="25" height="59" viewBox="0 0 43 78" fill="none">
                 <path

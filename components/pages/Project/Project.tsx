@@ -15,7 +15,7 @@ export const Project = ({ caseData }: ProjectPageProps) => {
     <PageContainer headTitle="Ence | Inova">
       <Navbar translucent absolute />
 
-      <div className="max-h-[60vh] mb-4 flex justify-center items-center overflow-y-clip">
+      <div className="max-h-[1080px] mb-4 flex justify-center items-center overflow-y-clip">
         <img
           src={caseData.banner.url}
           alt={`${caseData.projectName} banner`}
@@ -25,11 +25,11 @@ export const Project = ({ caseData }: ProjectPageProps) => {
 
       {/* case description */}
       <main className="mb-12 text-xs sm:text-base">
-        <span className="mb-4 block text-center font-semibold">
+        <span className="mb-4 block font-semibold">
           {caseData.caseOrder}/5 cases
         </span>
 
-        <h1 className="mb-10 sm:mb-20 text-center text-2xl sm:text-5xl">
+        <h1 className="mb-10 sm:mb-20 text-2xl sm:text-5xl">
           {caseData.title}
         </h1>
 
@@ -74,9 +74,7 @@ export const Project = ({ caseData }: ProjectPageProps) => {
 
               {caseData.dataSheet.dev[0]?.personName && (
                 <li>
-                  <strong>
-                    {isInEnglish ? "Front-end dev" : "Dev Front-end"}:{" "}
-                  </strong>
+                  <strong>Dev: </strong>
 
                   <span>
                     {caseData.dataSheet.dev

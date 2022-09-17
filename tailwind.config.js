@@ -29,7 +29,7 @@ module.exports = {
           accent: "#9A8C98",
           neutral: "#000000",
           "base-100": "#F2F2F8",
-          "base-content": "#22223B",
+          "base-content": "#000000",
         },
       },
       // {

@@ -49,7 +49,9 @@ export const PageContainer = (props: PageContainerProps) => {
           }
 
           body::-webkit-scrollbar-thumb {
-            background: #22223b;
+            background: ${router.pathname.includes("/about")
+              ? "white"
+              : "black"};
           }
 
           body::-webkit-scrollbar-track {

@@ -80,12 +80,12 @@ export const Home = ({ cmsData }: HomeProps) => {
 
         <Lottie
           animationData={scrollDown}
-          className="absolute left-1/2 -translate-x-1/2 bottom-24 w-12"
+          className="absolute bottom-24 w-12"
         />
       </motion.main>
 
       {/* Highlighted cases */}
-      <section className="mb-16 sm:mb-60 text-center">
+      <section className="mb-16 sm:mb-60">
         <h2 className="mb-2 sm:mb-12 font-semibold sm:text-5xl">
           {highlightedCases.title}
         </h2>
@@ -104,11 +104,11 @@ export const Home = ({ cmsData }: HomeProps) => {
                 <img
                   src={caseItem.banner.url}
                   alt="Zoeira Cooking case"
-                  className="w-full max-h-[350px] object-cover object-center hover:scale-[1.02] transition-transform duration-500 z-10"
+                  className="w-full max-h-[350px] object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
                 />
 
-                <div className="absolute -bottom-full group-hover:bottom-8 p-4 bg-primary text-2xl text-white transition-all duration-500">
-                  {caseItem.projectName} - {caseItem.caseOrder}
+                <div className="absolute top-0 left-0 w-full h-full p-4 flex justify-center items-center bg-black opacity-0 group-hover:opacity-70 text-xl sm:text-4xl text-white transition-all duration-500">
+                  {caseItem.projectName}
                 </div>
               </a>
             </Link>

@@ -39,11 +39,11 @@ export const AllCases = ({ cases }: AllCasesPageProps) => {
                 className="slide-up w-full max-h-[350px] object-cover group-hover:scale-[1.03] transition-transform duration-500"
               />
 
-              <h2 className="absolute -bottom-full group-hover:bottom-8 p-4 bg-primary text-lg sm:text-2xl text-white transition-all duration-500">
-                {project.projectName} - {project.caseOrder}
-              </h2>
+              <div className="absolute top-0 left-0 w-full h-full p-4 flex justify-center items-center bg-black opacity-0 group-hover:opacity-70 text-xl sm:text-4xl text-white transition-all duration-500">
+                {project.projectName}
+              </div>
 
-              <div className="absolute top-0 right-0 bottom-0 px-4 flex items-end bg-secondary text-xl sm:text-5xl z-10">
+              <div className="absolute top-0 right-0 bottom-0 px-8 flex items-end bg-secondary text-xl sm:text-6xl z-10">
                 {project.caseOrder}
               </div>
             </a>
