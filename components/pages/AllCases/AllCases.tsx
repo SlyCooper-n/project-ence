@@ -17,11 +17,11 @@ export const AllCases = ({ cases }: AllCasesPageProps) => {
         {isInEnglish ? "Projects-" : "Projetos-"}
       </h1>
 
-      <p className="mb-10 text-[8px] sm:text-base">
+      <h2 className="mb-10 text-[8px] sm:text-base">
         {isInEnglish
           ? "The following is a selection of experiences."
           : "A seguir, uma seleção de experiências."}
-      </p>
+      </h2>
 
       {cases.map((project) => (
         <Reveal key={project.id} triggerOnce keyframes={fadeUp}>

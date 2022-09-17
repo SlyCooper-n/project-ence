@@ -45,12 +45,12 @@ export const Navbar = ({
 
       {!router.pathname.includes("/budget") ? (
         <Link href={isInEnglish ? "/en/budget" : "/budget"}>
-          <a className="relative hidden sm:block z-50">
+          <a className="relative hidden sm:block font-semibold z-50">
             {isInEnglish ? "Start experience" : "Iniciar experiência"}
           </a>
         </Link>
       ) : (
-        <span className="hidden sm:block z-50">
+        <span className="hidden sm:block font-semibold z-50">
           {isInEnglish ? "Experience started" : "Experiência iniciada"}
         </span>
       )}
@@ -102,6 +102,7 @@ export const Navbar = ({
       <motion.div
         variants={menuList}
         animate={isMenuOpen ? "show" : "hidden"}
+        onClick={handleToggleMenu}
         className="fixed top-0 -right-full w-screen h-screen pt-32 flex items-center bg-secondary z-[49]"
       >
         <motion.ul className="container w-[95vw] flex flex-col justify-center gap-4 sm:gap-16">
