@@ -3,6 +3,7 @@ import { Footer, Navbar } from "@components/modules";
 import { Button, VisuallyHidden } from "@components/widgets";
 import { HomeProps } from "@core/types";
 import { scrollDown } from "@core/utils";
+import { motion, useAnimationControls } from "framer-motion";
 import Lottie from "lottie-react";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -11,28 +12,41 @@ export const Home = ({ cmsData }: HomeProps) => {
   const { seo, heading, highlightedCases, about } = cmsData;
 
   const isInEnglish = useRouter().pathname.includes("/en");
+  const headingControls = useAnimationControls();
+
+  async function handleShowHeading(isMenuOpen: boolean) {
+    await headingControls.start({
+      opacity: isMenuOpen ? 0 : 1,
+      transition: { delay: isMenuOpen ? 0 : 1 },
+    });
+  }
 
   return (
     <PageContainer headTitle={seo.title} description={seo.description}>
-      <Navbar />
+      <Navbar onMenuOpen={handleShowHeading} />
+
+      <div className="hidden sm:block absolute right-0 w-3/5 h-full bg-secondary" />
 
       {/* Heading */}
-      <main className="relative h-[calc(100vh-3rem)] flex flex-col justify-center items-center text-center">
+      <motion.main
+        animate={headingControls}
+        className="relative h-[calc(100vh-3rem)] flex flex-col justify-center"
+      >
         <VisuallyHidden asChild>
           <h1>{heading.title}</h1>
         </VisuallyHidden>
 
-        <img
-          src="/images/logo-ence-st-black.svg"
+        <motion.img
+          src="/images/logo.svg"
           alt="Ence logo"
-          className="w-[100px] mx-auto mb-8"
+          className="sm:max-w-[60vw] mb-12"
         />
 
-        <p className="sm:w-4/5 max-w-[400px] sm:max-w-[929px] mx-auto mb-4 text-[8px] sm:text-xl">
+        <motion.p className="sm:w-4/5 sm:max-w-[929px] mb-12 text-[8px] sm:text-xl">
           {heading.subtitle}
-        </p>
+        </motion.p>
 
-        <ul className="flex gap-4 text-[8px] sm:text-base">
+        <motion.ul className="flex sm:justify-end gap-4 text-[8px] sm:text-base">
           {heading.socialMedia.map((media) => (
             <li key={media.socialMedia}>
               <a
@@ -62,13 +76,13 @@ export const Home = ({ cmsData }: HomeProps) => {
               width: 100%;
             }
           `}</style>
-        </ul>
+        </motion.ul>
 
         <Lottie
           animationData={scrollDown}
-          className="absolute bottom-24 w-12"
+          className="absolute left-1/2 -translate-x-1/2 bottom-24 w-12"
         />
-      </main>
+      </motion.main>
 
       {/* Highlighted cases */}
       <section className="mb-16 sm:mb-60 text-center">
