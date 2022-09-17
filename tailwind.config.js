@@ -11,7 +11,7 @@ module.exports = {
         padding: "1rem",
       },
       fontFamily: {
-        sans: ["Space Grotesk", "sans-serif"],
+        sans: ["Epilogue", "sans-serif"],
       },
     },
   },
@@ -25,7 +25,7 @@ module.exports = {
       {
         light: {
           primary: "#22223B",
-          secondary: "#4A4E69",
+          secondary: "#E5F2C9",
           accent: "#9A8C98",
           neutral: "#000000",
           "base-100": "#F2F2F8",
