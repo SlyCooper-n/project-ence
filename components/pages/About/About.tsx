@@ -52,48 +52,78 @@ export const About = (props: AboutProps) => {
             )
           )}
 
-          <Swiper
-            modules={[Navigation]}
-            navigation
-            spaceBetween={24}
-            className="w-full hidden lg:block"
-          >
-            {props.people.map(
-              ({ id, bio, personName, profilePicture, socialMedia }) => (
-                <SwiperSlide
-                  key={id}
-                  className="flex flex-row-reverse items-end gap-4"
-                >
-                  <img
-                    src={profilePicture}
-                    alt={`${personName} picture`}
-                    className="max-w-[180px] lg:max-w-[525px]"
-                  />
+          <div className="relative w-[calc(100%-100px)] my-12 mx-auto">
+            <div className="swiper-people-prev absolute top-0 -left-[50px] h-full flex justify-center items-center z-10 cursor-pointer">
+              <svg width="43" height="78" viewBox="0 0 43 78" fill="none">
+                <path
+                  d="M35 70L4 39L35 8"
+                  stroke="#E5F2C9"
+                  strokeWidth="10.3333"
+                  strokeLinecap="square"
+                  strokeLinejoin="bevel"
+                />
+              </svg>
+            </div>
 
-                  <section className="flex flex-col gap-8 text-end">
-                    <h2 className="text-4xl">{personName}</h2>
+            <Swiper
+              modules={[Navigation]}
+              navigation={{
+                enabled: true,
+                prevEl: ".swiper-people-prev",
+                nextEl: ".swiper-people-next",
+              }}
+              spaceBetween={24}
+              className="w-full hidden lg:block"
+            >
+              {props.people.map(
+                ({ id, bio, personName, profilePicture, socialMedia }) => (
+                  <SwiperSlide
+                    key={id}
+                    className="flex flex-row-reverse items-end gap-4"
+                  >
+                    <img
+                      src={profilePicture}
+                      alt={`${personName} picture`}
+                      className="max-w-[180px] lg:max-w-[525px]"
+                    />
 
-                    <p className="max-w-[450px]">{bio}</p>
+                    <section className="flex flex-col gap-8 text-end">
+                      <h2 className="text-4xl">{personName}</h2>
 
-                    <ul className="flex justify-end gap-4">
-                      {socialMedia.map(({ media, url }) => (
-                        <li key={media}>
-                          <a
-                            href={url}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="relative capitalize"
-                          >
-                            {media}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </section>
-                </SwiperSlide>
-              )
-            )}
-          </Swiper>
+                      <p className="max-w-[450px]">{bio}</p>
+
+                      <ul className="flex justify-end gap-4">
+                        {socialMedia.map(({ media, url }) => (
+                          <li key={media}>
+                            <a
+                              href={url}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="relative capitalize"
+                            >
+                              {media}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    </section>
+                  </SwiperSlide>
+                )
+              )}
+            </Swiper>
+
+            <div className="swiper-people-next absolute top-0 -right-[50px] h-full flex justify-center items-center z-10 cursor-pointer">
+              <svg width="43" height="78" viewBox="0 0 43 78" fill="none">
+                <path
+                  d="M8 70L39 39L8 8"
+                  stroke="#E5F2C9"
+                  strokeWidth="10.3333"
+                  strokeLinecap="square"
+                  strokeLinejoin="bevel"
+                />
+              </svg>
+            </div>
+          </div>
         </div>
 
         <Footer />

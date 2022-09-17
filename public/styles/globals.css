@@ -36,3 +36,7 @@ a.relative:hover::before,
 a.relative.lang-active::before {
   width: 100%;
 }
+
+.swiper-button-disabled {
+  opacity: 0;
+}
