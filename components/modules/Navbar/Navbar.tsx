@@ -38,10 +38,10 @@ export const Navbar = ({ translucent, absolute, className }: NavbarProps) => {
             {isInEnglish ? "Start experience" : "Iniciar experiência"}
           </a>
         </Link>
-      ) : isInEnglish ? (
-        "Experience started"
       ) : (
-        "Experiência iniciada"
+        <span className="hidden sm:block">
+          {isInEnglish ? "Experience started" : "Experiência iniciada"}
+        </span>
       )}
 
       <div className="divider hidden sm:block w-[13vw] h-1 mx-4 bg-black" />
