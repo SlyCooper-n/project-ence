@@ -52,7 +52,7 @@ export const About = (props: AboutProps) => {
             )
           )}
 
-          <div className="relative w-[calc(100%-120px)] my-12 mx-auto">
+          <div className="relative hidden lg:block w-[calc(100%-120px)] my-12 mx-auto">
             <div className="swiper-people-prev absolute top-0 -left-[60px] h-full flex justify-center items-center z-10 cursor-pointer">
               <svg width="25" height="59" viewBox="0 0 43 78" fill="none">
                 <path
@@ -73,7 +73,7 @@ export const About = (props: AboutProps) => {
                 nextEl: ".swiper-people-next",
               }}
               spaceBetween={24}
-              className="w-full hidden lg:block"
+              className="w-full"
             >
               {props.people.map(
                 ({ id, bio, personName, profilePicture, socialMedia }) => (
