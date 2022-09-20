@@ -38,9 +38,9 @@ export const Budget = () => {
               <input
                 type="hidden"
                 name="_next"
-                value={`https://encestudio.com/${
+                value={`https://encestudio.com${
                   isInEnglish ? "/en" : ""
-                }/budget?submitted=true`}
+                }/budget.html?submitted=true`}
               />
 
               <input
@@ -120,8 +120,8 @@ export const Budget = () => {
                   : "Qual é o tamanho da sua empresa?"}
               </option>
 
-              <option value="small">
-                {isInEnglish ? "Small" : "Profissional liberal"}
+              <option value="liberal-professional">
+                {isInEnglish ? "Liberal professional" : "Profissional liberal"}
               </option>
 
               <option value="small">
