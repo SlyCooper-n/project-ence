@@ -155,7 +155,7 @@ export const Navbar = ({
 
               <li>
                 <a
-                  href="www.instagram.com/encestudio"
+                  href="https://www.instagram.com/encestudio"
                   rel="noreferrer"
                   target="_blank"
                   className="relative sm:text-lg"
