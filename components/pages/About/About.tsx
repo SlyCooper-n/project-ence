@@ -1,7 +1,7 @@
 import { PageContainer } from "@components/layouts";
 import { Footer, Navbar } from "@components/modules";
 import { AboutProps } from "@core/types";
-import { scrollDown } from "@core/utils";
+import { scrollDownAboutPage } from "@core/utils";
 import Lottie from "lottie-react";
 import { useRouter } from "next/router";
 import { Navigation } from "swiper";
@@ -20,7 +20,7 @@ export const About = (props: AboutProps) => {
         className="bg-black text-white"
       >
         <div className="flex-1 flex flex-col lg:justify-center">
-          <section className="relative h-[calc(100vh-3rem)] flex justify-center items-center text-lg sm:text-5xl">
+          <section className="relative h-[calc(100vh-3rem)] flex justify-center items-center text-2xl sm:text-5xl">
             <div className="bg absolute w-screen h-full" />
 
             <span className="text-center font-semibold z-10">
@@ -30,7 +30,7 @@ export const About = (props: AboutProps) => {
             </span>
 
             <Lottie
-              animationData={scrollDown}
+              animationData={scrollDownAboutPage}
               className="absolute bottom-20 w-12"
             />
 

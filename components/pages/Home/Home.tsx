@@ -86,7 +86,7 @@ export const Home = ({ cmsData }: HomeProps) => {
 
       {/* Highlighted cases */}
       <section className="mb-16 sm:mb-60">
-        <h2 className="mb-4 sm:mb-12 font-semibold text-xl sm:text-5xl">
+        <h2 className="mb-4 sm:mb-12 font-semibold text-2xl sm:text-5xl">
           {highlightedCases.title}
         </h2>
 
@@ -128,9 +128,9 @@ export const Home = ({ cmsData }: HomeProps) => {
         className="w-full mb-16 sm:mb-32 flex flex-col lg:flex-row lg:justify-between items-center"
       >
         <div className="lg:max-w-[33.33%] text-center lg:text-start">
-          <h2 className="mb-4 text-xl sm:text-5xl">{about.title}</h2>
+          <h2 className="mb-4 text-2xl sm:text-5xl">{about.title}</h2>
 
-          <p className="mb-4 text-[8px] sm:text-base">{about.subtitle}</p>
+          <p className="mb-4 text-sm sm:text-base">{about.subtitle}</p>
 
           <Link href={isInEnglish ? "en/about" : "/about"}>
             <a className="w-fit hidden lg:block">

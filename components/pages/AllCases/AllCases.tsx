@@ -41,7 +41,7 @@ export const AllCases = ({ cases }: AllCasesPageProps) => {
 
               <div className="absolute top-0 left-0 w-full h-full p-4 flex justify-center items-center bg-black opacity-0 group-hover:opacity-70 text-xl sm:text-4xl text-white transition-all duration-500" />
 
-              <div className="absolute top-0 right-0 bottom-0 px-4 sm:px-8 flex items-end bg-secondary text-xl sm:text-6xl z-10">
+              <div className="absolute top-0 right-0 bottom-0 min-w-[40px] w-[15%] max-w-[112px] sm:px-8 flex justify-center items-end bg-secondary text-xl sm:text-6xl z-10">
                 {project.caseOrder < 10
                   ? "0" + project.caseOrder
                   : project.caseOrder}
