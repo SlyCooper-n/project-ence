@@ -38,7 +38,7 @@ export const Budget = () => {
               <input
                 type="hidden"
                 name="_next"
-                value={`https://project-ence.vercel.app${
+                value={`https://encestudio.com/${
                   isInEnglish ? "/en" : ""
                 }/budget?submitted=true`}
               />
