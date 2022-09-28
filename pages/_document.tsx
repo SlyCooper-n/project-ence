@@ -19,6 +19,7 @@ export default function Document() {
           property="og:image"
           content="https://encestudio.com/images/facebook-banner.png"
         />
+        <meta name="author" content="João Vitor Nascimento" />
 
         <link
           rel="shortcut icon"
