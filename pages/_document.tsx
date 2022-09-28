@@ -7,6 +7,19 @@ export default function Document() {
       <Head>
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="Ence Studio" />
+        <meta
+          property="og:description"
+          content="Estúdio de design focado na criação e desenvolvimento de Identidade de marca e UI Design. criado para transformar a experiência de projetos."
+        />
+        <meta property="og:site_name" content="Ence Studio - Portfólio" />
+        <meta property="og:url" content="https://encestudio.com" />
+        <meta
+          property="og:image"
+          content="https://encestudio.com/images/facebook-banner.png"
+        />
+
         <link
           rel="shortcut icon"
           href="/favicon.png"
@@ -36,12 +49,6 @@ export default function Document() {
           <meta name="twitter:description" content="Best Next.js template with bash scripts in the world" />
           <meta name="twitter:image" content="https://yourdomain.com/icons/android-chrome-192x192.png" />
           <meta name="twitter:creator" content="@John_Doe" />
-          <meta property="og:type" content="website" />
-          <meta property="og:title" content="Next.js template with bash scripts" />
-          <meta property="og:description" content="Best Next.js template with bash scripts in the world" />
-          <meta property="og:site_name" content="Next.js template with bash scripts" />
-          <meta property="og:url" content="https://yourdomain.com" />
-          <meta property="og:image" content="https://yourdomain.com/icons/apple-touch-icon.png" />
         */}
       </Head>
 
