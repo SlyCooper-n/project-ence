@@ -37,7 +37,6 @@
     "@types/react": "18.0.17",
     "@types/react-dom": "18.0.6",
     "@types/scrollreveal": "^0.0.8",
-    "@types/testing-library__jest-dom": "^5.14.5",
     "autoprefixer": "^10.4.8",
     "cz-conventional-changelog": "^3.3.0",
     "eslint": "8.21.0",
