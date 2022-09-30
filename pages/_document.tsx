@@ -7,6 +7,7 @@ export default function Document() {
       <Head>
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 
+        {/* open graph meta tags */}
         <meta property="og:type" content="website" />
         <meta property="og:title" content="Ence Studio" />
         <meta
@@ -21,6 +22,18 @@ export default function Document() {
         />
         <meta name="author" content="João Vitor Nascimento" />
 
+        {/* twitter meta tags */}
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:url" content="https://encestudio.com" />
+        <meta name="twitter:title" content="Ence Studio" />
+        <meta
+          name="twitter:description"
+          content="Estúdio de design focado na criação e desenvolvimento de Identidade de marca e UI Design. criado para transformar a experiência de projetos."
+        />
+        <meta name="twitter:creator" content="@" />
+        {/* <meta name="twitter:image" content="https://encestudio.com/images/twitter-banner.png" /> */}
+
+        {/* favicon and apple touch icon */}
         <link
           rel="shortcut icon"
           href="/favicon.png"
@@ -41,16 +54,6 @@ export default function Document() {
           strategy="beforeInteractive"
           src="https://polyfill.io/v3/polyfill.min.js"
         />
-
-        {/*
-          // opengraph meta tags
-          <meta name="twitter:card" content="summary" />
-          <meta name="twitter:url" content="https://yourdomain.com" />
-          <meta name="twitter:title" content="Next.js template with bash scripts" />
-          <meta name="twitter:description" content="Best Next.js template with bash scripts in the world" />
-          <meta name="twitter:image" content="https://yourdomain.com/icons/android-chrome-192x192.png" />
-          <meta name="twitter:creator" content="@John_Doe" />
-        */}
       </Head>
 
       <body>
