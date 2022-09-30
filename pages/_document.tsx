@@ -30,7 +30,7 @@ export default function Document() {
           name="twitter:description"
           content="Estúdio de design focado na criação e desenvolvimento de Identidade de marca e UI Design. criado para transformar a experiência de projetos."
         />
-        <meta name="twitter:creator" content="@" />
+        <meta name="twitter:creator" content="@joaovitorn___" />
         {/* <meta name="twitter:image" content="https://encestudio.com/images/twitter-banner.png" /> */}
 
         {/* favicon and apple touch icon */}
