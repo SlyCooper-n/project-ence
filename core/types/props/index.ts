@@ -172,6 +172,8 @@ export interface NavbarProps {
 
 // * Widget components props
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: "button" | "text";
+  color?: "primary" | "secondary";
   children: ReactNode;
 }
 export interface SelectProps {

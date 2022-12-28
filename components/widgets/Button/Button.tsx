@@ -1,12 +1,22 @@
 import { ButtonProps } from "@core/types";
 
-export const Button = ({ className, children, ...rest }: ButtonProps) => {
+export const Button = ({
+  variant = "button",
+  color = "primary",
+  className = "",
+  children,
+  ...rest
+}: ButtonProps) => {
   return (
     <button
       {...rest}
-      className={`group h-7 lg:h-10 flex flex-row justify-center items-center gap-0 hover:gap-5 transition-all bg-black text-white ${className}`}
+      className={`group min-w-fit h-7 lg:h-10 px-4 flex flex-row justify-center items-center gap-0 hover:gap-5 transition-all ${
+        color == "primary"
+          ? "bg-black text-secondary"
+          : "bg-secondary text-black"
+      } ${className}`}
     >
-      <div className="text-xs lg:text-sm -mr-5 group-hover:mr-0">
+      <div className="text-xs lg:text-sm -mr-5 group-hover:mr-0 font-semibold">
         {children}
       </div>
 
@@ -16,7 +26,7 @@ export const Button = ({ className, children, ...rest }: ButtonProps) => {
         <svg width="10" height="25" viewBox="0 0 43 78" fill="none">
           <path
             d="M8 70L39 39L8 8"
-            stroke="#FFFFFF"
+            stroke={`${color == "primary" ? "#E5F2C9" : "#000000"}`}
             strokeWidth="10.3333"
             strokeLinecap="square"
             strokeLinejoin="bevel"

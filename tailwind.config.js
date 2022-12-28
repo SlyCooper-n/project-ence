@@ -11,7 +11,8 @@ module.exports = {
         padding: "1rem",
       },
       fontFamily: {
-        sans: ["Epilogue", "sans-serif"],
+        sans: "Epilogue, sans-serif",
+        emphasis: "Fraunces, sans-serif",
       },
     },
   },
