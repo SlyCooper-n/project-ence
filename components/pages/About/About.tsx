@@ -1,8 +1,7 @@
-import { PageContainer } from "@components/layouts";
+import { Container } from "@components/layouts";
 import { Footer, Navbar } from "@components/modules";
 import { AboutProps } from "@core/types";
-import { scrollDownAboutPage } from "@core/utils";
-import Lottie from "lottie-react";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { Navigation } from "swiper";
 import "swiper/css/bundle";
@@ -13,68 +12,80 @@ export const About = (props: AboutProps) => {
 
   return (
     <>
-      <Navbar className="container w-[95vw]" />
+      <Head>
+        <title>{isInEnglish ? "Ence | About" : "Ence | Sobre"}</title>
+      </Head>
 
-      <PageContainer
-        headTitle={isInEnglish ? "Ence | About" : "Ence | Sobre"}
-        className="bg-black text-white"
-      >
-        <div className="flex-1 flex flex-col lg:justify-center">
-          <section className="relative h-[calc(100vh-3rem)] flex justify-center items-center text-2xl sm:text-5xl">
-            <div className="bg absolute w-screen h-full" />
+      <Navbar />
 
-            <span className="text-center font-semibold z-10">
+      <div className="bg-black text-white">
+        <Container asChild>
+          <section className="py-40">
+            <h2 className="mb-36 text-6xl">
               {isInEnglish
-                ? "Behind the studio experience-"
-                : "Por trás da experiência do estúdio-"}
-            </span>
+                ? "One of the people who will be part of your experience is "
+                : "Uma das pessoas que vão fazer parte da sua experiência é "}
+              <em className="font-emphasis">
+                {isInEnglish ? "yourself." : "você mesmo."}
+              </em>
+            </h2>
 
-            <Lottie
-              animationData={scrollDownAboutPage}
-              className="absolute bottom-20 w-12"
-            />
+            <ul className="flex flex-col gap-12">
+              <li>
+                <h3 className="mb-12 flex items-center gap-5 text-3xl">
+                  <span className="text-8xl font-emphasis">01</span>
+                  Briefing/pesquisa
+                </h3>
 
-            <style jsx>{`
-              div.bg {
-                background: linear-gradient(90deg, #000000 0%, #e5f2c9 275.03%);
-              }
-            `}</style>
+                <p>
+                  Como toda experiência, você precisa vivenciá-la. No ínicio da
+                  experiência já temos um grande questionário em torno do seu
+                  projeto, para entendermos como ele está e no que ele irá se
+                  tornar no futuro, vamos destrinchar diversas informações sobre
+                  você e seu negócio.
+                </p>
+              </li>
+            </ul>
           </section>
+        </Container>
 
-          {props.people.map(
-            ({ id, bio, personName, profilePicture, socialMedia }) => (
-              <article
-                key={id}
-                className="lg:hidden w-3/4 mx-auto my-12 flex flex-col gap-8"
-              >
-                <img
-                  src={profilePicture}
-                  alt={`${personName} picture`}
-                  className="max-w-[180px] aspect-square object-cover object-bottom"
-                />
+        <section></section>
 
-                <h2>{personName}</h2>
+        {props.people.map(
+          ({ id, bio, personName, profilePicture, socialMedia }) => (
+            <article
+              key={id}
+              className="lg:hidden w-3/4 mx-auto my-12 flex flex-col gap-8"
+            >
+              <img
+                src={profilePicture}
+                alt={`${personName} picture`}
+                className="max-w-[180px] aspect-square object-cover object-bottom"
+              />
 
-                <p className="text-[8px] sm:text-base">{bio}</p>
+              <h2>{personName}</h2>
 
-                <ul className="flex gap-4 text-[8px] sm:text-base">
-                  {socialMedia.map(({ media, url }) => (
-                    <li key={media}>
-                      <a
-                        href={url}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="relative capitalize"
-                      >
-                        {media}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </article>
-            )
-          )}
+              <p className="text-[8px] sm:text-base">{bio}</p>
 
+              <ul className="flex gap-4 text-[8px] sm:text-base">
+                {socialMedia.map(({ media, url }) => (
+                  <li key={media}>
+                    <a
+                      href={url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="relative capitalize"
+                    >
+                      {media}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </article>
+          )
+        )}
+
+        <Container>
           <div className="relative hidden w-[calc(100%-120px)] h-screen mx-auto lg:flex justify-center items-center">
             <div className="swiper-people-prev absolute top-0 -left-[60px] h-full flex justify-center items-center z-10 cursor-pointer">
               <svg width="25" height="59" viewBox="0 0 43 78" fill="none">
@@ -147,10 +158,10 @@ export const About = (props: AboutProps) => {
               </svg>
             </div>
           </div>
-        </div>
+        </Container>
 
         <Footer />
-      </PageContainer>
+      </div>
     </>
   );
 };

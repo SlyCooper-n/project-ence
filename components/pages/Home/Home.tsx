@@ -1,16 +1,17 @@
 import { Container } from "@components/layouts";
 import { CaseBanner, Footer, Navbar } from "@components/modules";
 import { Button, VisuallyHidden } from "@components/widgets";
+import { usePageConfig } from "@core/hooks";
 import { HomeProps } from "@core/types";
-import { scrollDown } from "@core/utils";
 import { motion, useAnimationControls } from "framer-motion";
-import Lottie from "lottie-react";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
 export const Home = ({ cmsData }: HomeProps) => {
   const { seo, heading, highlightedCases, about } = cmsData;
+
+  usePageConfig();
 
   const isInEnglish = useRouter().pathname.includes("/en");
   const headingControls = useAnimationControls();
@@ -37,7 +38,7 @@ export const Home = ({ cmsData }: HomeProps) => {
       <Container asChild>
         <motion.main
           animate={headingControls}
-          className="relative h-[calc(100vh-3rem)] flex flex-col justify-center"
+          className="relative h-[calc(100vh-3rem)] flex flex-col justify-center items-center"
         >
           <VisuallyHidden asChild>
             <h1>{heading.title}</h1>
@@ -46,21 +47,23 @@ export const Home = ({ cmsData }: HomeProps) => {
           <motion.img
             src="/images/logo.svg"
             alt="Ence logo"
-            className="sm:max-w-[60vw] mb-12"
+            className="sm:max-w-[60vw] mb-10"
           />
 
-          <motion.p className="sm:w-4/5 sm:max-w-[929px] mb-12 text-sm sm:text-xl">
-            {heading.subtitle}
+          <motion.p className="sm:w-4/5 sm:max-w-[929px] mb-24 text-sm sm:text-xl text-center">
+            {isInEnglish
+              ? "After each experience, marks remain"
+              : "Após toda experiência, remanescem marcas"}
           </motion.p>
 
-          <motion.ul className="flex sm:justify-end gap-4 text-sm sm:text-base">
+          {/* <motion.ul className="flex sm:justify-end gap-4 text-sm sm:text-base">
             {heading.socialMedia.map((media) => (
               <li key={media.socialMedia}>
                 <a
                   href={media.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="relative capitalize"
+                  className="relative capitalize font-bold"
                 >
                   {media.socialMedia}
                 </a>
@@ -88,7 +91,7 @@ export const Home = ({ cmsData }: HomeProps) => {
           <Lottie
             animationData={scrollDown}
             className="absolute bottom-20 w-12"
-          />
+          /> */}
         </motion.main>
       </Container>
 
@@ -110,7 +113,7 @@ export const Home = ({ cmsData }: HomeProps) => {
           <div className="flex">
             <CaseBanner case={highlightedCases.cases[1]} />
 
-            <CaseBanner case={highlightedCases.cases[1]} />
+            <CaseBanner case={highlightedCases.cases[2]} />
           </div>
         </div>
 
@@ -195,7 +198,7 @@ export const Home = ({ cmsData }: HomeProps) => {
         </Link>
       </section>
 
-      <Footer />
+      <Footer className="bg-secondary" />
     </>
   );
 };

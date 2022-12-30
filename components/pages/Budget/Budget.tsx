@@ -1,6 +1,7 @@
-import { PageContainer } from "@components/layouts";
+import { Container } from "@components/layouts";
 import { Footer, Navbar } from "@components/modules";
 import { Button, Input } from "@components/widgets";
+import Head from "next/head";
 import { useRouter } from "next/router";
 import { PatternFormat } from "react-number-format";
 
@@ -9,20 +10,22 @@ export const Budget = () => {
   const { submitted } = useRouter().query;
 
   return (
-    <PageContainer
-      headTitle={isInEnglish ? "Ence | Budget" : "Ence | Orçamento"}
-    >
-      <div className="min-h-screen flex flex-col">
-        <Navbar />
+    <div className="flex flex-col">
+      <Head>
+        <title>{isInEnglish ? "Ence | Budget" : "Ence | Orçamento"}</title>
+      </Head>
 
+      <Navbar />
+
+      <Container asChild>
         <main className="flex-1 flex flex-col justify-center">
-          <h1 className="mb-4 text-lg sm:text-2xl">
+          <h1 className="mb-4 px-[2.5vw] text-xl sm:text-4xl">
             {isInEnglish
               ? "Beginning of the experience-"
               : "Início da experiência-"}
           </h1>
 
-          <p className="mb-12 text-[8px] sm:text-base">
+          <p className="mb-12 px-[2.5vw] text-[8px] sm:text-base">
             {isInEnglish
               ? "Fill in the form below to start the experience"
               : "Preencha o formulário abaixo para iniciar a experiência"}
@@ -173,7 +176,7 @@ export const Budget = () => {
               </option>
             </select>
 
-            <footer className="mt-8 flex flex-col sm:flex-row items-center gap-8">
+            <footer className="mt-8 px-[2.5vw] flex flex-col sm:flex-row items-center gap-8">
               <Button type="submit" className="w-[240px]">
                 {isInEnglish ? "Request budget" : "Solicitar orçamento"}
               </Button>
@@ -191,9 +194,9 @@ export const Budget = () => {
             </footer>
           </form>
         </main>
+      </Container>
 
-        <Footer />
-      </div>
-    </PageContainer>
+      <Footer />
+    </div>
   );
 };

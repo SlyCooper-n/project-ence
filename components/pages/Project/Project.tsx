@@ -1,19 +1,26 @@
-import { PageContainer } from "@components/layouts";
+import { Container } from "@components/layouts";
 import { Footer, Navbar } from "@components/modules";
 import { Button } from "@components/widgets";
+import { usePageConfig } from "@core/hooks";
 import { ProjectPageProps } from "@core/types";
 import { fadeUp } from "@core/utils";
+import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Reveal } from "react-awesome-reveal";
 
 export const Project = ({ caseData }: ProjectPageProps) => {
-  const router = useRouter();
-  const isInEnglish = router.pathname.includes("/en");
+  usePageConfig();
+  const isInEnglish = useRouter().pathname.includes("/en");
 
   return (
-    <PageContainer headTitle={`Ence | ${caseData.projectName}`}>
-      <Navbar translucent absolute className="xl:px-[8vw]" />
+    <>
+      <Head>
+        <title>Ence | {caseData.projectName}</title>
+        <meta name="description" content={caseData.description} />
+      </Head>
+
+      <Navbar translucent absolute />
 
       <div className="max-h-[1080px] mb-4 sm:mb-12 flex justify-center items-center overflow-y-clip">
         <img
@@ -24,90 +31,94 @@ export const Project = ({ caseData }: ProjectPageProps) => {
       </div>
 
       {/* case description */}
-      <main className="mb-12 text-xs sm:text-base">
-        <span className="mb-4 block font-semibold">
-          {caseData.caseOrder}/5 cases
-        </span>
+      <Container asChild>
+        <main className="mb-12 text-xs sm:text-base">
+          <span className="mb-4 block font-semibold">
+            {caseData.caseOrder}/5 cases
+          </span>
 
-        <h1 className="mb-10 sm:mb-20 text-2xl sm:text-5xl">
-          {caseData.title}
-        </h1>
+          <h1 className="mb-10 sm:mb-20 text-2xl sm:text-5xl">
+            {caseData.title}
+          </h1>
 
-        <div className="mb-6 flex flex-col sm:flex-row sm:justify-between gap-6 sm:gap-0">
-          <p className="sm:w-1/2 sm:mr-[20vw] sm:text-start">
-            {caseData.description}
-          </p>
+          <div className="mb-6 flex flex-col sm:flex-row sm:justify-between gap-6 sm:gap-0">
+            <p className="sm:w-1/2 sm:mr-[20vw] sm:text-start">
+              {caseData.description}
+            </p>
 
-          <div className="sm:w-fit sm:text-start">
-            <h2 className="w-fit mb-2">
-              {isInEnglish ? "Data Sheet" : "Ficha Técnica"} -
-            </h2>
+            <div className="sm:w-fit sm:text-start">
+              <h2 className="w-fit mb-2">
+                {isInEnglish ? "Data Sheet" : "Ficha Técnica"} -
+              </h2>
 
-            <ul className="w-fit">
-              <li>
-                <strong>{isInEnglish ? "Services" : "Serviços"}: </strong>
-
-                <span>{caseData.dataSheet.services}</span>
-              </li>
-
-              <li>
-                <strong>
-                  {isInEnglish ? "Art director" : "Diretor de arte"}:{" "}
-                </strong>
-
-                <span>
-                  {caseData.dataSheet.artDirector
-                    .map((person) => person.personName)
-                    .join(", ")}
-                </span>
-              </li>
-
-              <li>
-                <strong>Design: </strong>
-
-                <span>
-                  {caseData.dataSheet.design
-                    .map((person) => person.personName)
-                    .join(", ")}
-                </span>
-              </li>
-
-              {caseData.dataSheet.dev[0]?.personName && (
+              <ul className="w-fit">
                 <li>
-                  <strong>Dev: </strong>
+                  <strong>{isInEnglish ? "Services" : "Serviços"}: </strong>
+
+                  <span>{caseData.dataSheet.services}</span>
+                </li>
+
+                <li>
+                  <strong>
+                    {isInEnglish ? "Art director" : "Diretor de arte"}:{" "}
+                  </strong>
 
                   <span>
-                    {caseData.dataSheet.dev
+                    {caseData.dataSheet.artDirector
                       .map((person) => person.personName)
                       .join(", ")}
                   </span>
                 </li>
-              )}
-            </ul>
+
+                <li>
+                  <strong>Design: </strong>
+
+                  <span>
+                    {caseData.dataSheet.design
+                      .map((person) => person.personName)
+                      .join(", ")}
+                  </span>
+                </li>
+
+                {caseData.dataSheet.dev[0]?.personName && (
+                  <li>
+                    <strong>Dev: </strong>
+
+                    <span>
+                      {caseData.dataSheet.dev
+                        .map((person) => person.personName)
+                        .join(", ")}
+                    </span>
+                  </li>
+                )}
+              </ul>
+            </div>
           </div>
-        </div>
 
-        <div className="sm:text-start">
-          <h2 className="mb-2">
-            {isInEnglish ? "Design strategy" : "Estratégia de design"} -
-          </h2>
+          <div className="sm:text-start">
+            <h2 className="mb-2">
+              {isInEnglish ? "Design strategy" : "Estratégia de design"} -
+            </h2>
 
-          <p className="sm:max-w-[50%]">{caseData.designStrategy}</p>
-        </div>
-      </main>
+            <p className="sm:max-w-[50%]">{caseData.designStrategy}</p>
+          </div>
+        </main>
+      </Container>
 
       {/* case snaps */}
-      <section className="mb-8 flex flex-col gap-2">
-        <Reveal keyframes={fadeUp} triggerOnce>
-          {caseData.snaps.map((snap) => (
-            <img
-              key={snap.id}
-              src={snap.url}
-              alt={`${caseData.projectName} snap`}
-            />
-          ))}
-        </Reveal>
-      </section>
+      <Container asChild>
+        <section className="mb-8 flex flex-col gap-2">
+          <Reveal keyframes={fadeUp} triggerOnce>
+            {caseData.snaps.map((snap) => (
+              <img
+                key={snap.id}
+                src={snap.url}
+                alt={`${caseData.projectName} snap`}
+              />
+            ))}
+          </Reveal>
+        </section>
+      </Container>
 
       {/* navigation buttons */}
       <div className="mb-8 flex justify-center items-center gap-4 text-xs sm:text-base">
@@ -125,6 +136,6 @@ export const Project = ({ caseData }: ProjectPageProps) => {
       </div>
 
       <Footer />
-    </PageContainer>
+    </>
   );
 };

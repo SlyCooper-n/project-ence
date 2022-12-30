@@ -1,11 +1,15 @@
 import { Container } from "@components/layouts";
 import { useRouter } from "next/router";
 
-export const Footer = () => {
+interface FooterProps {
+  className?: string;
+}
+
+export const Footer = ({ className }: FooterProps) => {
   const isInEnglish = useRouter().pathname.includes("/en");
 
   return (
-    <footer className="pt-8 pb-5">
+    <footer className={`pt-8 pb-5 ${className ?? ""}`}>
       <Container className="text-[8px] sm:text-base font-semibold">
         {isInEnglish
           ? "Ence - all rights reserved 2020-2022 | Developed by "
