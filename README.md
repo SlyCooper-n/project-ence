@@ -1,4 +1,5 @@
-# project-ence
+# Ence Studio
 
-> This is a template for a new project based on Next.js and created with [bash scripts](https://github.com/SlyCooper-n/models).
+Ence Studio's portfolio website.
 
+*In progress*
