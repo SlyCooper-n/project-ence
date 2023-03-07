@@ -1,8 +1,5 @@
 import { Head, Html, Main, NextScript } from "next/document";
-import { Inter_Tight } from "next/font/google";
 import Script from "next/script";
-
-const inter = Inter_Tight({ weight: ["500"] });
 
 export default function Document() {
   return (
@@ -19,7 +16,7 @@ export default function Document() {
         <meta property="og:url" content="https://encestudio.com" />
         <meta
           property="og:image"
-          content="https://encestudio.com/images/facebook-banner.png"
+          content="https://encestudio.com/facebook-banner.png"
         />
         <meta name="author" content="João Vitor Nascimento" />
 
@@ -32,7 +29,7 @@ export default function Document() {
           content="Estúdio de design focado na criação e desenvolvimento de Identidade de marca e UI Design. criado para transformar a experiência de projetos."
         />
         <meta name="twitter:creator" content="@joaovitorn___" />
-        {/* <meta name="twitter:image" content="https://encestudio.com/images/twitter-banner.png" /> */}
+        {/* <meta name="twitter:image" content="https://encestudio.com/twitter-banner.png" /> */}
 
         <link
           rel="shortcut icon"
@@ -56,7 +53,7 @@ export default function Document() {
         />
       </Head>
 
-      <body className={inter.className}>
+      <body className="min-h-screen bg-base-300 text-base-content">
         <Main />
 
         <NextScript />
