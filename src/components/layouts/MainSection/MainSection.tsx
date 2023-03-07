@@ -15,7 +15,7 @@ export const MainSection = () => {
         <Container className="z-10 flex flex-1 flex-col justify-center">
           <Heading
             asChild
-            className="text-3xl md:text-6xl lg:text-[5rem] lg:leading-tight"
+            className="text-3xl md:text-6xl lg:text-7xl lg:leading-tight"
           >
             {isInEnglish ? (
               <h1>

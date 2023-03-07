@@ -22,19 +22,19 @@ export const Home = () => {
 
       <Container asChild className="py-24 md:py-36 lg:py-48">
         <section>
-          <Heading className="mb-9 md:text-2xl">
+          <Heading className="mb-9 md:text-xl">
             {isInEnglish ? "About our work" : "Sobre nosso trabalho"}
           </Heading>
 
           <div className="flex flex-col gap-36 md:flex-row md:items-end">
             <p className="flex flex-col gap-12">
-              <strong className="text-3xl lg:text-4xl">
+              <strong className="text-3xl lg:text-[2rem]">
                 {isInEnglish
                   ? "The perfect union between strategy and visuals which generates results for solid brands that remain from experience."
                   : "A união perfeita entre estratégia e visual que geram resultados para marcas fortes remanescentes de uma experiência."}
               </strong>
 
-              <em className="lg:text-2xl">
+              <em className="lg:text-xl">
                 {isInEnglish
                   ? "Design is the most potent tool for any company that wants to communicate efficiently with its customers and get results through it."
                   : "Design é a ferramenta mais poderosa de toda e qualquer empresa que queira se comunicar com seus clientes de forma eficiente e obter resultados através disso."}
@@ -42,7 +42,7 @@ export const Home = () => {
             </p>
 
             <p className="flex flex-col items-end gap-5">
-              <strong className="block text-4xl lg:text-5xl">
+              <strong className="block text-4xl lg:text-[2rem]">
                 {isInEnglish ? "+Results" : "+Resultados"}
               </strong>
 
