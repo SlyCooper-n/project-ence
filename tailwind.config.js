@@ -1,48 +1,21 @@
-/** @type {import(tailwindcss).Config} */
+/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
-    "./components/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      container: {
-        center: true,
-        padding: "1rem",
+      colors: {
+        gray: "#8E8E8E",
+
+        base: {
+          300: "#000000",
+          content: "#FFFFFF",
+        },
       },
-      fontFamily: {
-        sans: "Epilogue, sans-serif",
-        emphasis: "Fraunces, sans-serif",
+
+      backgroundImage: {
+        "cto-graph": "url('/images/cto-graph-bg.png')",
       },
     },
   },
-  plugins: [
-    // require("@tailwindcss/forms"),
-    // require("tailwind-scrollbar"),
-    require("daisyui"),
-  ],
-  daisyui: {
-    themes: [
-      {
-        light: {
-          primary: "#22223B",
-          secondary: "#E5F2C9",
-          accent: "#9A8C98",
-          neutral: "#000000",
-          "base-100": "#F2F2F8",
-          "base-content": "#000000",
-        },
-      },
-      // {
-      //   dark: {
-      //     primary: "#22223B",
-      //     secondary: "#4A4E69",
-      //     accent: "#9A8C98",
-      //     neutral: "#000000",
-      //     "base-100": "#22223B",
-      //     "base-content": "#FFFFFF",
-      //   },
-      // },
-    ],
-  },
+  plugins: [],
 };

@@ -1,0 +1,46 @@
+{
+  "cases": [
+    {
+      "id": 1,
+      "slug": "inova-alpin",
+      "name": "INOVA Alpin",
+      "slogan": {
+        "pt": "Inovando em soluções",
+        "en": ""
+      },
+      "date": "2022",
+      "bannerUrl": {
+        "mobile": "/images/cases/inova-mobile.png",
+        "desktop": "/images/cases/inova-desktop.png"
+      }
+    },
+    {
+      "id": 2,
+      "slug": "conceito",
+      "name": "Conceito",
+      "slogan": {
+        "pt": "Clareza em seus termos e traços",
+        "en": ""
+      },
+      "date": "2022",
+      "bannerUrl": {
+        "mobile": "/images/cases/conceito-mobile.png",
+        "desktop": "/images/cases/conceito-desktop.png"
+      }
+    },
+    {
+      "id": 3,
+      "slug": "zoeira-cooking",
+      "name": "Zoeira Cooking",
+      "slogan": {
+        "pt": "Pessoas, batata frita e zueira",
+        "en": ""
+      },
+      "date": "2022",
+      "bannerUrl": {
+        "mobile": "/images/cases/zoeira-cooking-mobile.png",
+        "desktop": "/images/cases/zoeira-cooking-desktop.png"
+      }
+    }
+  ]
+}

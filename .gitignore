@@ -7,8 +7,6 @@
 
 # testing
 /coverage
-/cypress/screenshots
-/cypress/videos
 
 # next.js
 /.next/
@@ -35,11 +33,4 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
-
-# PWAs
-/public/sw.js
-/public/sw.js.map
-/public/worker-*.js
-/public/worker-*.js.map
-/public/workbox-*.js
-/public/workbox-*.js.map
+next-env.d.ts
