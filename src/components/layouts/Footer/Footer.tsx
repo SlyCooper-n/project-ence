@@ -1,6 +1,9 @@
 import { Container, Ence, Text } from "@/components";
+import { useLang } from "@/hooks";
 
 export const Footer = () => {
+  const { isInEnglish } = useLang();
+
   return (
     <Container
       asChild
@@ -8,7 +11,8 @@ export const Footer = () => {
     >
       <footer>
         <Text className="text-xs text-gray sm:text-base">
-          <Ence /> - 2020/2023 | Desenvolvido por{" "}
+          <Ence /> - 2020/2023 |{" "}
+          {isInEnglish ? "Developed by " : "Desenvolvido por "}
           <a
             href="https://linktr.ee/gabriel_vs_frasao"
             target="_blank"
