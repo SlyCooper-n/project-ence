@@ -7,7 +7,6 @@ import {
   Head,
   Heading,
   MainSection,
-  Skeleton,
   Text,
 } from "@/components";
 import { useLang } from "@/hooks";
@@ -72,20 +71,18 @@ export const Home = () => {
 
         <div className="flex flex-col gap-7 border-t md:flex-row md:items-center md:gap-0 md:border-t-2">
           <picture className="relative md:w-[320px] lg:w-[510px]">
-            <Skeleton className="absolute -z-10 w-full" />
-
             <source
               media="(max-width: 767px)"
-              srcSet="/images/authr-mobile.png"
+              srcSet="/images/author-mobile.png"
             />
 
             <source
               media="(min-width: 768px)"
-              srcSet="/images/authr-desktop.png"
+              srcSet="/images/author-desktop.png"
             />
 
             <img
-              src="/images/authr-desktop.png"
+              src="/images/author-desktop.png"
               alt="João Vitor picture"
               className="w-full object-cover"
             />
