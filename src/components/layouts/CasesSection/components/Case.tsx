@@ -1,6 +1,7 @@
-import { Heading, Text } from "@/components";
-import { useLang } from "@/hooks";
 import Link from "next/link";
+
+import { Heading, Picture, Text } from "@/components";
+import { useLang } from "@/hooks";
 
 interface CaseProps {
   slug: string;
@@ -24,19 +25,19 @@ export const Case = ({ slug, name, date, slogan, bannerUrl }: CaseProps) => {
       href={isInEnglish ? `/en/cases/${slug}` : `/cases/${slug}`}
       className="group relative block flex-1"
     >
-      <picture className="relative mb-5 block overflow-hidden sm:mb-0">
+      <Picture.Root className="block overflow-hidden">
         <div className="absolute inset-0 z-10 bg-black/40 transition-colors duration-500 group-hover:bg-black/0" />
 
         <source media="(max-width: 639px)" srcSet={bannerUrl.mobile} />
 
         <source media="(min-width: 640px)" srcSet={bannerUrl.desktop} />
 
-        <img
-          src={bannerUrl.mobile}
+        <Picture.Image
+          src={bannerUrl.desktop}
           alt={`${name} banner`}
-          className="w-full object-cover transition-all duration-500 group-hover:scale-[1.02]"
+          className="mb-5 transition-all duration-500 group-hover:scale-[1.02] sm:mb-0"
         />
-      </picture>
+      </Picture.Root>
 
       <div className="z-20 sm:absolute sm:top-3 sm:left-3 lg:top-6 lg:left-6">
         <Heading asChild className="text-base font-normal md:text-lg">
