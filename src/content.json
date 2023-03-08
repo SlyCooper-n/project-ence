@@ -1,4 +1,5 @@
 {
+  "highlightedCasesId": [1, 2, 3],
   "cases": [
     {
       "id": 1,
@@ -6,10 +7,14 @@
       "name": "INOVA Alpin",
       "slogan": {
         "pt": "Inovando em soluções",
-        "en": ""
+        "en": "Innovating in solutions"
       },
       "date": "2022",
       "bannerUrl": {
+        "mobile": "/images/cases/inova-mobile.png",
+        "desktop": "/images/cases/inova-desktop.png"
+      },
+      "highlightedBannerUrl": {
         "mobile": "/images/cases/inova-mobile.png",
         "desktop": "/images/cases/inova-desktop.png"
       }
@@ -20,12 +25,16 @@
       "name": "Conceito",
       "slogan": {
         "pt": "Clareza em seus termos e traços",
-        "en": ""
+        "en": "Clarity in your terms and traits"
       },
       "date": "2022",
       "bannerUrl": {
         "mobile": "/images/cases/conceito-mobile.png",
         "desktop": "/images/cases/conceito-desktop.png"
+      },
+      "highlightedBannerUrl": {
+        "mobile": "/images/cases/conceito-mobile.png",
+        "desktop": "/images/cases/highlight-conceito-desktop.png"
       }
     },
     {
@@ -34,12 +43,16 @@
       "name": "Zoeira Cooking",
       "slogan": {
         "pt": "Pessoas, batata frita e zueira",
-        "en": ""
+        "en": "People, fries and a lot of fun"
       },
       "date": "2022",
       "bannerUrl": {
         "mobile": "/images/cases/zoeira-cooking-mobile.png",
         "desktop": "/images/cases/zoeira-cooking-desktop.png"
+      },
+      "highlightedBannerUrl": {
+        "mobile": "/images/cases/zoeira-cooking-mobile.png",
+        "desktop": "/images/cases/highlight-zoeira-cooking-desktop.png"
       }
     }
   ]
