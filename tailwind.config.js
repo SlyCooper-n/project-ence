@@ -12,6 +12,11 @@ module.exports = {
         },
       },
 
+      fontSize: {
+        "2xl": ["1.75rem", "2.25rem"],
+        "3xl": ["2rem", "2.25rem"],
+      },
+
       backgroundImage: {
         "cto-graph": "url('/images/cto-graph-bg.png')",
       },

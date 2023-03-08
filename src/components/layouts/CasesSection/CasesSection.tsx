@@ -13,7 +13,7 @@ export const CasesSection = () => {
       <section>
         <Heading className="mb-14">Cases</Heading>
 
-        <div className="mb-12 flex flex-col gap-9 md:gap-3">
+        <div className="mb-12 flex flex-col gap-9 sm:gap-3">
           <Case
             slug={cases[0].slug}
             name={cases[0].name}
@@ -22,7 +22,7 @@ export const CasesSection = () => {
             bannerUrl={cases[0].bannerUrl}
           />
 
-          <div className="flex flex-col gap-9 md:flex-row md:gap-3">
+          <div className="flex flex-col gap-9 sm:flex-row sm:gap-3">
             <Case
               slug={cases[1].slug}
               name={cases[1].name}

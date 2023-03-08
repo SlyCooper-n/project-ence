@@ -12,12 +12,7 @@ export const Text = ({ asChild, className = "", children }: TextProps) => {
   const Comp = asChild ? Slot : "span";
 
   return (
-    <Comp
-      className={twMerge(
-        "text-base selection:bg-gray selection:text-white/75",
-        className,
-      )}
-    >
+    <Comp className={twMerge("max-w-3xl text-base", className)}>
       {children}
     </Comp>
   );

@@ -24,12 +24,12 @@ export const Case = ({ slug, name, date, slogan, bannerUrl }: CaseProps) => {
       href={isInEnglish ? `/en/cases/${slug}` : `/cases/${slug}`}
       className="group relative block flex-1"
     >
-      <picture className="relative mb-5 block overflow-hidden md:mb-0">
+      <picture className="relative mb-5 block overflow-hidden sm:mb-0">
         <div className="absolute inset-0 z-10 bg-black/40 transition-colors duration-500 group-hover:bg-black/0" />
 
-        <source media="(max-width: 767px)" srcSet={bannerUrl.mobile} />
+        <source media="(max-width: 639px)" srcSet={bannerUrl.mobile} />
 
-        <source media="(min-width: 768px)" srcSet={bannerUrl.desktop} />
+        <source media="(min-width: 640px)" srcSet={bannerUrl.desktop} />
 
         <img
           src={bannerUrl.mobile}
@@ -38,7 +38,7 @@ export const Case = ({ slug, name, date, slogan, bannerUrl }: CaseProps) => {
         />
       </picture>
 
-      <div className="z-20 md:absolute md:top-3 md:left-3 lg:top-6 lg:left-6">
+      <div className="z-20 sm:absolute sm:top-3 sm:left-3 lg:top-6 lg:left-6">
         <Heading asChild className="text-base font-normal md:text-lg">
           <h3>
             {name} | {date}

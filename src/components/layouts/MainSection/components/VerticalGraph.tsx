@@ -1,7 +1,7 @@
 export const VerticalGraph = () => {
   return (
     <svg
-      className="absolute -bottom-48 left-1/2 -translate-x-1/2 md:bottom-1/2 md:left-56 md:hidden md:translate-y-1/2 md:rotate-90"
+      className="absolute -bottom-48 left-1/2 -translate-x-1/2 sm:hidden"
       width="240"
       height="743"
       viewBox="0 0 240 743"

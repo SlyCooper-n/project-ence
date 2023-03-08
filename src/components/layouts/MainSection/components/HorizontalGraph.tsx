@@ -1,7 +1,7 @@
 export const HorizontalGraph = () => {
   return (
     <svg
-      className="absolute bottom-1/2 hidden translate-y-1/2 md:block"
+      className="absolute bottom-1/2 hidden translate-y-1/2 sm:block"
       width="780"
       height="312"
       viewBox="0 0 780 312"

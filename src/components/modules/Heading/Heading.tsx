@@ -16,12 +16,7 @@ export const Heading = ({
   const Comp = asChild ? Slot : "h2";
 
   return (
-    <Comp
-      className={twMerge(
-        "text-xl font-semibold selection:bg-gray selection:text-white/75",
-        className,
-      )}
-    >
+    <Comp className={twMerge("text-xl font-semibold", className)}>
       {children}
     </Comp>
   );

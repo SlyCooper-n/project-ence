@@ -2,10 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-strong {
-  @apply font-semibold;
-}
-
-em {
-  @apply not-italic;
+* {
+  @apply selection:bg-gray selection:text-white/75;
 }
