@@ -45,7 +45,11 @@ export const MainSection = () => {
               Instagram
             </Anchor>
 
-            <Anchor href="" target="_blank" className="text-xl font-semibold">
+            <Anchor
+              href="https://www.behance.net/joaovitorn-ence"
+              target="_blank"
+              className="text-xl font-semibold"
+            >
               Behance
             </Anchor>
           </div>

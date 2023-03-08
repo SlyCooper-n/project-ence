@@ -31,7 +31,10 @@ export const Footer = () => {
               Instagram
             </Anchor>
 
-            <Anchor href="" target="_blank">
+            <Anchor
+              href="https://www.behance.net/joaovitorn-ence"
+              target="_blank"
+            >
               Behance
             </Anchor>
           </div>
