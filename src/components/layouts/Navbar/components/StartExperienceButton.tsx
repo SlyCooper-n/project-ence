@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import { Text } from "@/components";
+import { Anchor, Text } from "@/components";
 import { useLang } from "@/hooks";
 
 export const StartExperienceButton = () => {
@@ -17,9 +17,14 @@ export const StartExperienceButton = () => {
           {isInEnglish ? "Experience started" : "Experiência iniciada"}
         </Text>
       ) : (
-        <Link href={isInEnglish ? "/en/budget" : "/budget"} className="text-lg">
-          {isInEnglish ? "Start experience" : "Iniciar experiência"}
-        </Link>
+        <Anchor asChild>
+          <Link
+            href={isInEnglish ? "/en/budget" : "/budget"}
+            className="text-lg"
+          >
+            {isInEnglish ? "Start experience" : "Iniciar experiência"}
+          </Link>
+        </Anchor>
       )}
     </>
   );
