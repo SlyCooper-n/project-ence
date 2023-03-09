@@ -59,7 +59,7 @@ export const AuthorSection = () => {
               </p>
             </Text>
 
-            <Button asChild className="mx-0 w-44 xl:w-64 xl:py-6">
+            <Button asChild className="mx-0">
               <Link href={isInEnglish ? "/en/about" : "/about"}>
                 {isInEnglish ? "See more" : "Ver mais"}
               </Link>

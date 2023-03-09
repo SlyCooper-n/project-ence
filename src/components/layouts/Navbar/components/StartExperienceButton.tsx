@@ -13,15 +13,12 @@ export const StartExperienceButton = () => {
   return (
     <>
       {isInBudgetPage ? (
-        <Text className="select-none">
+        <Text className="select-none font-semibold">
           {isInEnglish ? "Experience started" : "Experiência iniciada"}
         </Text>
       ) : (
         <Anchor asChild>
-          <Link
-            href={isInEnglish ? "/en/budget" : "/budget"}
-            className="text-lg"
-          >
+          <Link href={isInEnglish ? "/en/budget" : "/budget"}>
             {isInEnglish ? "Start experience" : "Iniciar experiência"}
           </Link>
         </Anchor>

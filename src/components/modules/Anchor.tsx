@@ -20,7 +20,7 @@ export const Anchor = ({
     <Comp
       {...props}
       className={twMerge(
-        "relative after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-white after:transition-all after:hover:w-full",
+        "relative font-semibold after:absolute after:left-0 after:-bottom-1 after:h-[2px] after:w-0 after:bg-white after:transition-all after:hover:w-full",
         className,
       )}
     >

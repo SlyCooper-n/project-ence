@@ -30,7 +30,7 @@ export const Logo = ({ size = "base" }: LogoProps) => {
       >
         <path
           d="M0 35.6517V25.0605L27 32.3699V42.9611L0 35.6517Z"
-          className="fill-[#F2F2F8] transition-colors delay-150 duration-300 group-hover:fill-black group-hover:stroke-white group-hover:stroke-2"
+          className="fill-[#F2F2F8] transition-colors duration-300 group-hover:fill-black group-hover:stroke-white group-hover:stroke-2"
         />
         <path
           d="M0 22.077V11.4858L27 18.7952V29.3864L0 22.077Z"
@@ -39,7 +39,7 @@ export const Logo = ({ size = "base" }: LogoProps) => {
         <rect
           width="19.9889"
           height="9.99447"
-          className="fill-[#F2F2F8] transition-colors  duration-300 group-hover:fill-black group-hover:stroke-white group-hover:stroke-2"
+          className="fill-[#F2F2F8] transition-colors delay-150 duration-300 group-hover:fill-black group-hover:stroke-white group-hover:stroke-2"
         />
       </svg>
 

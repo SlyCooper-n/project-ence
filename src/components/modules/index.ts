@@ -3,6 +3,7 @@ export * from "./Button";
 export * from "./Container";
 export * from "./Ence";
 export * from "./Heading";
+export * from "./Input";
 export * from "./Logo";
 export * from "./Picture";
 export * from "./Skeleton";

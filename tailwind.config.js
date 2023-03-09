@@ -19,6 +19,7 @@ module.exports = {
 
       backgroundImage: {
         "cto-graph": "url('/images/cto-graph-bg.png')",
+        "budget-slider": "url('/images/budget-slider-bg.png')",
       },
     },
   },

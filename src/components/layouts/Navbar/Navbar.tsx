@@ -2,7 +2,7 @@ import clsx from "clsx";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import { Container, Logo } from "@/components";
+import { Container, Logo, VisuallyHidden } from "@/components";
 import { useLang } from "@/hooks";
 import { StartExperienceButton } from "./components";
 
@@ -27,8 +27,14 @@ export const Navbar = () => {
           <li>
             <button
               onClick={() => {}}
-              className="block h-4 w-16 bg-white sm:h-6 sm:w-28"
-            />
+              className="group flex h-4 w-16 overflow-hidden border hover:border-white sm:h-6 sm:w-28"
+            >
+              <div className="h-full flex-1 bg-white transition-all duration-300 group-hover:bg-transparent" />
+              <div className="h-full flex-1 bg-white transition-all delay-75 duration-300 group-hover:bg-transparent" />
+              <div className="h-full flex-1 bg-white transition-all delay-150 duration-300 group-hover:bg-transparent" />
+
+              <VisuallyHidden>Open Menu</VisuallyHidden>
+            </button>
           </li>
 
           <li className="flex gap-2 text-xl sm:text-2xl">

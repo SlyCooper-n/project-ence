@@ -26,7 +26,7 @@ export const Footer = () => {
             </Anchor>
           </Text>
 
-          <div className="flex gap-9 sm:text-xl">
+          <div className="flex gap-9">
             <Anchor href="https://www.instagram.com/encestudio" target="_blank">
               Instagram
             </Anchor>

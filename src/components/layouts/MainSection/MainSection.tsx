@@ -37,18 +37,13 @@ export const MainSection = () => {
       <Container asChild>
         <section className="hidden items-center justify-between py-6 md:flex">
           <div className="flex gap-7">
-            <Anchor
-              href="https://www.instagram.com/encestudio"
-              target="_blank"
-              className="text-xl font-semibold"
-            >
+            <Anchor href="https://www.instagram.com/encestudio" target="_blank">
               Instagram
             </Anchor>
 
             <Anchor
               href="https://www.behance.net/joaovitorn-ence"
               target="_blank"
-              className="text-xl font-semibold"
             >
               Behance
             </Anchor>

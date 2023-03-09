@@ -52,7 +52,7 @@ export const CasesSection = () => {
           </div>
         </div>
 
-        <Button asChild className="w-44 md:w-48">
+        <Button asChild>
           <Link href={isInEnglish ? "/en/cases" : "/cases"}>
             {isInEnglish ? "See more projects" : "Ver mais projetos"}
           </Link>

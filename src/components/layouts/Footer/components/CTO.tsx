@@ -3,12 +3,24 @@ import AnimatedText from "react-animated-text-content";
 
 import { Button, Container, Heading } from "@/components";
 import { useLang } from "@/hooks";
+import clsx from "clsx";
+import { useRouter } from "next/router";
 
 export const CTO = () => {
   const { isInEnglish } = useLang();
+  const { pathname } = useRouter();
+
+  const isBudgetPage = pathname.includes("/budget");
 
   return (
-    <section className="mx-auto max-w-[1920px] bg-cto-graph bg-cover bg-center bg-no-repeat">
+    <section
+      className={clsx(
+        "mx-auto max-w-[1920px] bg-cto-graph bg-cover bg-center bg-no-repeat",
+        {
+          hidden: isBudgetPage,
+        },
+      )}
+    >
       <Container className="flex flex-col items-center gap-12 py-48 md:py-60">
         <Heading asChild className="text-center text-4xl md:text-5xl">
           {isInEnglish ? (
@@ -47,7 +59,7 @@ export const CTO = () => {
           )}
         </p>
 
-        <Button asChild className="w-44 md:w-48">
+        <Button asChild>
           <Link href={isInEnglish ? "/en/budget" : "/budget"}>
             {isInEnglish ? "Start experience" : "Iniciar experiência"}
           </Link>
