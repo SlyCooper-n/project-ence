@@ -106,5 +106,51 @@
       "order": 3,
       "nextCaseSlug": "inova-alpin"
     }
-  ]
+  ],
+  "pages": {
+    "about": {
+      "processes": [
+        {
+          "title": {
+            "pt": "Briefing/pesquisas",
+            "en": "Briefing/searches"
+          },
+          "description": {
+            "pt": "No início da experiência já temos um grande questionário em torno do seu projeto, para entendermos como ele está e no que ele irá se tornar no futuro. Vamos destrinchar diversas informações sobre você e seu negócio.",
+            "en": "At the beginning of the experience, we already have a great questionnaire about your project, so that we can understand how it is and what will be in the future. We will reveal a lot of information about you and your business."
+          }
+        },
+        {
+          "title": {
+            "pt": "Moodboards/referências",
+            "en": "Moodboards/references"
+          },
+          "description": {
+            "pt": "Após reunirmos as informações no briefing vamos montar nossa estratégia visual por meio de diversas referências, reunidas de diversos projetos e vamos definir em meio a tantos caminhos um único a ser seguido.",
+            "en": "After gathering the information in the briefing, we are going to assemble our visual strategy through different references, gathered from different projects and we are going to define, among so many paths, a single one to be followed."
+          }
+        },
+        {
+          "title": {
+            "pt": "Construção/apresentação",
+            "en": "Construction/presentation"
+          },
+          "description": {
+            "pt": "Tudo que for desenvolvido será apresentado individualmente, para que entenda e compreenda exatamente a construção e os desafios que serão vencidos durante a experiência. Nesta etapa será desenvolvido o conceito base para sua marca.",
+            "en": "Everything that is developed will be presented individually, so that you understand and understand exactly the construction and the challenges that will be overcome during the experience. In this step, the base concept for your brand will be developed."
+          }
+        },
+        {
+          "title": {
+            "pt": "Entrega/marca",
+            "en": "Delivery/brand"
+          },
+          "description": {
+            "pt": "O que vem após cada experiência vivenciada por nós? Uma marca, uma marca deixada e quando a vemos recordamos de tudo. Mas ainda não é o fim! Agora continuamos a construir e consolidar sua marca no seu mercado.",
+            "en": "What comes after each experience lived by us? A mark, a mark left and when we see it we remember everything. But it's not the end yet! Now we continue to build and consolidate your brand in your market."
+          }
+        }
+      ]
+    }
+  }
 }
