@@ -1,10 +1,9 @@
+import clsx from "clsx";
 import Link from "next/link";
-import AnimatedText from "react-animated-text-content";
+import { useRouter } from "next/router";
 
 import { Button, Container, Heading } from "@/components";
 import { useLang } from "@/hooks";
-import clsx from "clsx";
-import { useRouter } from "next/router";
 
 export const CTO = () => {
   const { isInEnglish } = useLang();
@@ -22,28 +21,10 @@ export const CTO = () => {
       )}
     >
       <Container className="flex flex-col items-center gap-12 py-48 md:py-60">
-        <Heading asChild className="text-center text-4xl md:text-5xl">
-          {isInEnglish ? (
-            <AnimatedText
-              tag="h2"
-              type="words"
-              animationType="lights"
-              duration={1}
-              className="max-w-[500px]"
-            >
-              Let&apos;s start your experience!?
-            </AnimatedText>
-          ) : (
-            <AnimatedText
-              tag="h2"
-              type="words"
-              animationType="lights"
-              duration={1}
-              className="max-w-[500px]"
-            >
-              Vamos dar início à sua experiência!?
-            </AnimatedText>
-          )}
+        <Heading className="max-w-[500px] text-center text-4xl md:text-5xl">
+          {isInEnglish
+            ? "Let's start your experience!?"
+            : "Vamos dar início à sua experiência!?"}
         </Heading>
 
         <p className="mx-auto w-fit text-center md:text-xl">
