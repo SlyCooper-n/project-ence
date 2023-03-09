@@ -13,10 +13,7 @@ export const MainSection = () => {
         <HorizontalGraph />
 
         <Container className="z-10 flex flex-1 flex-col justify-center">
-          <Heading
-            asChild
-            className="text-3xl md:text-6xl lg:text-7xl lg:leading-tight"
-          >
+          <Heading asChild className="text-3xl md:text-6xl lg:leading-tight">
             <h1>
               {isInEnglish
                 ? "After each experience, marks remain."
