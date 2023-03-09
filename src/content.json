@@ -10,6 +10,20 @@
         "en": "Innovating in solutions"
       },
       "date": "2022",
+      "description": {
+        "pt": "Inovando em serviços em altura, Inova é uma empresa focada em realizar os melhores trabalhos em altura e em lugares de difícil acesso. Com o objetivo de entregar uma solução econômica e inteligente",
+        "en": "Innovating in services at heights, Inova is a company focused on carrying out the best work at heights and in places of difficult access. In order to provide an economical and smart solution"
+      },
+      "dataSheet": {
+        "services": ["UI Design"],
+        "artDirector": "João Vitor",
+        "design": "João Vitor",
+        "dev": "Gabriel VS Frasão"
+      },
+      "designStrategy": {
+        "pt": "Um site de fácil acesso, direto ao que interessa, apresentando os principais pontos: Os serviços, sobre a empresa e meios de contato",
+        "en": "An easily accessible website, direct to what matters, presenting the main points: The services, about the company and means of contact"
+      },
       "bannerUrl": {
         "mobile": "/images/cases/inova-mobile.png",
         "desktop": "/images/cases/inova-desktop.png"
@@ -17,7 +31,10 @@
       "highlightedBannerUrl": {
         "mobile": "/images/cases/inova-mobile.png",
         "desktop": "/images/cases/inova-desktop.png"
-      }
+      },
+      "images": [],
+      "order": 1,
+      "nextCaseSlug": "conceito"
     },
     {
       "id": 2,
@@ -28,6 +45,20 @@
         "en": "Clarity in your terms and traits"
       },
       "date": "2022",
+      "description": {
+        "pt": "",
+        "en": ""
+      },
+      "dataSheet": {
+        "services": [""],
+        "artDirector": "João Vitor",
+        "design": "João Vitor",
+        "dev": "Gabriel VS Frasão"
+      },
+      "designStrategy": {
+        "pt": "",
+        "en": ""
+      },
       "bannerUrl": {
         "mobile": "/images/cases/conceito-mobile.png",
         "desktop": "/images/cases/conceito-desktop.png"
@@ -35,7 +66,10 @@
       "highlightedBannerUrl": {
         "mobile": "/images/cases/conceito-mobile.png",
         "desktop": "/images/cases/highlight-conceito-desktop.png"
-      }
+      },
+      "images": [],
+      "order": 2,
+      "nextCaseSlug": "zoeira-cooking"
     },
     {
       "id": 3,
@@ -46,6 +80,20 @@
         "en": "People, fries and a lot of fun"
       },
       "date": "2022",
+      "description": {
+        "pt": "",
+        "en": ""
+      },
+      "dataSheet": {
+        "services": [""],
+        "artDirector": "João Vitor",
+        "design": "João Vitor",
+        "dev": "Gabriel VS Frasão"
+      },
+      "designStrategy": {
+        "pt": "",
+        "en": ""
+      },
       "bannerUrl": {
         "mobile": "/images/cases/zoeira-cooking-mobile.png",
         "desktop": "/images/cases/zoeira-cooking-desktop.png"
@@ -53,7 +101,10 @@
       "highlightedBannerUrl": {
         "mobile": "/images/cases/zoeira-cooking-mobile.png",
         "desktop": "/images/cases/highlight-zoeira-cooking-desktop.png"
-      }
+      },
+      "images": [],
+      "order": 3,
+      "nextCaseSlug": "inova-alpin"
     }
   ]
 }
