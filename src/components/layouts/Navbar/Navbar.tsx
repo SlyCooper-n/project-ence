@@ -2,15 +2,15 @@ import clsx from "clsx";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
-import { Container, Logo, VisuallyHidden } from "@/components";
+import { Anchor, Container, Logo, VisuallyHidden } from "@/components";
 import { useLang } from "@/hooks";
 import { StartExperienceButton } from "./components";
 
 export const Navbar = () => {
   const { isInEnglish } = useLang();
-  const { pathname } = useRouter();
+  const { asPath } = useRouter();
 
-  const basePath = isInEnglish ? pathname.slice(3) : pathname;
+  const basePath = isInEnglish ? asPath.slice(3) : asPath;
 
   return (
     <Container asChild>
@@ -19,7 +19,7 @@ export const Navbar = () => {
           <Logo />
         </Link>
 
-        <ul className="flex items-center gap-5 md:gap-16">
+        <ul className="flex items-center gap-5 md:gap-12">
           <li className="hidden sm:block">
             <StartExperienceButton />
           </li>
@@ -29,32 +29,39 @@ export const Navbar = () => {
               onClick={() => {}}
               className="group flex h-4 w-16 overflow-hidden border hover:border-white sm:h-6 sm:w-28"
             >
-              <div className="h-full flex-1 bg-white transition-all duration-300 group-hover:bg-transparent" />
-              <div className="h-full flex-1 bg-white transition-all delay-75 duration-300 group-hover:bg-transparent" />
-              <div className="h-full flex-1 bg-white transition-all delay-150 duration-300 group-hover:bg-transparent" />
+              {Array.from({ length: 10 }).map((_, i) => {
+                const delay = 50 * i; // in milliseconds
 
+                return (
+                  <div
+                    key={i}
+                    style={{ transitionDelay: `${delay}ms` }}
+                    className={`h-full flex-1 bg-white transition-all duration-300 group-hover:bg-transparent`}
+                  />
+                );
+              })}
               <VisuallyHidden>Open Menu</VisuallyHidden>
             </button>
           </li>
 
-          <li className="flex gap-2 text-xl sm:text-2xl">
-            <Link
-              href={"/en" + basePath}
+          <li className="flex gap-2 font-semibold">
+            <Anchor
+              asChild
               className={clsx("transition-opacity", {
-                "opacity-50": isInEnglish,
+                "opacity-50 after:hover:w-0": isInEnglish,
               })}
             >
-              EN
-            </Link>
+              <Link href={"/en" + basePath}>en</Link>
+            </Anchor>
 
-            <Link
-              href={basePath === "" ? "/" : basePath}
+            <Anchor
+              asChild
               className={clsx("transition-opacity", {
-                "opacity-50": !isInEnglish,
+                "opacity-50 after:hover:w-0": !isInEnglish,
               })}
             >
-              PT
-            </Link>
+              <Link href={basePath === "" ? "/" : basePath}>pt</Link>
+            </Anchor>
           </li>
         </ul>
       </header>
