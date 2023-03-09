@@ -25,7 +25,7 @@ export const Case = ({ slug, name, date, slogan, bannerUrl }: CaseProps) => {
       href={isInEnglish ? `/en/cases/${slug}` : `/cases/${slug}`}
       className="group relative block flex-1"
     >
-      <Picture.Root className="block overflow-hidden">
+      <Picture.Root className="mb-5 block overflow-hidden sm:mb-0">
         <div className="absolute inset-0 z-10 bg-black/40 transition-colors duration-500 group-hover:bg-black/0" />
 
         <source media="(max-width: 639px)" srcSet={bannerUrl.mobile} />
@@ -35,7 +35,7 @@ export const Case = ({ slug, name, date, slogan, bannerUrl }: CaseProps) => {
         <Picture.Image
           src={bannerUrl.desktop}
           alt={`${name} banner`}
-          className="mb-5 transition-all duration-500 group-hover:scale-[1.02] sm:mb-0"
+          className="transition-all duration-500 group-hover:scale-[1.02]"
         />
       </Picture.Root>
 
