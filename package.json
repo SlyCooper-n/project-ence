@@ -10,6 +10,7 @@
     "format": "prettier -w \"**/*.{ts,tsx,md}\""
   },
   "dependencies": {
+    "@radix-ui/react-accordion": "^1.1.1",
     "@radix-ui/react-slot": "^1.0.1",
     "@radix-ui/react-visually-hidden": "^1.0.1",
     "@types/node": "18.14.6",
