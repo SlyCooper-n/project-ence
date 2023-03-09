@@ -1,5 +1,11 @@
-import { Cases } from "@/components";
+import { Cases, Head } from "@/components";
 
 export default function CasesPage() {
-  return <Cases />;
+  return (
+    <>
+      <Head title="Cases" />
+
+      <Cases />
+    </>
+  );
 }

@@ -1,5 +1,11 @@
-import { Budget } from "@/components";
+import { Budget, Head } from "@/components";
 
 export default function BudgetPage() {
-  return <Budget />;
+  return (
+    <>
+      <Head title="Orçamento" />
+
+      <Budget />
+    </>
+  );
 }

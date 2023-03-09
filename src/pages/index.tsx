@@ -1,5 +1,11 @@
-import { Home } from "@/components";
+import { Head, Home } from "@/components";
 
 export default function HomePage() {
-  return <Home />;
+  return (
+    <>
+      <Head title="Início" />
+
+      <Home />
+    </>
+  );
 }
