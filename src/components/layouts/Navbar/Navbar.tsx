@@ -47,7 +47,7 @@ export const Navbar = () => {
           <li className="flex gap-2 font-semibold">
             <Anchor
               asChild
-              className={clsx("transition-opacity", {
+              className={clsx("uppercase transition-opacity", {
                 "opacity-50 after:hover:w-0": isInEnglish,
               })}
             >
@@ -56,7 +56,7 @@ export const Navbar = () => {
 
             <Anchor
               asChild
-              className={clsx("transition-opacity", {
+              className={clsx("uppercase transition-opacity", {
                 "opacity-50 after:hover:w-0": !isInEnglish,
               })}
             >
