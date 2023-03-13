@@ -38,7 +38,11 @@ export const Menu = ({ open, closeMenu }: MenuProps) => {
           )}
         >
           <li>
-            <Anchor onClick={closeMenu} asChild className="after:bg-black">
+            <Anchor
+              onClick={closeMenu}
+              asChild
+              className="font-bold after:bg-black"
+            >
               <Link href={isInEnglish ? "/en" : "/"}>
                 {isInEnglish ? "Home" : "Início"}
               </Link>
@@ -46,7 +50,11 @@ export const Menu = ({ open, closeMenu }: MenuProps) => {
           </li>
 
           <li>
-            <Anchor onClick={closeMenu} asChild className="after:bg-black">
+            <Anchor
+              onClick={closeMenu}
+              asChild
+              className="font-bold after:bg-black"
+            >
               <Link href={isInEnglish ? "/en/cases" : "/cases"}>
                 {isInEnglish ? "Projects" : "Projetos"}
               </Link>
@@ -54,7 +62,11 @@ export const Menu = ({ open, closeMenu }: MenuProps) => {
           </li>
 
           <li>
-            <Anchor onClick={closeMenu} asChild className="after:bg-black">
+            <Anchor
+              onClick={closeMenu}
+              asChild
+              className="font-bold after:bg-black"
+            >
               <Link href={isInEnglish ? "/en/about" : "/about"}>
                 {isInEnglish
                   ? "Behind the experience"
@@ -65,7 +77,11 @@ export const Menu = ({ open, closeMenu }: MenuProps) => {
 
           <li>
             {isBudgetPage ? null : (
-              <Anchor onClick={closeMenu} asChild className="after:bg-black">
+              <Anchor
+                onClick={closeMenu}
+                asChild
+                className="font-bold after:bg-black"
+              >
                 <Link href={isInEnglish ? "/en/budget" : "/budget"}>
                   {isInEnglish ? "Start experience" : "Iniciar experiência"}
                 </Link>

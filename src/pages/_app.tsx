@@ -4,7 +4,10 @@ import { Inter_Tight } from "next/font/google";
 import { Footer, Navbar } from "@/components";
 import "@/styles/globals.css";
 
-const inter = Inter_Tight({ weight: ["400", "600"], subsets: ["latin"] });
+const inter = Inter_Tight({
+  weight: ["400", "600", "700"],
+  subsets: ["latin"],
+});
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
