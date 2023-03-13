@@ -53,7 +53,7 @@ export default function Document() {
         />
       </Head>
 
-      <body className="min-h-screen bg-base-300 text-base-content">
+      <body className="min-h-screen overflow-x-hidden bg-base-300 text-base-content">
         <Main />
 
         <NextScript />
