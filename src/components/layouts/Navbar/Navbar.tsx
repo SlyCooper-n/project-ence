@@ -8,7 +8,7 @@ import { Menu, StartExperienceButton } from "./components";
 
 export const Navbar = () => {
   const { isInEnglish } = useLang();
-  const { isMenuOpen, toggleMenu, closeMenu } = useMenu()
+  const { isMenuOpen, toggleMenu, closeMenu } = useMenu();
   const { asPath } = useRouter();
 
   const basePath = isInEnglish ? asPath.slice(3) : asPath;

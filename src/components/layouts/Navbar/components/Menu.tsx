@@ -1,8 +1,9 @@
 import clsx from "clsx";
+import Link from "next/link";
 
 import { Anchor, Container } from "@/components/modules";
 import { useLang } from "@/hooks";
-import Link from "next/link";
+import { useRouter } from "next/router";
 
 interface MenuProps {
   open: boolean;
@@ -11,12 +12,15 @@ interface MenuProps {
 
 export const Menu = ({ open, closeMenu }: MenuProps) => {
   const { isInEnglish } = useLang();
+  const { pathname } = useRouter();
+
+  const isBudgetPage = pathname.includes("/budget");
 
   return (
     <Container
       asChild
       className={clsx(
-        "absolute inset-0 z-40 flex flex-col justify-center bg-[#D6D6D6] text-black transition-transform",
+        "fixed inset-0 z-40 flex h-screen w-screen flex-col justify-center bg-[#D6D6D6] text-black transition-transform",
         {
           "translate-x-0": open,
           "translate-x-full": !open,
@@ -24,7 +28,15 @@ export const Menu = ({ open, closeMenu }: MenuProps) => {
       )}
     >
       <nav>
-        <ul className="mb-20 flex flex-col gap-5 text-2xl md:gap-9 md:text-7xl">
+        <ul
+          className={clsx(
+            "mb-20 flex flex-col gap-5 text-2xl transition-all delay-300 duration-300 md:gap-9 md:text-7xl",
+            {
+              "translate-x-0 opacity-100": open,
+              "translate-x-8 opacity-0": !open,
+            },
+          )}
+        >
           <li>
             <Anchor onClick={closeMenu} asChild className="after:bg-black">
               <Link href={isInEnglish ? "/en" : "/"}>
@@ -52,15 +64,25 @@ export const Menu = ({ open, closeMenu }: MenuProps) => {
           </li>
 
           <li>
-            <Anchor onClick={closeMenu} asChild className="after:bg-black">
-              <Link href={isInEnglish ? "/en/budget" : "/budget"}>
-                {isInEnglish ? "Start experience" : "Iniciar experiência"}
-              </Link>
-            </Anchor>
+            {isBudgetPage ? null : (
+              <Anchor onClick={closeMenu} asChild className="after:bg-black">
+                <Link href={isInEnglish ? "/en/budget" : "/budget"}>
+                  {isInEnglish ? "Start experience" : "Iniciar experiência"}
+                </Link>
+              </Anchor>
+            )}
           </li>
         </ul>
 
-        <div className="flex gap-7">
+        <div
+          className={clsx(
+            "flex gap-7 transition-all delay-300 duration-500 md:text-xl",
+            {
+              "translate-x-0 opacity-100": open,
+              "translate-x-8 opacity-0": !open,
+            },
+          )}
+        >
           <Anchor
             href="https://www.instagram.com/encestudio"
             target="_blank"

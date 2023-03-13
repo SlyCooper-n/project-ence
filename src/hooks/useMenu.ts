@@ -6,12 +6,14 @@ export const useMenu = () => {
   function openMenu() {
     setIsMenuOpen(true);
 
+    document.body.style.height = "100vh";
     document.body.style.overflowY = "hidden";
   }
 
   function closeMenu() {
     setIsMenuOpen(false);
 
+    document.body.style.height = "auto";
     document.body.style.overflowY = "visible";
   }
 
