@@ -15,9 +15,9 @@ export const Arrow = ({ className }: ArrowProps) => {
       <path
         d="M2.14258 2.14307L10.3929 10.3934L18.6432 2.14307"
         stroke="black"
-        stroke-width="2.94719"
-        stroke-linecap="square"
-        stroke-linejoin="round"
+        strokeWidth="2.94719"
+        strokeLinecap="square"
+        strokeLinejoin="round"
       />
     </svg>
   );
