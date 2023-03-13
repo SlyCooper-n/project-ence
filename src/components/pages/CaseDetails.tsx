@@ -1,6 +1,7 @@
+import Link from "next/link";
+
 import content from "@/content.json";
 import { useLang } from "@/hooks";
-import Link from "next/link";
 import { Anchor, Container, Heading, Text } from "../modules";
 
 interface CaseDetailsProps {
@@ -20,6 +21,7 @@ export const CaseDetails = ({ caseId }: CaseDetailsProps) => {
     services,
     frontEnd,
     designStrategy,
+    coverUrl,
     images,
     nextCaseSlug,
   } = caseItem;
@@ -27,9 +29,9 @@ export const CaseDetails = ({ caseId }: CaseDetailsProps) => {
   return (
     <>
       <img
-        src=""
+        src={coverUrl}
         alt={`${name} banner`}
-        className="mx-auto h-[758px] w-full max-w-[1920px]"
+        className="mx-auto h-56 w-full max-w-[1920px] object-cover md:h-96 lg:h-[758px]"
       />
 
       <Container className="py-16">
@@ -82,7 +84,7 @@ export const CaseDetails = ({ caseId }: CaseDetailsProps) => {
           </div>
         </main>
 
-        <section className="mb-16 flex flex-col gap-12">
+        <section className="mb-16 flex flex-col gap-4 md:gap-12">
           {images.map((img) => (
             <img key={img} src={img} alt="" />
           ))}

@@ -28,10 +28,36 @@
         "desktop": "/images/cases/inova-desktop.png"
       },
       "highlightedBannerUrl": {
-        "mobile": "/images/cases/inova-mobile.png",
-        "desktop": "/images/cases/inova-desktop.png"
+        "mobile": "/images/cases/highlight-inova-mobile.png",
+        "desktop": "/images/cases/highlight-inova-desktop.png"
       },
-      "images": [],
+      "coverUrl": "/images/cases/inova/Capa.png",
+      "images": [
+        "/images/cases/inova/Snap01.png",
+        "/images/cases/inova/Snap02.png",
+        "/images/cases/inova/Snap03.png",
+        "/images/cases/inova/Snap04.png",
+        "/images/cases/inova/Snap05.png",
+        "/images/cases/inova/Snap06.png",
+        "/images/cases/inova/Snap07.png",
+        "/images/cases/inova/Snap08.png",
+        "/images/cases/inova/Snap09.png",
+        "/images/cases/inova/Snap10.png",
+        "/images/cases/inova/Snap11.png",
+        "/images/cases/inova/Snap12.png",
+        "/images/cases/inova/Snap13.png",
+        "/images/cases/inova/Snap14.png",
+        "/images/cases/inova/Snap15.png",
+        "/images/cases/inova/Snap16.png",
+        "/images/cases/inova/Snap17.png",
+        "/images/cases/inova/Snap18.png",
+        "/images/cases/inova/Snap19.png",
+        "/images/cases/inova/Snap20.png",
+        "/images/cases/inova/Snap21.png",
+        "/images/cases/inova/Snap22.png",
+        "/images/cases/inova/Snap23.png",
+        "/images/cases/inova/Snap24.png"
+      ],
       "nextCaseSlug": "conceito"
     },
     {
@@ -60,10 +86,31 @@
         "desktop": "/images/cases/conceito-desktop.png"
       },
       "highlightedBannerUrl": {
-        "mobile": "/images/cases/conceito-mobile.png",
+        "mobile": "/images/cases/highlight-conceito-mobile.png",
         "desktop": "/images/cases/highlight-conceito-desktop.png"
       },
-      "images": [],
+      "coverUrl": "/images/cases/conceito/Capa.png",
+      "images": [
+        "/images/cases/conceito/Snap01.png",
+        "/images/cases/conceito/Snap02.png",
+        "/images/cases/conceito/Snap03.png",
+        "/images/cases/conceito/Snap04.png",
+        "/images/cases/conceito/Snap05.png",
+        "/images/cases/conceito/Snap06.png",
+        "/images/cases/conceito/Snap07.png",
+        "/images/cases/conceito/Snap08.png",
+        "/images/cases/conceito/Snap09.png",
+        "/images/cases/conceito/Snap10.png",
+        "/images/cases/conceito/Snap11.png",
+        "/images/cases/conceito/Snap12.png",
+        "/images/cases/conceito/Snap13.png",
+        "/images/cases/conceito/Snap14.png",
+        "/images/cases/conceito/Snap15.png",
+        "/images/cases/conceito/Snap16.png",
+        "/images/cases/conceito/Snap17.png",
+        "/images/cases/conceito/Snap18.png",
+        "/images/cases/conceito/Snap19.png"
+      ],
       "nextCaseSlug": "zoeira-cooking"
     },
     {
@@ -92,10 +139,31 @@
         "desktop": "/images/cases/zoeira-cooking-desktop.png"
       },
       "highlightedBannerUrl": {
-        "mobile": "/images/cases/zoeira-cooking-mobile.png",
+        "mobile": "/images/cases/highlight-zoeira-cooking-mobile.png",
         "desktop": "/images/cases/highlight-zoeira-cooking-desktop.png"
       },
-      "images": [],
+      "coverUrl": "/images/cases/zoeira-cooking/Imagem destaque.png",
+      "images": [
+        "/images/cases/zoeira-cooking/Snap01.png",
+        "/images/cases/zoeira-cooking/Snap02.png",
+        "/images/cases/zoeira-cooking/Snap03.png",
+        "/images/cases/zoeira-cooking/Snap04.png",
+        "/images/cases/zoeira-cooking/Snap05.png",
+        "/images/cases/zoeira-cooking/Snap06.png",
+        "/images/cases/zoeira-cooking/Snap07.png",
+        "/images/cases/zoeira-cooking/Snap08.png",
+        "/images/cases/zoeira-cooking/Snap09.png",
+        "/images/cases/zoeira-cooking/Snap10.png",
+        "/images/cases/zoeira-cooking/Snap11.png",
+        "/images/cases/zoeira-cooking/Snap12.png",
+        "/images/cases/zoeira-cooking/Snap13.png",
+        "/images/cases/zoeira-cooking/Snap14.png",
+        "/images/cases/zoeira-cooking/Snap15.png",
+        "/images/cases/zoeira-cooking/Snap16.png",
+        "/images/cases/zoeira-cooking/Snap17.png",
+        "/images/cases/zoeira-cooking/Snap18.png",
+        "/images/cases/zoeira-cooking/Snap19.png"
+      ],
       "nextCaseSlug": "inova-alpin"
     }
   ],
