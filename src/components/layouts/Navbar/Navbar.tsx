@@ -54,10 +54,10 @@ export const Navbar = () => {
                       key={i}
                       style={{ transitionDelay: `${delay}ms` }}
                       className={clsx(
-                        "h-full flex-1 transition-all duration-300 group-hover:bg-transparent",
+                        "h-full flex-1 border transition-all duration-300 group-hover:bg-transparent",
                         {
-                          "bg-black": isMenuOpen,
-                          "bg-white": !isMenuOpen,
+                          "border-black bg-black": isMenuOpen,
+                          "border-white bg-white": !isMenuOpen,
                         },
                       )}
                     />

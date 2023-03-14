@@ -78,7 +78,7 @@ export const Budget = () => {
               <Input.Label>{isInEnglish ? "Services" : "Serviços"}</Input.Label>
             </Input.Root>
 
-            <Button type="submit" className="mt-4">
+            <Button type="submit" className="mx-0 mt-4">
               {isInEnglish ? "Send" : "Enviar"}
             </Button>
           </form>

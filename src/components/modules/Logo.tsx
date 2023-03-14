@@ -35,9 +35,9 @@ export const Logo = ({ size = "base", isMenuOpen }: LogoProps) => {
           className={clsx(
             "transition-colors duration-300 group-hover:stroke-2",
             {
-              "fill-black group-hover:fill-[#D6D6D6] group-hover:stroke-black":
+              "fill-black group-hover:fill-transparent group-hover:stroke-black":
                 isMenuOpen,
-              "fill-[#F2F2F8] group-hover:fill-black group-hover:stroke-white":
+              "fill-[#F2F2F8] group-hover:fill-transparent group-hover:stroke-white":
                 !isMenuOpen,
             },
           )}
@@ -47,9 +47,9 @@ export const Logo = ({ size = "base", isMenuOpen }: LogoProps) => {
           className={clsx(
             "transition-colors delay-75 duration-300 group-hover:stroke-2",
             {
-              "fill-black group-hover:fill-[#D6D6D6] group-hover:stroke-black":
+              "fill-black group-hover:fill-transparent group-hover:stroke-black":
                 isMenuOpen,
-              "fill-[#F2F2F8] group-hover:fill-black group-hover:stroke-white":
+              "fill-[#F2F2F8] group-hover:fill-transparent group-hover:stroke-white":
                 !isMenuOpen,
             },
           )}
@@ -60,9 +60,9 @@ export const Logo = ({ size = "base", isMenuOpen }: LogoProps) => {
           className={clsx(
             "transition-colors delay-150 duration-300 group-hover:stroke-2",
             {
-              "fill-black group-hover:fill-[#D6D6D6] group-hover:stroke-black":
+              "fill-black group-hover:fill-transparent group-hover:stroke-black":
                 isMenuOpen,
-              "fill-[#F2F2F8] group-hover:fill-black group-hover:stroke-white":
+              "fill-[#F2F2F8] group-hover:fill-transparent group-hover:stroke-white":
                 !isMenuOpen,
             },
           )}
