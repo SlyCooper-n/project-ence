@@ -8,16 +8,16 @@ export const Budget = () => {
     <div className="mx-auto flex min-h-[calc(100vh-115px)] max-w-[1920px] pt-28">
       <Container
         asChild
-        className="flex max-w-xl flex-1 flex-col items-center justify-center py-7"
+        className="flex max-w-md flex-1 flex-col justify-center py-7"
       >
         <main>
-          <Heading asChild className="mb-5 text-2xl md:text-3xl">
+          <Heading asChild className="mb-5 text-xl">
             <h1>
               {isInEnglish ? "Start of experience" : "Início da experiência"}
             </h1>
           </Heading>
 
-          <Text asChild className="mb-7 max-w-[500px] text-center md:text-xl">
+          <Text asChild className="mb-7 max-w-[500px]">
             <p>
               {isInEnglish ? (
                 <>
