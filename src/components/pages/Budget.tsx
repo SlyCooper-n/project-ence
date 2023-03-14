@@ -8,7 +8,7 @@ export const Budget = () => {
     <div className="mx-auto flex min-h-[calc(100vh-115px)] max-w-[1920px] pt-28">
       <Container
         asChild
-        className="flex max-w-xl flex-1 flex-col items-center justify-center py-16"
+        className="flex max-w-xl flex-1 flex-col items-center justify-center py-7"
       >
         <main>
           <Heading asChild className="mb-5 text-2xl md:text-3xl">
@@ -17,7 +17,7 @@ export const Budget = () => {
             </h1>
           </Heading>
 
-          <Text asChild className="mb-20 max-w-[500px] text-center md:text-xl">
+          <Text asChild className="mb-7 max-w-[500px] text-center md:text-xl">
             <p>
               {isInEnglish ? (
                 <>
@@ -45,7 +45,7 @@ export const Budget = () => {
             </p>
           </Text>
 
-          <form action="" className="flex w-full max-w-[500px] flex-col gap-9">
+          <form action="" className="flex w-full max-w-[500px] flex-col gap-5">
             <Input.Root>
               <Input.Field type="text" name="name" required autoFocus />
 
@@ -78,7 +78,7 @@ export const Budget = () => {
               <Input.Label>{isInEnglish ? "Services" : "Serviços"}</Input.Label>
             </Input.Root>
 
-            <Button type="submit" className="mt-11">
+            <Button type="submit" className="mt-4">
               {isInEnglish ? "Send" : "Enviar"}
             </Button>
           </form>
