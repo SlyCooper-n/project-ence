@@ -8,7 +8,7 @@ export const Budget = () => {
     <div className="mx-auto flex min-h-[calc(100vh-115px)] max-w-[1920px] pt-28">
       <Container
         asChild
-        className="flex max-w-md flex-1 flex-col justify-center py-7"
+        className="flex max-w-lg flex-1 flex-col justify-center py-7"
       >
         <main>
           <Heading asChild className="mb-5 text-xl">
