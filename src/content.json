@@ -58,6 +58,21 @@
         "/images/cases/inova/Snap23.png",
         "/images/cases/inova/Snap24.png"
       ],
+      "videos": [
+        {
+          "index": 0,
+          "id": "1y-Y6VulNDTFOJpcx6M0eqILoYxhDOVtA"
+        },
+        {
+          "index": 14,
+          "id": "1GD3jnmVjHi8bsn8JFSd7ivhAzfAVO9Kw"
+        },
+        {
+          "index": 16,
+          "id": "1i0agnNiqVcy21GgKTXcZ-C2AUYLKPVt5"
+        }
+      ],
+      "previousCaseSlug": null,
       "nextCaseSlug": "conceito"
     },
     {
@@ -111,6 +126,13 @@
         "/images/cases/conceito/Snap18.png",
         "/images/cases/conceito/Snap19.png"
       ],
+      "videos": [
+        {
+          "index": 0,
+          "id": "1OtTZp0ryjLWBmUXP_eyzziPMFBPQH9kI"
+        }
+      ],
+      "previousCaseSlug": "inova-alpin",
       "nextCaseSlug": "zoeira-cooking"
     },
     {
@@ -164,7 +186,14 @@
         "/images/cases/zoeira-cooking/Snap18.png",
         "/images/cases/zoeira-cooking/Snap19.png"
       ],
-      "nextCaseSlug": "inova-alpin"
+      "videos": [
+        {
+          "index": 0,
+          "id": ""
+        }
+      ],
+      "previousCaseSlug": "conceito",
+      "nextCaseSlug": null
     }
   ],
   "pages": {

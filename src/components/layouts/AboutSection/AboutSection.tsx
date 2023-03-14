@@ -1,3 +1,5 @@
+import clsx from "clsx";
+
 import { Container, Heading, Text } from "@/components";
 import { useLang } from "@/hooks";
 
@@ -30,7 +32,11 @@ export const AboutSection = () => {
 
           <Text asChild className="flex flex-col items-end gap-5">
             <p>
-              <strong className="block text-2xl lg:text-3xl">
+              <strong
+                className={clsx("block text-2xl lg:text-3xl", {
+                  "mr-14": isInEnglish,
+                })}
+              >
                 {isInEnglish ? "+Results" : "+Resultados"}
               </strong>
 

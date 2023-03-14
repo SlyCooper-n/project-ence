@@ -23,6 +23,8 @@ export const CaseDetails = ({ caseId }: CaseDetailsProps) => {
     designStrategy,
     coverUrl,
     images,
+    videos,
+    previousCaseSlug,
     nextCaseSlug,
   } = caseItem;
 
@@ -85,37 +87,52 @@ export const CaseDetails = ({ caseId }: CaseDetailsProps) => {
         </main>
 
         <section className="mb-16 flex flex-col gap-4 md:gap-12">
-          {images.map((img) => (
-            <img key={img} src={img} alt="" />
-          ))}
+          {images.map((img, i) => {
+            const video = videos?.find((video) => video.index === i);
+
+            if (video)
+              return (
+                <video
+                  key={video.id}
+                  src={`https://drive.google.com/uc?export=download&id=${video.id}`}
+                  autoPlay
+                  muted
+                  loop
+                />
+              );
+
+            return <img key={img} src={img} alt="" />;
+          })}
         </section>
 
         <nav className="flex flex-col gap-12 md:flex-row md:justify-between">
-          <Text asChild className="max-w-sm">
-            <p>
-              <Anchor asChild className="mb-4 block w-fit">
-                <Link href={isInEnglish ? "/en/budget" : "/budget"}>
-                  {isInEnglish ? "Start experience" : "Iniciar experiência"}
-                </Link>
-              </Anchor>
+          {previousCaseSlug ? (
+            <Anchor asChild className="mr-auto block h-fit w-fit">
+              <Link
+                href={
+                  isInEnglish
+                    ? `/en/cases/${previousCaseSlug}`
+                    : `/cases/${previousCaseSlug}`
+                }
+              >
+                &lt; {isInEnglish ? "Previous project" : "Projeto anterior"}
+              </Link>
+            </Anchor>
+          ) : null}
 
-              {isInEnglish
-                ? "You are just a few clicks away from developing the visual universe of your project. Get in touch below."
-                : "Você está a alguns cliques de desenvolver o universo visual do seu projeto. Entre em contato abaixo."}
-            </p>
-          </Text>
-
-          <Anchor asChild className="block h-fit w-fit">
-            <Link
-              href={
-                isInEnglish
-                  ? `/en/cases/${nextCaseSlug}`
-                  : `/cases/${nextCaseSlug}`
-              }
-            >
-              {isInEnglish ? "Next project" : "Próximo projeto"} &gt;
-            </Link>
-          </Anchor>
+          {nextCaseSlug ? (
+            <Anchor asChild className="ml-auto block h-fit w-fit">
+              <Link
+                href={
+                  isInEnglish
+                    ? `/en/cases/${nextCaseSlug}`
+                    : `/cases/${nextCaseSlug}`
+                }
+              >
+                {isInEnglish ? "Next project" : "Próximo projeto"} &gt;
+              </Link>
+            </Anchor>
+          ) : null}
         </nav>
       </Container>
     </>
