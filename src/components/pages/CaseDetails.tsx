@@ -31,7 +31,7 @@ export const CaseDetails = ({ caseId }: CaseDetailsProps) => {
       <img
         src={coverUrl}
         alt={`${name} banner`}
-        className="mx-auto h-56 w-full max-w-[1920px] object-cover md:h-96 lg:h-[758px]"
+        className="mx-auto mt-28 h-56 w-full max-w-[1920px] object-cover md:h-96 lg:mt-0 lg:h-[758px]"
       />
 
       <Container className="py-16">

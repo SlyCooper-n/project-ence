@@ -5,10 +5,10 @@ export const Budget = () => {
   const { isInEnglish } = useLang();
 
   return (
-    <div className="mx-auto flex min-h-[calc(100vh-115px)] max-w-[1920px]">
+    <div className="mx-auto flex min-h-[calc(100vh-115px)] max-w-[1920px] pt-28">
       <Container
         asChild
-        className="flex max-w-[808px] flex-1 flex-col items-center justify-center py-16"
+        className="flex max-w-xl flex-1 flex-col items-center justify-center py-16"
       >
         <main>
           <Heading asChild className="mb-5 text-2xl md:text-3xl">
@@ -78,7 +78,7 @@ export const Budget = () => {
               <Input.Label>{isInEnglish ? "Services" : "Serviços"}</Input.Label>
             </Input.Root>
 
-            <Button type="submit" className="mx-0 mt-11">
+            <Button type="submit" className="mt-11">
               {isInEnglish ? "Send" : "Enviar"}
             </Button>
           </form>

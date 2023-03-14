@@ -16,14 +16,23 @@ export const Navbar = () => {
   return (
     <>
       <Container asChild>
-        <header className="flex items-center justify-between py-9">
-          <Link href={isInEnglish ? "/en" : "/"}>
-            <Logo />
+        <header
+          className={clsx(
+            "absolute top-0 left-1/2 z-50 flex w-screen -translate-x-1/2 items-center justify-between py-9 backdrop-blur-md sm:w-[calc(100vw-11px)]",
+            { "bg-transparent": isMenuOpen, "bg-black/30": !isMenuOpen },
+          )}
+        >
+          <Link href={isInEnglish ? "/en" : "/"} onClick={closeMenu}>
+            <Logo isMenuOpen={isMenuOpen} />
           </Link>
 
-          <ul className="flex items-center gap-5 md:gap-12">
-            <li className="hidden sm:block">
-              <StartExperienceButton />
+          <ul
+            className={clsx("flex items-center gap-5 md:gap-12", {
+              "text-black": isMenuOpen,
+            })}
+          >
+            <li className="hidden sm:block" onClick={closeMenu}>
+              <StartExperienceButton isMenuOpen={isMenuOpen} />
             </li>
 
             <li className="z-50">
@@ -63,6 +72,7 @@ export const Navbar = () => {
                 asChild
                 className={clsx("uppercase transition-opacity", {
                   "opacity-50 after:hover:w-0": isInEnglish,
+                  "after:bg-black": isMenuOpen,
                 })}
               >
                 <Link href={"/en" + basePath}>en</Link>
@@ -72,6 +82,7 @@ export const Navbar = () => {
                 asChild
                 className={clsx("uppercase transition-opacity", {
                   "opacity-50 after:hover:w-0": !isInEnglish,
+                  "after:bg-black": isMenuOpen,
                 })}
               >
                 <Link href={basePath === "" ? "/" : basePath}>pt</Link>

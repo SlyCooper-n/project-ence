@@ -10,7 +10,7 @@ export const Cases = () => {
   const { cases } = content;
 
   return (
-    <Container asChild className="py-16 md:py-28">
+    <Container asChild className="mt-28 py-16 md:py-28">
       <main>
         <Heading asChild className="mb-7 md:text-3xl">
           <h1>{isInEnglish ? "Cases view" : "Cases visualização"}</h1>

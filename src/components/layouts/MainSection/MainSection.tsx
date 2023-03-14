@@ -7,7 +7,7 @@ export const MainSection = () => {
 
   return (
     <>
-      <main className="relative mx-auto flex min-h-[685px] max-w-[1920px] flex-col overflow-hidden sm:my-20 sm:min-h-[312px]">
+      <main className="relative mx-auto flex min-h-[685px] max-w-[1920px] flex-col overflow-hidden sm:mt-48 sm:mb-20 sm:min-h-[312px]">
         <VerticalGraph />
 
         <HorizontalGraph />

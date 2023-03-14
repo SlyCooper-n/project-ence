@@ -11,7 +11,7 @@ export const About = () => {
 
   return (
     <>
-      <Container className="overflow-hidden py-16 md:py-36">
+      <Container className="mt-28 overflow-hidden py-16 md:py-36">
         <main>
           <Heading asChild className="mb-16 md:mb-32">
             <h1>
