@@ -51,6 +51,13 @@ export default function Document() {
           strategy="beforeInteractive"
           src="https://polyfill.io/v3/polyfill.min.js"
         />
+
+        <script
+          async
+          defer
+          data-website-id="9ccc64a9-2c65-41ed-bca6-51c1680e8d6a"
+          src="https://umami-analytics-omega.vercel.app/umami.js"
+        />
       </Head>
 
       <body className="min-h-screen overflow-x-hidden bg-base-300 text-base-content">
