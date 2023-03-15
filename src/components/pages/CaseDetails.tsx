@@ -29,13 +29,25 @@ export const CaseDetails = ({ caseId }: CaseDetailsProps) => {
     nextCaseSlug,
   } = caseItem;
 
+  const isConceitoPage = caseItem.slug === "conceito";
+
   return (
     <>
-      <img
-        src={coverUrl}
-        alt={`${name} banner`}
-        className="mx-auto mt-28 h-56 w-full max-w-[1920px] object-cover md:h-96 lg:mt-0 lg:h-[758px]"
-      />
+      {isConceitoPage ? (
+        <video
+          src="https://drive.google.com/uc?export=download&id=1OtTZp0ryjLWBmUXP_eyzziPMFBPQH9kI"
+          autoPlay
+          controls
+          loop
+          className="mx-auto mt-28 h-56 w-full max-w-[1920px] object-cover md:h-96 lg:mt-0 lg:h-[758px]"
+        />
+      ) : (
+        <img
+          src={coverUrl}
+          alt={`${name} banner`}
+          className="mx-auto mt-28 h-56 w-full max-w-[1920px] object-cover md:h-96 lg:mt-0 lg:h-[758px]"
+        />
+      )}
 
       <Container className="py-16">
         <main className="mb-24 md:mb-64">
