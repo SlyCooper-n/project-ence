@@ -99,7 +99,7 @@ export const CaseDetails = ({ caseId }: CaseDetailsProps) => {
           </div>
         </main>
 
-        <section className="mb-4 flex w-full gap-2 md:gap-4">
+        <section className="mb-4 flex w-full gap-2 md:mb-12 md:gap-4">
           {previews.map((img) => (
             <img
               key={img}
