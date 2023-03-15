@@ -35,7 +35,7 @@ const Trigger = forwardRef<HTMLButtonElement, TriggerProps>(
     <Primitive.Header className="flex">
       <Primitive.Trigger
         className={twMerge(
-          "group flex flex-1 items-center gap-3 bg-gray/70 p-10 text-xl font-semibold leading-none outline-none md:text-2xl",
+          "group flex flex-1 items-center gap-3 p-10 text-xl font-semibold leading-none outline-none md:text-2xl",
           className,
         )}
         {...props}
@@ -56,7 +56,7 @@ const Content = forwardRef<HTMLDivElement, ContentProps>(
   ({ children, className, ...props }, ref) => (
     <Primitive.Content
       className={twMerge(
-        "overflow-hidden bg-gray/70 data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp md:text-xl",
+        "overflow-hidden data-[state=open]:animate-slideDown data-[state=closed]:animate-slideUp md:text-xl",
         className,
       )}
       {...props}

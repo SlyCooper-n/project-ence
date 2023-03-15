@@ -34,7 +34,7 @@ export const ServicesAccordions = () => {
       type="multiple"
       value={accordionsValue}
       onValueChange={toggleAll}
-      className="mx-auto flex max-w-[1920px] flex-col md:flex-row"
+      className="mx-auto flex max-w-[1920px] flex-col bg-gray/70 md:flex-row"
     >
       <div className="flex-1">
         <Accordion.Item value="strategy">
