@@ -46,9 +46,6 @@ export const ServicesAccordions = () => {
             {isInEnglish
               ? "First of all we need to know which way to go during the experience, we have to know strategically and visually what will be done. Here we managed to develop all this way."
               : "Antes de tudo precisamos saber por qual caminho ir durante a experiência, temos que saber estrategicamente e visualmente o que será feito. Aqui conseguimos desenvolver todo esse caminho."}
-            <br />
-            <br />
-            {isInEnglish ? null : <br />}
           </Accordion.Content>
         </Accordion.Item>
 
