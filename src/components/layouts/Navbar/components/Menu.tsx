@@ -17,8 +17,7 @@ export const Menu = ({ open, closeMenu }: MenuProps) => {
   const isBudgetPage = pathname.includes("/budget");
 
   return (
-    <Container
-      asChild
+    <nav
       className={clsx(
         "fixed inset-0 z-40 flex h-screen w-screen flex-col justify-center bg-[#D6D6D6] text-black transition-transform",
         {
@@ -27,7 +26,7 @@ export const Menu = ({ open, closeMenu }: MenuProps) => {
         },
       )}
     >
-      <nav>
+      <Container>
         <ul
           className={clsx(
             "mb-20 flex flex-col gap-5 text-2xl transition-all delay-300 duration-300 md:gap-9 md:text-7xl",
@@ -114,7 +113,7 @@ export const Menu = ({ open, closeMenu }: MenuProps) => {
             Behance
           </Anchor>
         </div>
-      </nav>
-    </Container>
+      </Container>
+    </nav>
   );
 };

@@ -11,8 +11,8 @@
       },
       "date": "2022",
       "description": {
-        "pt": "Inovando em serviços em altura, Inova é uma empresa focada em realizar os melhores trabalhos em altura e em lugares de difícil acesso. Com o objetivo de entregar uma solução econômica e inteligente",
-        "en": "Innovating in services at heights, Inova is a company focused on carrying out the best work at heights and in places of difficult access. In order to provide an economical and smart solution"
+        "pt": "A relação da Inova com o estúdio já é de longa data, começamos trabalhando em seu site no inicio de 2022 e decidimos a identidade visual completa junto ao novo website. Inova é uma empresa que realiza trabalhos em lugares de difícil acesso, que busca entregar soluções inovadoras em seus serviços aumentando a eficácia e a lucratividade de seus clientes.",
+        "en": "Inova's relationship with the studio goes back a long way, it started working on its website in early 2022 and discussed developing a complete visual identity along with the new website. Inova is a company that works in hard-to-reach places, which seeks to deliver innovative solutions in its services, increasing the effectiveness and profitability of its customers."
       },
       "services": {
         "pt": ["UI Design"],
@@ -20,8 +20,8 @@
       },
       "frontEnd": "Gabriel VS Frasão",
       "designStrategy": {
-        "pt": "Um site de fácil acesso, direto ao que interessa, apresentando os principais pontos: Os serviços, sobre a empresa e meios de contato",
-        "en": "An easily accessible website, direct to what matters, presenting the main points: The services, about the company and means of contact"
+        "pt": "A Inova buscava por uma identidade que traduzisse tudo isso, que transparecesse inovação e tecnologia, porém, que  assim entregasse a mensagem do que ela faz, sem deixar subentendido que a empresa oferecesse outro serviço ou produto. Trabalhamos com novas cores e um novo padrão de aplicação das mesma, resultando em um visual mais tech e futurístico. Ainda mantendo um traço tradicional da empresa, desenvolvemos um logotipo forte e versátil para os diferentes tipos de aplicações  e materiais que a Inova possa vir a desenvolver, com um conceito muito interessante, apresentando o ponto de vista de quem trabalha em altura.",
+        "en": "Inova was looking for an identity that would translate all of this, that would show innovation and technology however, that would still deliver the message of what it does, without implying that the company offered another service or  product. We worked with new colors and a new pattern for applying them, resulting in a more tech and futuristic look. Still maintaining a traditional trait of the company, we developed a strong and versatile logo for the different types of applications and materials that Inova may develop, with a very interesting concept, presenting the point of view of those who work at height."
       },
       "bannerUrl": {
         "mobile": "/images/cases/inova-mobile.png",
@@ -32,6 +32,11 @@
         "desktop": "/images/cases/highlight-inova-desktop.png"
       },
       "coverUrl": "/images/cases/inova/Capa.png",
+      "previews": [
+        "/images/cases/inova/Preview01.png",
+        "/images/cases/inova/Preview02.png",
+        "/images/cases/inova/Preview03.png"
+      ],
       "images": [
         "/images/cases/inova/Snap01.png",
         "/images/cases/inova/Snap02.png",
@@ -85,16 +90,16 @@
       },
       "date": "2022",
       "description": {
-        "pt": "",
-        "en": ""
+        "pt": "A Conceito faz parte do mercado imobiliário e busca facilitar todos os processos de venda e locação de um imóvel. Abrindo portas por toda São Paulo-SP, entregando o imóvel certo para o conceito de cada pessoa.",
+        "en": "The Conceito is part of the real estate market and seeks to facilitate all processes of selling and leasing a property. Opening doors throughout São Paulo-SP, delivering the right property for each person's concept."
       },
       "services": {
         "pt": [""],
         "en": [""]
       },
       "designStrategy": {
-        "pt": "",
-        "en": ""
+        "pt": "Buscando entregar um imóvel que agradece de fato cada cliente, a Conceito logo entendeu que deveria estar disposta a apresentar o máximo de opções para seu cliente de forma clara. Criamos seu logo, que abre portas para toda a identidade assim como a Conceito faz para seus clientes, com cores diferentes no mercado causando impacto, com um posicionamento solicito e uma comunicação clara em seus termos e traços.",
+        "en": "Seeking to deliver a property that really appreciates each customer, the Conceito soon understood that it should be willing to present the maximum number of options to its customer in a clear way. We created your logo, which opens doors to the whole identity, just like the concept does for its customers, with different colors in the market causing an impact, with a solicitous positioning and clear communication in its terms and traits."
       },
       "bannerUrl": {
         "mobile": "/images/cases/conceito-mobile.png",
@@ -105,6 +110,11 @@
         "desktop": "/images/cases/highlight-conceito-desktop.png"
       },
       "coverUrl": "/images/cases/conceito/Capa.png",
+      "previews": [
+        "/images/cases/conceito/preview01.png",
+        "/images/cases/conceito/preview02.png",
+        "/images/cases/conceito/preview03.png"
+      ],
       "images": [
         "/images/cases/conceito/Snap01.png",
         "/images/cases/conceito/Snap02.png",
@@ -145,16 +155,16 @@
       },
       "date": "2022",
       "description": {
-        "pt": "",
-        "en": ""
+        "pt": "Levar alegria e diversão junto ao lanche que vai dentro da mochila do entregador é o trabalho da Zoeira Cooking, uma empresa que olha o lado positivo de tudo, principalmente quando falamos de algo que nos deixa tão feliz quanto comer.",
+        "en": "Bringing joy and fun along with the snack that goes inside the delivery guy's backpack is the job of Zoeira Cooking, a company that looks at the positive side of everything, especially when we talk about something that makes us as happy as eating."
       },
       "services": {
         "pt": [""],
         "en": [""]
       },
       "designStrategy": {
-        "pt": "",
-        "en": ""
+        "pt": "A Zoeira Cooking queria transparecer essa felicidade e alegria para seu público, pois eles têm o objetivo de mostrar que o valor de um bom momento com pessoas e comida juntos é alegre e importante de ser vividos. Traduzimos essa mensagem em uma logo que representa a alegria e felicidade de quem está prestes a comer, e trabalhamos também disposição dos elementos, textos e logo de uma forma não enjoativa e repetitiva, mas divertida e feliz.",
+        "en": "Zoeira Cooking wanted to convey this happiness and joy to its audience, as they have the objective of showing that the value of a good time with people and food together is happy and important to be experienced. We translated this message into a logo that represents the joy and happiness of those who are about to eat, and we also worked on arranging the elements, texts and logo in a way that is not cloying and repetitive, but fun and happy."
       },
       "bannerUrl": {
         "mobile": "/images/cases/zoeira-cooking-mobile.png",
@@ -165,6 +175,11 @@
         "desktop": "/images/cases/highlight-zoeira-cooking-desktop.png"
       },
       "coverUrl": "/images/cases/zoeira-cooking/Imagem destaque.png",
+      "previews": [
+        "/images/cases/zoeira-cooking/preview01.png",
+        "/images/cases/zoeira-cooking/preview02.png",
+        "/images/cases/zoeira-cooking/preview03.png"
+      ],
       "images": [
         "/images/cases/zoeira-cooking/Snap01.png",
         "/images/cases/zoeira-cooking/Snap02.png",

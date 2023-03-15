@@ -22,6 +22,7 @@ export const CaseDetails = ({ caseId }: CaseDetailsProps) => {
     frontEnd,
     designStrategy,
     coverUrl,
+    previews,
     images,
     videos,
     previousCaseSlug,
@@ -86,6 +87,17 @@ export const CaseDetails = ({ caseId }: CaseDetailsProps) => {
           </div>
         </main>
 
+        <section className="mb-4 flex w-full gap-2 md:gap-4">
+          {previews.map((img) => (
+            <img
+              key={img}
+              src={img}
+              alt={`${name} preview`}
+              className="w-[calc(33.33%-0.5rem)] md:w-[calc(33.33%-1rem)]"
+            />
+          ))}
+        </section>
+
         <section className="mb-16 flex flex-col gap-4 md:gap-12">
           {images.map((img, i) => {
             const video = videos?.find((video) => video.index === i);
@@ -101,7 +113,7 @@ export const CaseDetails = ({ caseId }: CaseDetailsProps) => {
                 />
               );
 
-            return <img key={img} src={img} alt="" />;
+            return <img key={img} src={img} alt={`${name} snap`} />;
           })}
         </section>
 
