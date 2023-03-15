@@ -16,7 +16,7 @@ const Item = forwardRef<HTMLDivElement, ItemProps>(
   ({ children, className, ...props }, ref) => (
     <Primitive.Item
       className={twMerge(
-        "mt-px overflow-hidden text-black first:mt-0 focus-within:relative focus-within:z-10",
+        "overflow-hidden text-black first:mt-0 focus-within:relative focus-within:z-10",
         className,
       )}
       {...props}
