@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Fade } from "react-awesome-reveal";
 
 import content from "@/content.json";
 import { useLang } from "@/hooks";
@@ -14,6 +15,7 @@ export const CaseDetails = ({ caseId }: CaseDetailsProps) => {
   const caseItem = content.cases.find((item) => item.id === caseId);
   if (!caseItem) throw new Error(`Error trying to find case of id ${caseId}`);
   const {
+    slug,
     name,
     slogan,
     description,
@@ -29,41 +31,56 @@ export const CaseDetails = ({ caseId }: CaseDetailsProps) => {
     nextCaseSlug,
   } = caseItem;
 
+  const isInova = slug === "inova-alpin";
 
   return (
     <>
+      {isInova ? (
+        <video
+          src={`https://drive.google.com/uc?export=download&id=${videos[1].id}`}
+          autoPlay
+          muted
+          loop
+          className="mx-auto mt-28 h-56 w-full max-w-[1920px] object-cover md:h-96 lg:mt-0 lg:h-[758px]"
+        />
+      ) : (
         <img
           src={coverUrl}
           alt={`${name} banner`}
           className="mx-auto mt-28 h-56 w-full max-w-[1920px] object-cover md:h-96 lg:mt-0 lg:h-[758px]"
         />
+      )}
 
       <Container className="py-16">
         <main className="mb-24 md:mb-64">
-          <Text className="mb-2 block font-semibold">
-            {isInEnglish ? "About:" : "Sobre:"}
-          </Text>
+          <Fade direction="left" triggerOnce cascade>
+            <Text className="mb-2 block font-semibold">
+              {isInEnglish ? "About:" : "Sobre:"}
+            </Text>
 
-          <Heading asChild className="mb-7 text-2xl md:mb-20">
-            <h1>{name}</h1>
-          </Heading>
+            <Heading asChild className="mb-7 text-2xl md:mb-20">
+              <h1>{name}</h1>
+            </Heading>
+          </Fade>
 
-          <ul className="mb-16 flex flex-col gap-4 md:mb-28 md:flex-row md:gap-16 md:text-xl">
-            <li>
-              <strong>{isInEnglish ? "Date" : "Data"}</strong>: {date}
-            </li>
-
-            <li>
-              <strong>{isInEnglish ? "Services" : "Serviços"}</strong>:{" "}
-              {services[activeLanguage].join(", ")}
-            </li>
-
-            {frontEnd ? (
+          <Fade direction="up" triggerOnce cascade>
+            <ul className="mb-16 flex flex-col gap-4 md:mb-28 md:flex-row md:gap-16 md:text-xl">
               <li>
-                <strong>Front-End</strong>: {frontEnd}
+                <strong>{isInEnglish ? "Date" : "Data"}</strong>: {date}
               </li>
-            ) : null}
-          </ul>
+
+              <li>
+                <strong>{isInEnglish ? "Services" : "Serviços"}</strong>:{" "}
+                {services[activeLanguage].join(", ")}
+              </li>
+
+              {frontEnd ? (
+                <li>
+                  <strong>Front-End</strong>: {frontEnd}
+                </li>
+              ) : null}
+            </ul>
+          </Fade>
 
           <div className="flex flex-col gap-12 md:flex-row md:items-center md:justify-between">
             <Heading className="text-2xl md:text-6xl">
@@ -89,33 +106,36 @@ export const CaseDetails = ({ caseId }: CaseDetailsProps) => {
         </main>
 
         <section className="mb-4 flex w-full gap-2 md:mb-12 md:gap-4">
-          {previews.map((img) => (
-            <img
-              key={img}
-              src={img}
-              alt={`${name} preview`}
-              className="w-[calc(33.33%-0.5rem)] md:w-[calc(33.33%-1rem)]"
-            />
-          ))}
+          <Fade
+            triggerOnce
+            cascade
+            className="w-[calc(33.33%-0.5rem)] md:w-[calc(33.33%-1rem)]"
+          >
+            {previews.map((img) => (
+              <img key={img} src={img} alt={`${name} preview`} />
+            ))}
+          </Fade>
         </section>
 
         <section className="mb-16 flex flex-col gap-4 md:gap-12">
-          {images.map((img, i) => {
-            const video = videos?.find((video) => video.index === i);
+          <Fade triggerOnce cascade damping={0.05}>
+            {images.map((img, i) => {
+              const video = videos?.find((video) => video.index === i);
 
-            if (video)
-              return (
-                <video
-                  key={video.id}
-                  src={`https://drive.google.com/uc?export=download&id=${video.id}`}
-                  autoPlay
-                  muted
-                  loop
-                />
-              );
+              if (video)
+                return (
+                  <video
+                    key={video.id}
+                    src={`https://drive.google.com/uc?export=download&id=${video.id}`}
+                    autoPlay
+                    muted
+                    loop
+                  />
+                );
 
-            return <img key={img} src={img} alt={`${name} snap`} />;
-          })}
+              return <img key={img} src={img} alt={`${name} snap`} />;
+            })}
+          </Fade>
         </section>
 
         <nav className="flex flex-col gap-12 md:flex-row md:justify-between">

@@ -31,11 +31,24 @@ module.exports = {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: 0 },
         },
+
+        graphSlide: {
+          "0%": { transform: "translateX(-100vw)" },
+          "25%": { transform: "translateX(0)" },
+          "75%": { transform: "translateX(0)", opacity: 0.9 },
+          "88.5%": { opacity: 0 },
+          "100%": { transform: "translateX(100vw)", opacity: 0 },
+        },
       },
 
       animation: {
         slideDown: "slideDown 300ms cubic-bezier(0.87, 0, 0.13, 1)",
         slideUp: "slideUp 300ms cubic-bezier(0.87, 0, 0.13, 1)",
+        "graph-slide": "graphSlide 5s ease infinite",
+        "graph-slide-2": "graphSlide 5s ease infinite",
+        "graph-slide-3": "graphSlide 5s ease infinite 75ms",
+        "graph-slide-4": "graphSlide 5s ease infinite 150ms",
+        "graph-slide-5": "graphSlide 5s ease infinite 225ms",
       },
     },
   },

@@ -1,41 +1,52 @@
 import Link from "next/link";
+import { Fade } from "react-awesome-reveal";
 
 import { Button, Container, Heading, Picture, Text } from "@/components";
 import { useLang } from "@/hooks";
+import { AnimatedBorder } from "./components";
 
 export const AuthorSection = () => {
   const { isInEnglish } = useLang();
 
   return (
-    <section className="mx-auto max-w-[1920px] border-y md:border-y-2">
+    <section className="relative mx-auto max-w-[1920px]">
+      <AnimatedBorder top={0} />
+      <AnimatedBorder bottom={0} />
+
       <Container className="py-10 md:py-24">
-        <Heading className="md:text-2xl">
-          {isInEnglish ? "Behind the experience" : "Por trás da experiência"}
-        </Heading>
+        <Fade direction="left" triggerOnce>
+          <Heading className="md:text-2xl">
+            {isInEnglish ? "Behind the experience" : "Por trás da experiência"}
+          </Heading>
+        </Fade>
       </Container>
 
-      <div className="flex flex-col gap-7 border-t md:flex-row md:items-center md:gap-0 md:border-t-2">
-        <Picture.Root className="md:w-[320px] lg:w-[510px]">
-          <source
-            media="(max-width: 767px)"
-            srcSet="/images/author-mobile.png"
-          />
+      <div className="relative flex flex-col gap-7 overflow-y-hidden md:flex-row md:items-center md:gap-0">
+        <AnimatedBorder top={0} />
 
-          <source
-            media="(min-width: 768px)"
-            srcSet="/images/author-desktop.png"
-          />
+        <Fade direction="down" triggerOnce>
+          <Picture.Root className="md:w-[320px] lg:w-[510px]">
+            <source
+              media="(max-width: 767px)"
+              srcSet="/images/author-mobile.png"
+            />
 
-          <Picture.Image
-            src="/images/author-desktop.png"
-            alt="João Vitor picture"
-            className="w-full object-cover"
-          />
-        </Picture.Root>
+            <source
+              media="(min-width: 768px)"
+              srcSet="/images/author-desktop.png"
+            />
+
+            <Picture.Image
+              src="/images/author-desktop.png"
+              alt="João Vitor picture"
+              className="w-full object-cover"
+            />
+          </Picture.Root>
+        </Fade>
 
         <Container className="mb-14 flex flex-col gap-24 md:mb-0 md:flex-1 md:items-center md:gap-12 lg:gap-24">
-          <Text asChild className="flex flex-col gap-16 md:gap-12">
-            <p>
+          <Text className="flex flex-col gap-16 md:gap-12">
+            <Fade triggerOnce cascade>
               <strong className="text-xl lg:text-2xl">
                 {isInEnglish
                   ? "The only person behind those projects, a person who fell in love with his experience in developing and building brands, João Vitor."
@@ -47,23 +58,25 @@ export const AuthorSection = () => {
                   ? "João Vitor is a designer with 4 years of career working with Brand Identity, Branding & UI Design. He has developed projects for startups and also in the Fashion & Gastronomy industries."
                   : "João Vitor é um designer com 4 anos de carreira trabalhando com Identidade de marca, Branding & UI Design. Desenvolveu projetos para startups e também nas indústrias de Moda & Gastronomia."}
               </em>
-            </p>
+            </Fade>
           </Text>
 
           <footer className="flex max-w-3xl flex-col gap-5 md:flex-row-reverse md:items-center">
-            <Text asChild className="text-xs md:flex-1 xl:text-base">
-              <p>
-                {isInEnglish
-                  ? "Learn more about me and the studio, our processes and services explained showing how we can help you through them."
-                  : "Descubra mais sobre mim e o estúdio, nossos processos e serviços, explicados mostrando como podemos te ajudar através deles."}
-              </p>
-            </Text>
+            <Fade triggerOnce cascade>
+              <Text asChild className="text-xs md:flex-1 xl:text-base">
+                <p>
+                  {isInEnglish
+                    ? "Learn more about me and the studio, our processes and services explained showing how we can help you through them."
+                    : "Descubra mais sobre mim e o estúdio, nossos processos e serviços, explicados mostrando como podemos te ajudar através deles."}
+                </p>
+              </Text>
 
-            <Button asChild className="mx-0">
-              <Link href={isInEnglish ? "/en/about" : "/about"}>
-                {isInEnglish ? "See more" : "Ver mais"}
-              </Link>
-            </Button>
+              <Button asChild className="mx-0">
+                <Link href={isInEnglish ? "/en/about" : "/about"}>
+                  {isInEnglish ? "See more" : "Ver mais"}
+                </Link>
+              </Button>
+            </Fade>
           </footer>
         </Container>
       </div>

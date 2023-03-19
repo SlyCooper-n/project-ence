@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { Fade } from "react-awesome-reveal";
 
 import content from "@/content.json";
 import { useLang } from "@/hooks";
@@ -14,14 +15,18 @@ export const About = () => {
     <>
       <Container className="mt-28 overflow-hidden pt-16 md:pt-36">
         <main>
-          <Heading asChild className="mb-16 md:mb-32">
-            <h1>
-              {isInEnglish ? "About Ence" : "Sobre a Ence"}
-              <Text className="ml-3 inline-block text-xl font-normal text-white/25">
-                {isInEnglish ? "services" : "serviços"}
-              </Text>
-            </h1>
-          </Heading>
+          <Fade direction="left" triggerOnce>
+            <Heading asChild className="mb-16 flex md:mb-32">
+              <h1>
+                {isInEnglish ? "About Ence" : "Sobre a Ence"}
+                <Fade triggerOnce delay={1000}>
+                  <Text className="ml-3 inline-block text-xl font-normal text-white/25">
+                    {isInEnglish ? "services" : "serviços"}
+                  </Text>
+                </Fade>
+              </h1>
+            </Heading>
+          </Fade>
 
           <Text
             asChild
@@ -40,12 +45,18 @@ export const About = () => {
 
       <Container className="overflow-hidden pb-16 md:pb-36">
         <section className="relative py-16 md:py-36">
-          <Heading className="mb-12">
-            {isInEnglish ? "About Ence" : "Sobre a Ence"}
-            <Text className="ml-3 inline-block text-xl font-normal text-white/25">
-              {isInEnglish ? "processes" : "processos"}
-            </Text>
-          </Heading>
+          <Fade direction="left" triggerOnce>
+            <Heading asChild className="mb-16 flex md:mb-32">
+              <h1>
+                {isInEnglish ? "About Ence" : "Sobre a Ence"}
+                <Fade triggerOnce delay={1000}>
+                  <Text className="ml-3 inline-block text-xl font-normal text-white/25">
+                    {isInEnglish ? "processes" : "processos"}
+                  </Text>
+                </Fade>
+              </h1>
+            </Heading>
+          </Fade>
 
           <Text
             asChild
@@ -63,6 +74,8 @@ export const About = () => {
               const index = i < 9 ? `0${++i}` : ++i;
               const isEven = i++ % 2 === 0;
 
+              const fadeDirection = isEven ? "right" : "left";
+
               return (
                 <li
                   key={process.title.en}
@@ -74,37 +87,41 @@ export const About = () => {
                     },
                   )}
                 >
-                  <div
-                    className={clsx("mb-2 flex items-center gap-4", {
-                      "flex-row-reverse": isEven,
-                    })}
-                  >
-                    <span className="block text-6xl font-semibold sm:text-8xl md:text-[12rem]">
-                      {index}
-                    </span>
-
-                    <Heading asChild className="md:hidden">
-                      <h3>{process.title[activeLanguage]}</h3>
-                    </Heading>
-                  </div>
-
-                  <div>
-                    <Heading
-                      asChild
-                      className={clsx("mb-11 hidden text-2xl md:block", {
-                        "text-end": isEven,
+                  <Fade direction={fadeDirection} triggerOnce cascade>
+                    <div
+                      className={clsx("mb-2 flex items-center gap-4", {
+                        "flex-row-reverse": isEven,
                       })}
                     >
-                      <h3>{process.title[activeLanguage]}</h3>
-                    </Heading>
+                      <span className="block text-6xl font-semibold sm:text-8xl md:text-[12rem]">
+                        {index}
+                      </span>
 
-                    <Text
-                      asChild
-                      className={clsx({ "text-end md:text-xl": isEven })}
-                    >
-                      <p>{process.description[activeLanguage]}</p>
-                    </Text>
-                  </div>
+                      <Heading asChild className="md:hidden">
+                        <h3>{process.title[activeLanguage]}</h3>
+                      </Heading>
+                    </div>
+
+                    <div>
+                      <Fade triggerOnce delay={1000}>
+                        <Heading
+                          asChild
+                          className={clsx("mb-11 hidden text-2xl md:block", {
+                            "text-end": isEven,
+                          })}
+                        >
+                          <h3>{process.title[activeLanguage]}</h3>
+                        </Heading>
+
+                        <Text
+                          asChild
+                          className={clsx({ "text-end md:text-xl": isEven })}
+                        >
+                          <p>{process.description[activeLanguage]}</p>
+                        </Text>
+                      </Fade>
+                    </div>
+                  </Fade>
                 </li>
               );
             })}

@@ -1,7 +1,7 @@
 export const HorizontalGraph = () => {
   return (
     <svg
-      className="absolute bottom-1/2 hidden translate-y-1/2 sm:block"
+      className="absolute bottom-1/2 hidden translate-y-1/2 overflow-visible sm:block"
       width="780"
       height="312"
       viewBox="0 0 780 312"
@@ -10,29 +10,34 @@ export const HorizontalGraph = () => {
     >
       <g opacity="0.35">
         <path
+          d="M67.7708 311.58L-54.4512 311.58L29.8992 5.73481e-05L152.121 5.20056e-05L67.7708 311.58Z"
+          fill="url(#paint4_linear_1753_34)"
+          fillOpacity="0.9"
+          className="animate-graph-slide-5"
+        />
+        <path
           d="M224.425 311.58L102.203 311.58L186.554 5.73481e-05L308.776 5.20056e-05L224.425 311.58Z"
           fill="url(#paint0_linear_1753_34)"
           fillOpacity="0.5"
+          className="animate-graph-slide-4"
         />
         <path
           d="M381.279 311.58L259.057 311.58L343.407 5.73481e-05L465.629 5.20056e-05L381.279 311.58Z"
           fill="url(#paint1_linear_1753_34)"
           fillOpacity="0.5"
+          className="animate-graph-slide-3"
         />
         <path
           d="M538.134 311.58L415.912 311.58L500.262 5.73481e-05L622.485 5.20056e-05L538.134 311.58Z"
           fill="url(#paint2_linear_1753_34)"
           fillOpacity="0.5"
+          className="animate-graph-slide-2"
         />
         <path
           d="M694.992 311.58L572.77 311.58L657.12 5.73481e-05L779.342 5.20056e-05L694.992 311.58Z"
           fill="url(#paint3_linear_1753_34)"
           fillOpacity="0.5"
-        />
-        <path
-          d="M67.7708 311.58L-54.4512 311.58L29.8992 5.73481e-05L152.121 5.20056e-05L67.7708 311.58Z"
-          fill="url(#paint4_linear_1753_34)"
-          fillOpacity="0.9"
+          className="animate-graph-slide"
         />
       </g>
       <defs>
