@@ -39,6 +39,13 @@ module.exports = {
           "88.5%": { opacity: 0 },
           "100%": { transform: "translateX(100vw)", opacity: 0 },
         },
+        mobileGraphSlide: {
+          "0%": { transform: "translateY(100vh)" },
+          "25%": { transform: "translateY(0)" },
+          "75%": { transform: "translateY(0)", opacity: 0.9 },
+          "88.5%": { opacity: 0 },
+          "100%": { transform: "translateY(-100vh)", opacity: 0 },
+        },
       },
 
       animation: {
@@ -49,6 +56,14 @@ module.exports = {
         "graph-slide-3": "graphSlide 5s ease infinite 75ms backwards",
         "graph-slide-4": "graphSlide 5s ease infinite 150ms backwards",
         "graph-slide-5": "graphSlide 5s ease infinite 225ms backwards",
+        "mobile-graph-slide": "mobileGraphSlide 5s ease infinite backwards",
+        "mobile-graph-slide-2": "mobileGraphSlide 5s ease infinite backwards",
+        "mobile-graph-slide-3":
+          "mobileGraphSlide 5s ease infinite 75ms backwards",
+        "mobile-graph-slide-4":
+          "mobileGraphSlide 5s ease infinite 150ms backwards",
+        "mobile-graph-slide-5":
+          "mobileGraphSlide 5s ease infinite 225ms backwards",
       },
     },
   },
