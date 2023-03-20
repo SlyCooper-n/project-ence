@@ -10,8 +10,8 @@ export const AuthorSection = () => {
 
   return (
     <section className="relative mx-auto max-w-[1920px]">
-      <AnimatedBorder top={0} />
-      <AnimatedBorder bottom={0} />
+      <AnimatedBorder top />
+      <AnimatedBorder bottom />
 
       <Container className="py-10 md:py-24">
         <Fade direction="left" triggerOnce>
@@ -22,7 +22,7 @@ export const AuthorSection = () => {
       </Container>
 
       <div className="relative flex flex-col gap-7 overflow-y-hidden md:flex-row md:items-center md:gap-0">
-        <AnimatedBorder top={0} />
+        <AnimatedBorder top />
 
         <Fade direction="down" triggerOnce>
           <Picture.Root className="md:w-[320px] lg:w-[510px]">
