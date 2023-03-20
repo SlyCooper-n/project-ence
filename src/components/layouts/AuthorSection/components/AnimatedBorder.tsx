@@ -9,7 +9,6 @@ export const AnimatedBorder = ({ top, bottom }: AnimatedBorderProps) => {
   return (
     <motion.div
       initial={{
-        position: "absolute",
         top,
         bottom,
         left: 0,
@@ -18,6 +17,7 @@ export const AnimatedBorder = ({ top, bottom }: AnimatedBorderProps) => {
         backgroundColor: "white",
       }}
       whileInView={{ width: "100%", transition: { delay: 0.3 } }}
+      className="absolute"
     />
   );
 };
