@@ -3,11 +3,12 @@ import {
   AuthorSection,
   CasesSection,
   MainSection,
+  PageAnimation,
 } from "@/components";
 
 export const Home = () => {
   return (
-    <>
+    <PageAnimation>
       <MainSection />
 
       <CasesSection />
@@ -15,6 +16,6 @@ export const Home = () => {
       <AboutSection />
 
       <AuthorSection />
-    </>
+    </PageAnimation>
   );
 };

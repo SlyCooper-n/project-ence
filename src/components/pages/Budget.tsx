@@ -1,11 +1,18 @@
-import { Button, Container, Heading, Input, Text } from "@/components";
+import {
+  Button,
+  Container,
+  Heading,
+  Input,
+  PageAnimation,
+  Text,
+} from "@/components";
 import { useLang } from "@/hooks";
 
 export const Budget = () => {
   const { isInEnglish } = useLang();
 
   return (
-    <div className="mx-auto flex min-h-[calc(100vh-115px)] max-w-[1920px] pt-28">
+    <PageAnimation className="mx-auto flex min-h-[calc(100vh-115px)] max-w-[1920px] pt-28">
       <Container
         asChild
         className="flex max-w-lg flex-1 flex-col justify-center py-7"
@@ -94,6 +101,6 @@ export const Budget = () => {
           </Heading>
         </Container>
       </section>
-    </div>
+    </PageAnimation>
   );
 };

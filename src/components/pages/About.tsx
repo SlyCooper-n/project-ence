@@ -3,6 +3,7 @@ import { Fade } from "react-awesome-reveal";
 
 import content from "@/content.json";
 import { useLang } from "@/hooks";
+import { PageAnimation } from "../config";
 import { ServicesAccordions } from "../layouts";
 import { Container, Heading, Text } from "../modules";
 
@@ -12,7 +13,7 @@ export const About = () => {
   const { processes } = content.pages.about;
 
   return (
-    <>
+    <PageAnimation>
       <Container className="mt-28 overflow-hidden pt-16 md:pt-36">
         <main>
           <Fade direction="left" triggerOnce>
@@ -130,7 +131,7 @@ export const About = () => {
           <GraphBg />
         </section>
       </Container>
-    </>
+    </PageAnimation>
   );
 };
 

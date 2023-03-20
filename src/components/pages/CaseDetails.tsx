@@ -3,6 +3,7 @@ import { Fade } from "react-awesome-reveal";
 
 import content from "@/content.json";
 import { useLang } from "@/hooks";
+import { PageAnimation } from "../config";
 import { Anchor, Container, Heading, Text } from "../modules";
 
 interface CaseDetailsProps {
@@ -34,7 +35,7 @@ export const CaseDetails = ({ caseId }: CaseDetailsProps) => {
   const isInova = slug === "inova-alpin";
 
   return (
-    <>
+    <PageAnimation>
       {isInova ? (
         <video
           src={`https://drive.google.com/uc?export=download&id=${videos[1].id}`}
@@ -168,6 +169,6 @@ export const CaseDetails = ({ caseId }: CaseDetailsProps) => {
           ) : null}
         </nav>
       </Container>
-    </>
+    </PageAnimation>
   );
 };
