@@ -11,13 +11,10 @@ export const AnimatedBorder = ({ top, bottom }: AnimatedBorderProps) => {
       initial={{
         top,
         bottom,
-        left: 0,
         width: 0,
-        height: "1px",
-        backgroundColor: "white",
       }}
-      whileInView={{ width: "100%", transition: { delay: 0.3 } }}
-      className="absolute"
+      whileInView={{ width: "100%", top, bottom, transition: { delay: 0.3 } }}
+      className="absolute left-0 h-px bg-white"
     />
   );
 };
