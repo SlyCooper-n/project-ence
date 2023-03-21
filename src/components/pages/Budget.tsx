@@ -52,7 +52,26 @@ export const Budget = () => {
             </p>
           </Text>
 
-          <form action="" className="flex w-full max-w-[500px] flex-col gap-5">
+          <form
+            action="https://formsubmit.co/contato@encestudio.com"
+            method="POST"
+            className="flex w-full max-w-[500px] flex-col gap-5"
+          >
+            <header>
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="box" />
+              <input
+                type="hidden"
+                name="_subject"
+                value="Experience started!"
+              />
+              <input
+                type="hidden"
+                name="_cc"
+                value="gabrielvitor.frasao@gmail.com"
+              />
+            </header>
+
             <Input.Root>
               <Input.Field type="text" name="name" required autoFocus />
 
@@ -68,7 +87,7 @@ export const Budget = () => {
             </Input.Root>
 
             <Input.Root>
-              <Input.Field type="text" name="email" required />
+              <Input.Field type="email" name="email" required />
 
               <Input.Label>Email</Input.Label>
             </Input.Root>
@@ -79,11 +98,28 @@ export const Budget = () => {
               <Input.Label>WhatsApp</Input.Label>
             </Input.Root>
 
-            <Input.Root>
-              <Input.Field type="text" name="services" required />
+            <select
+              name="services"
+              defaultValue="visual-universe-default"
+              required
+              className="border-b border-white bg-black pt-4 pb-3 pl-2"
+            >
+              <option value="visual-universe-default" disabled>
+                {isInEnglish ? "Services" : "Serviços"}
+              </option>
 
-              <Input.Label>{isInEnglish ? "Services" : "Serviços"}</Input.Label>
-            </Input.Root>
+              <option value="visual-universe">
+                {isInEnglish
+                  ? "Creation of visual universe"
+                  : "Criação de universo visual"}
+              </option>
+
+              <option value="ui-ux-design">
+                {isInEnglish
+                  ? "UI/UX Design development for websites and landing pages"
+                  : "Desenvolvimento de UI/UX Design para sites e landing pages"}
+              </option>
+            </select>
 
             <Button type="submit" className="mx-0 mt-4">
               {isInEnglish ? "Send" : "Enviar"}
