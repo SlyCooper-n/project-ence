@@ -57,7 +57,7 @@ export const CasesSection = () => {
           </Fade>
         </div>
 
-        <Fade triggerOnce delay={1000}>
+        <Fade triggerOnce delay={900}>
           <Button asChild>
             <Link href={isInEnglish ? "/en/cases" : "/cases"}>
               {isInEnglish ? "See more projects" : "Ver mais projetos"}
