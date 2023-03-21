@@ -35,6 +35,36 @@ export default function Document() {
           rel="shortcut icon"
           href="/favicon.png"
           type="image/png"
+          sizes="16x16"
+        />
+        <link
+          rel="shortcut icon"
+          href="/favicon-32.png"
+          type="image/png"
+          sizes="32x32"
+        />
+        <link
+          rel="shortcut icon"
+          href="/favicon-96.png"
+          type="image/png"
+          sizes="96x96"
+        />
+        <link
+          rel="shortcut icon"
+          href="/favicon-152.png"
+          type="image/png"
+          sizes="152x152"
+        />
+        <link
+          rel="shortcut icon"
+          href="/favicon-167.png"
+          type="image/png"
+          sizes="167x167"
+        />
+        <link
+          rel="shortcut icon"
+          href="/favicon-180.png"
+          type="image/png"
           sizes="180x180"
         />
         <link
@@ -44,7 +74,7 @@ export default function Document() {
           sizes="57x57"
         />
 
-        <meta name="theme-color" content="#22223B" />
+        <meta name="theme-color" content="#000" />
 
         <Script
           crossOrigin="anonymous"
