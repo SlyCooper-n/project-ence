@@ -196,12 +196,7 @@
         "/images/cases/zoeira-cooking/Snap18.png",
         "/images/cases/zoeira-cooking/Snap19.png"
       ],
-      "videos": [
-        {
-          "index": 0,
-          "id": ""
-        }
-      ],
+      "videos": [],
       "previousCaseSlug": "conceito",
       "nextCaseSlug": null
     }
