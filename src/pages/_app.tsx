@@ -15,11 +15,7 @@ export default function App({ Component, pageProps, router }: AppProps) {
     <div className={inter.className}>
       <Navbar />
 
-      <AnimatePresence
-        mode="wait"
-        initial={false}
-        onExitComplete={() => window.scrollTo(0, 0)}
-      >
+      <AnimatePresence mode="wait">
         <Component {...pageProps} key={router.route} />
       </AnimatePresence>
 
