@@ -36,7 +36,7 @@ export const Cases = () => {
             </p>
           </Text>
 
-          <div className="flex flex-col gap-10 md:gap-20">
+          <div className="flex flex-col gap-10 md:gap-20 lg:hidden">
             <Fade triggerOnce cascade>
               {cases.map((item) => (
                 <Link
@@ -71,6 +71,32 @@ export const Cases = () => {
                   <Text className="md:text-xl">
                     {item.slogan[activeLanguage]}
                   </Text>
+                </Link>
+              ))}
+            </Fade>
+          </div>
+
+          <div className="hidden flex-col gap-56 lg:flex">
+            <Fade triggerOnce cascade>
+              {cases.map((item) => (
+                <Link
+                  key={item.id}
+                  href={
+                    isInEnglish
+                      ? `/en/cases/${item.slug}`
+                      : `/cases/${item.slug}`
+                  }
+                  className="group relative flex w-full flex-col items-center overflow-hidden"
+                >
+                  <Text className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-6xl font-semibold transition-opacity group-hover:opacity-0">
+                    {item.name}
+                  </Text>
+
+                  <img
+                    src={item.logo}
+                    alt={`${item.name} logo`}
+                    className="h-48 translate-y-7 opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
+                  />
                 </Link>
               ))}
             </Fade>

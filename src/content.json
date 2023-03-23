@@ -4,6 +4,7 @@
     {
       "id": 1,
       "slug": "inova-alpin",
+      "logo": "/images/cases/inova/logo.svg",
       "name": "INOVA Alpin",
       "slogan": {
         "pt": "Inovando em soluções",
@@ -83,6 +84,7 @@
     {
       "id": 2,
       "slug": "conceito",
+      "logo": "/images/cases/conceito/logo.svg",
       "name": "Conceito",
       "slogan": {
         "pt": "Clareza em seus termos e traços",
@@ -143,6 +145,7 @@
     {
       "id": 3,
       "slug": "zoeira-cooking",
+      "logo": "/images/cases/zoeira-cooking/logo.svg",
       "name": "Zoeira Cooking",
       "slogan": {
         "pt": "Pessoas, batata frita e zueira",
