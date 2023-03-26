@@ -95,7 +95,7 @@ export const Cases = () => {
                   <img
                     src={item.logo}
                     alt={`${item.name} logo`}
-                    className="w-96 translate-y-7 opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
+                    className="w-96 opacity-0 transition-all group-hover:opacity-100"
                   />
                 </Link>
               ))}
