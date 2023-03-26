@@ -8,7 +8,9 @@ export default function CaseDetailsPage({
 }: InferGetStaticPropsType<typeof getStaticProps>) {
   return (
     <>
-      <Head title="Case" />
+      <Head
+        title={content.cases.find((item) => item.id === caseId)?.name ?? "Case"}
+      />
 
       <CaseDetails caseId={caseId} />
     </>
