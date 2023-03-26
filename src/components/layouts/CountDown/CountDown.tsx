@@ -2,7 +2,12 @@ import { ReactNode, useEffect, useState } from "react";
 
 const countDownDate = new Date("Apr 1, 2023 07:00:00").getTime();
 
-export const CountDown = ({ children }: { children: ReactNode }) => {
+interface CountDownProps {
+  className: string;
+  children: ReactNode;
+}
+
+export const CountDown = ({ className, children }: CountDownProps) => {
   const [days, setDays] = useState(0);
   const [hours, setHours] = useState(0);
   const [minutes, setMinutes] = useState(0);
@@ -38,7 +43,12 @@ export const CountDown = ({ children }: { children: ReactNode }) => {
       {countDownFinished ? (
         children
       ) : (
-        <div className="flex h-screen w-screen items-center justify-center bg-black text-white">
+        <div
+          className={
+            "flex h-screen w-screen items-center justify-center bg-black text-white " +
+            className
+          }
+        >
           <div className="text-xl font-semibold sm:text-5xl">
             <span>{days}d </span>
             <span>{hours}h </span>

@@ -12,7 +12,7 @@ const inter = Inter_Tight({
 
 export default function App({ Component, pageProps, router }: AppProps) {
   return (
-    <CountDown>
+    <CountDown className={inter.className}>
       <div className={inter.className}>
         <Navbar />
 
