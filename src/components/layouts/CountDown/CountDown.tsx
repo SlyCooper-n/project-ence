@@ -1,6 +1,6 @@
 import { ReactNode, useEffect, useState } from "react";
 
-const countDownDate = new Date("Apr 1, 2023 07:00:00").getTime();
+const countDownDate = new Date("Mar 26, 2023 21:20:00").getTime();
 
 interface CountDownProps {
   className: string;
