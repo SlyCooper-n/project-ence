@@ -1,7 +1,6 @@
 export * from "./AboutSection/AboutSection";
 export * from "./AuthorSection/AuthorSection";
 export * from "./CasesSection/CasesSection";
-export * from "./CountDown/CountDown";
 export * from "./Footer/Footer";
 export * from "./MainSection/MainSection";
 export * from "./Navbar/Navbar";
