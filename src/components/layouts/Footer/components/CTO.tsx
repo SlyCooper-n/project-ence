@@ -6,18 +6,20 @@ import { Fade } from "react-awesome-reveal";
 import { Button, Container, Heading } from "@/components";
 import { useLang } from "@/hooks";
 
+const pagesWithoutCTO = ["/budget", "/experience-started"];
+
 export const CTO = () => {
   const { isInEnglish } = useLang();
   const { pathname } = useRouter();
 
-  const isBudgetPage = pathname.includes("/budget");
+  const isHidden = pagesWithoutCTO.some((page) => pathname.includes(page));
 
   return (
     <section
       className={clsx(
         "mx-auto max-w-[1920px] bg-cto-graph bg-cover bg-center bg-no-repeat",
         {
-          hidden: isBudgetPage,
+          hidden: isHidden,
         },
       )}
     >

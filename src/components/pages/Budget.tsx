@@ -70,6 +70,11 @@ export const Budget = () => {
                 name="_cc"
                 value="gabrielvitor.frasao@gmail.com"
               />
+              <input
+                type="hidden"
+                name="_next"
+                value="https://encestudio.com/experience-started.html"
+              />
             </header>
 
             <Input.Root>
@@ -79,7 +84,7 @@ export const Budget = () => {
             </Input.Root>
 
             <Input.Root>
-              <Input.Field type="text" name="business- requiredname" />
+              <Input.Field type="text" name="business-name" required />
 
               <Input.Label>
                 {isInEnglish ? "Your business name" : "Nome do seu negócio"}
