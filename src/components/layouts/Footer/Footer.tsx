@@ -1,13 +1,13 @@
 import { Anchor, Container, Ence, Text } from "@/components";
 import { useLang } from "@/hooks";
-import { CTO } from "./components";
+import { CTA } from "./components";
 
 export const Footer = () => {
   const { isInEnglish } = useLang();
 
   return (
     <>
-      <CTO />
+      <CTA />
 
       <Container
         asChild

@@ -25,7 +25,7 @@ export const StartExperienceButton = ({
       ) : (
         <Anchor asChild className={`${isMenuOpen ? "after:bg-black" : ""}`}>
           <Link href={isInEnglish ? "/en/budget" : "/budget"}>
-            {isInEnglish ? "Start experience" : "Iniciar experiência"}
+            {isInEnglish ? "Request budget" : "Solicitar orçamento"}
           </Link>
         </Anchor>
       )}

@@ -6,13 +6,13 @@ import { Fade } from "react-awesome-reveal";
 import { Button, Container, Heading } from "@/components";
 import { useLang } from "@/hooks";
 
-const pagesWithoutCTO = ["/budget", "/experience-started"];
+const pagesWithoutCTA = ["/budget", "/experience-started"];
 
-export const CTO = () => {
+export const CTA = () => {
   const { isInEnglish } = useLang();
   const { pathname } = useRouter();
 
-  const isHidden = pagesWithoutCTO.some((page) => pathname.includes(page));
+  const isHidden = pagesWithoutCTA.some((page) => pathname.includes(page));
 
   return (
     <section
