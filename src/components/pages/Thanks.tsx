@@ -7,9 +7,9 @@ export const Thanks = () => {
 
   return (
     <PageAnimation>
-      <div className="flex min-h-screen place-items-center bg-gray pt-36 pb-12 text-black">
+      <div className="flex min-h-screen flex-col place-items-center pt-36 pb-12">
         <Container asChild>
-          <main>
+          <main className="flex flex-1 flex-col justify-between">
             <img
               src="/images/thanks-logo.svg"
               alt=""
@@ -35,7 +35,6 @@ export const Thanks = () => {
               <Anchor
                 href="https://www.instagram.com/encestudio"
                 target="_blank"
-                className="after:bg-black"
               >
                 Instagram
               </Anchor>
@@ -43,7 +42,6 @@ export const Thanks = () => {
               <Anchor
                 href="https://www.behance.net/joaovitorn-ence"
                 target="_blank"
-                className="after:bg-black"
               >
                 Behance
               </Anchor>
