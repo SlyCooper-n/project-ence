@@ -21,12 +21,15 @@ export const Thanks = () => {
 
               <div className="absolute top-1/2 left-1/2 w-full -translate-x-1/2 -translate-y-1/2">
                 <Heading className="text-center sm:text-3xl md:mb-4 md:text-6xl">
-                  Você acabou de realizar o primeiro passo para iniciar sua
-                  experiência.
+                  {isInEnglish
+                    ? "You've just taken the first step to start your experience."
+                    : "Você acabou de realizar o primeiro passo para iniciar sua experiência."}
                 </Heading>
 
                 <Text className="sm:text-normal mx-auto block text-center text-sm md:text-lg lg:text-xl">
-                  Enviarei uma resposta em breve, conversamos logo mais.
+                  {isInEnglish
+                    ? "I'll send you a reply soon, we'll talk later."
+                    : "Enviarei uma resposta em breve, conversamos logo mais."}
                 </Text>
               </div>
             </div>
