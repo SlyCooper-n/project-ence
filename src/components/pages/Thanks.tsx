@@ -7,14 +7,10 @@ export const Thanks = () => {
 
   return (
     <PageAnimation>
-      <div className="flex min-h-screen flex-col place-items-center pt-36 pb-12">
+      <div className="flex min-h-screen flex-col place-items-center pb-12">
         <Container asChild>
           <main className="flex flex-1 flex-col justify-between">
-            <img
-              src="/images/thanks-logo.svg"
-              alt=""
-              className="mx-auto mb-12 md:mb-14"
-            />
+            <div />
 
             <div className="relative mb-12 md:mb-14">
               <img src="/images/thanks-graph.svg" alt="" className="w-full" />
