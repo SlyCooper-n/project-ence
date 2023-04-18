@@ -7,7 +7,7 @@ export const Thanks = () => {
 
   return (
     <PageAnimation>
-      <div className="flex min-h-screen flex-col place-items-center pb-12">
+      <div className="flex min-h-screen flex-col place-items-center pb-24">
         <Container asChild>
           <main className="flex flex-1 flex-col justify-between">
             <div />
