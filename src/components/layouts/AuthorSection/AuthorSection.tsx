@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Fade } from "react-awesome-reveal";
 
-import { Button, Container, Heading, Picture, Text } from "@/components";
+import { Button, Container, Heading, Text } from "@/components";
 import { useLang } from "@/hooks";
 import { AnimatedBorder } from "./components";
 
@@ -24,24 +24,12 @@ export const AuthorSection = () => {
       <div className="relative flex flex-col gap-7 overflow-y-hidden md:flex-row md:items-center md:gap-0">
         <AnimatedBorder top />
 
-        <Fade direction="down" triggerOnce>
-          <Picture.Root className="md:w-[320px] lg:w-[510px]">
-            <source
-              media="(max-width: 767px)"
-              srcSet="/images/author-mobile.png"
-            />
-
-            <source
-              media="(min-width: 768px)"
-              srcSet="/images/author-desktop.png"
-            />
-
-            <Picture.Image
-              src="/images/author-desktop.png"
-              alt="João Vitor picture"
-              className="w-full object-cover"
-            />
-          </Picture.Root>
+        <Fade direction="down" triggerOnce className="overflow-hidden">
+          <img
+            src="/images/author-desktop.png"
+            alt="João Vitor picture"
+            className="-mt-[25%] max-h-[500px] w-full object-cover object-top md:-mt-24 md:max-h-[650px] md:w-[320px] lg:w-[510px]"
+          />
         </Fade>
 
         <Container className="mb-14 flex flex-col gap-24 md:mb-0 md:flex-1 md:items-center md:gap-12 lg:gap-24">
