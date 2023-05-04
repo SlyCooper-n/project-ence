@@ -1,11 +1,11 @@
 {
   "name": "project-ence",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "export": "next export && zip -r out ./out",
+    "export": "next build && next export && zip -r out ./out",
     "start": "next start",
     "lint": "next lint",
     "format": "prettier -w \"**/*.{ts,tsx,md}\""
