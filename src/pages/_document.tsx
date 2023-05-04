@@ -82,8 +82,6 @@ export default function Document() {
           src="https://polyfill.io/v3/polyfill.min.js"
         />
 
-        {/*  TODO: remove this script when moving to prod */}
-
         <script
           async
           defer
